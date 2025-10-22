@@ -1,6 +1,7 @@
 body {
     color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
+    margin: 0px;
 }
 
 header {
@@ -10,14 +11,15 @@ header {
     color: rgb(255, 255, 255);
 }
 
-section{
-    background:red;
+section {
+    background: red;
     padding-bottom: 80px;
-padding-top: 80px;
-display: flex;
-justify-content: center;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
 
 }
-.chamada-texto{
+
+.chamada-texto {
     margin-right: 5%;
 }
