@@ -2,6 +2,7 @@ body {
     color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
     margin: 0px;
+    font-family: "Butcherman" , sans-serif;
 }
 
 header {
@@ -22,4 +23,11 @@ section {
 
 .chamada-texto {
     margin-right: 5%;
+}
+
+h1 {
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
 }
