@@ -1,152 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM1 - Portal Verdade ou Fake</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>CM1 - Verdade ou Fake (AI Enhanced)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           RESET & VARIÁVEIS DESIGN SYSTEM (ESTILO CYBER PREMIUM IA)
+           ========================================================================== */
+        :root {
+            --bg-principal: #0b0f19;
+            --bg-card: rgba(18, 24, 38, 0.65);
+            --bg-card-hover: rgba(26, 36, 56, 0.85);
+            --borda-glow: rgba(255, 255, 255, 0.08);
+            --borda-glow-hover: rgba(99, 102, 241, 0.4);
+            
+            --texto-principal: #f3f4f6;
+            --texto-secundario: #9ca3af;
+            
+            --cor-verdade: #10b981;
+            --cor-verdade-glow: rgba(16, 185, 129, 0.15);
+            --cor-fake: #ef4444;
+            --cor-fake-glow: rgba(239, 68, 68, 0.15);
+            
+            /* Gradientes de IA */
+            --gradiente-text: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            --gradiente-ai: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --gradiente-barra: linear-gradient(90deg, #1e1b4b 0%, #311042 50%, #1e1b4b 100%);
+        }
 
-    <header class="cabecalho">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-        <div class="logo">
-            <h1>CM1</h1>
-            <span>Portal Verdade ou Fake</span>
-        </div>
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.04) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
 
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Brasil</a>
-            <a href="#">Saúde</a>
-            <a href="#">Economia</a>
-            <a href="#">Verificações</a>
-        </nav>
+        /* ==========================================================================
+           HEADER / NAVEGAÇÃO
+           ========================================================================== */
+        .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda-glow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    </header>
+        .logo h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--gradiente-ai);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    <div class="barra-ao-vivo">
-        🔴 AO VIVO • Últimas verificações de notícias • CM1
-    </div>
+        .logo p {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            margin-top: -2px;
+        }
 
-    <main>
+        nav {
+            display: flex;
+            gap: 28px;
+        }
 
-        <section class="destaque">
+        nav a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 4px 0;
+        }
 
-            <h2>
-                Verdade ou Fake: aprenda a identificar informações confiáveis e combater a desinformação.
-            </h2>
+        nav a:hover {
+            color: #ffffff;
+        }
 
-            <p>
-                Confira abaixo algumas notícias recentes e descubra o que é verdadeiro e o que é falso.
-            </p>
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradiente-ai);
+            transition: width 0.3s ease;
+        }
 
-        </section>
+        nav a:hover::after {
+            width: 100%;
+        }
 
-        <section class="noticias">
+        /* ==========================================================================
+           BARRA DE STATUS (TICKER)
+           ========================================================================== */
+        .barra {
+            background: var(--gradiente-barra);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
 
-            <!-- NOTÍCIA 1 -->
-            <article class="cartao">
+        .barra::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--cor-fake);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cor-fake);
+            animation: pulse 1.5s infinite alternate;
+        }
 
-                <img src="img/ropejump.jpg"
-                     alt="Rope Jump"
-                     class="cartao-imagem">
+        @keyframes pulse {
+            from { opacity: 0.4; }
+            to { opacity: 1; transform: scale(1.2); }
+        }
 
-                <div class="conteudo">
-
-                    <span class="categoria">
-                        SEGURANÇA
-                    </span>
-
-                    <h3>
-                        Jovem morre após ser lançada sem corda em salto de rope jump em Limeira (SP)
-                    </h3>
-
-                    <p>
-                        ✔ VERDADEIRA. O caso aconteceu durante uma atividade de rope jump. A vítima foi lançada sem estar presa corretamente ao equipamento de segurança. O caso segue em investigação.
-                    </p>
-
-                    <span class="data">
-                        Atualizado hoje
-                    </span>
-
-                </div>
-
-            </article>
-
-            <!-- NOTÍCIA 2 -->
-            <article class="cartao">
-
-                <img src="img/OIP.jpg"
-                     alt="Produtos Ypê"
-                     class="cartao-imagem">
-
-                <div class="conteudo">
-
-                    <span class="categoria">
-                        ECONOMIA / BRASIL
-                    </span>
-
-                    <h3>
-                        Brasil anuncia proibição total da venda de produtos de limpeza em supermercados
-                    </h3>
-
-                    <p>
-                        ❌ FALSA. Não existe nenhuma lei proibindo a venda de produtos de limpeza em supermercados. A informação não foi confirmada por nenhum órgão oficial.
-                    </p>
-
-                    <span class="data">
-                        Atualizado hoje
-                    </span>
-
-                </div>
-
-            </article>
-
-            <!-- NOTÍCIA 3 -->
-            <article class="cartao">
-
-                <img src="img/errado.jpg"
-                     alt="Anvisa"
-                     class="cartao-imagem">
-
-                <div class="conteudo">
-
-                    <span class="categoria">
-                        SAÚDE / FISCALIZAÇÃO
-                    </span>
-
-                    <h3>
-                        Anvisa suspende alguns lotes de produtos da marca Ypê após falhas na fabricação
-                    </h3>
-
-                    <p>
-                        ✔ VERDADEIRA. A Anvisa suspendeu alguns lotes após identificar falhas nas boas práticas de fabricação. A medida foi preventiva para garantir a segurança dos consumidores.
-                    </p>
-
-                    <span class="data">
-                        Atualizado hoje
-                    </span>
-
-                </div>
-
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <h2>CM1</h2>
-
-        <p>
-            Um espaço dedicado à checagem de informações e ao combate à desinformação.
-            Antes de compartilhar uma notícia, verifique os fatos.
-        </p>
-
-    </footer>
-
-</body>
-</html>
-
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
