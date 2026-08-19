@@ -4,161 +4,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM1 - Verdade ou Fake (AI Enhanced)</title>
+
+    <title>Daltonismo | Enxergamos as mesmas cores?</title>
+
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ==========================================================================
-           RESET & VARIÁVEIS DESIGN SYSTEM (ESTILO CYBER PREMIUM IA)
-           ========================================================================== */
-        :root {
-            --bg-principal: #0b0f19;
-            --bg-card: rgba(18, 24, 38, 0.65);
-            --bg-card-hover: rgba(26, 36, 56, 0.85);
-            --borda-glow: rgba(255, 255, 255, 0.08);
-            --borda-glow-hover: rgba(99, 102, 241, 0.4);
-            
-            --texto-principal: #f3f4f6;
-            --texto-secundario: #9ca3af;
-            
-            --cor-verdade: #10b981;
-            --cor-verdade-glow: rgba(16, 185, 129, 0.15);
-            --cor-fake: #ef4444;
-            --cor-fake-glow: rgba(239, 68, 68, 0.15);
-            
-            /* Gradientes de IA */
-            --gradiente-text: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
-            --gradiente-ai: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-            --gradiente-barra: linear-gradient(90deg, #1e1b4b 0%, #311042 50%, #1e1b4b 100%);
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
 
-        body {
-            background-color: var(--bg-principal);
-            color: var(--texto-principal);
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.04) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
+<body>
 
-        /* ==========================================================================
-           HEADER / NAVEGAÇÃO
-           ========================================================================== */
-        .cabecalho {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--borda-glow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    <!-- FUNDO -->
+    <div class="background">
+        <div class="blob red"></div>
+        <div class="blob blue"></div>
+        <div class="blob green"></div>
+        <div class="blob yellow"></div>
+    </div>
 
-        .logo h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: var(--gradiente-ai);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
 
-        .logo p {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--texto-secundario);
-            font-weight: 600;
-            margin-top: -2px;
-        }
+    <!-- MENU -->
 
-        nav {
-            display: flex;
-            gap: 28px;
-        }
+    <header>
 
-        nav a {
-            color: var(--texto-secundario);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 4px 0;
-        }
+        <a href="#inicio" class="logo">
+            <span class="logo-dot"></span>
+            DALTONISMO
+        </a>
 
-        nav a:hover {
-            color: #ffffff;
-        }
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#tipos">Tipos</a>
+            <a href="#teste">Teste</a>
+            <a href="#projeto">Projeto</a>
+            <a href="#galeria">Galeria</a>
+        </nav>
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradiente-ai);
-            transition: width 0.3s ease;
-        }
+        <button class="menu-btn" onclick="goTo('sobre')">
+            EXPLORAR
+        </button>
 
-        nav a:hover::after {
-            width: 100%;
-        }
+    </header>
 
-        /* ==========================================================================
-           BARRA DE STATUS (TICKER)
-           ========================================================================== */
-        .barra {
-            background: var(--gradiente-barra);
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
 
-        .barra::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--cor-fake);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--cor-fake);
-            animation: pulse 1.5s infinite alternate;
-        }
+    <!-- INÍCIO -->
 
-        @keyframes pulse {
-            from { opacity: 0.4; }
-            to { opacity: 1; transform: scale(1.2); }
-        }
+    <main id="inicio">
 
-        /* ==========================================================================
-           HERO SECTION
-           ========================================================================== */
-        main {
-            max-width: 1300px;
-            margin: 0 auto;
+        <div class="hero-content">
+
+            <div class="tag">
+                <span></span>
+                PROJETO DE CIÊNCIAS E TECNOLOGIA
+            </div>
+
+            <h1>
+                NEM TODOS<br>
+                <span>ENXERGAM</span><br>
+                AS MESMAS CORES.
+            </h1>
+
+            <p>
+                Uma experiência sobre percepção visual, tecnologia
+                e as diferentes formas de enxergar o mundo.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="goTo('sobre')">
+                    EXPLORAR O PROJETO
+                    <span>↓</span>
+                </button>
+
+                <button class="secondary-btn" onclick="goTo('teste')">
+                    <span class="play">▶</span>
+                    FAZER O TESTE
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OLHO -->
+
+        <div class="vision">
+
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+
+            <div class="eye">
+                <div class="iris">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+
+            <p class="vision-text">
+                PERCEPÇÃO<br>
+                VISUAL
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- SOBRE -->
+
+    <section id="sobre" class="section sobre">
+
+        <div class="section-number">
+            01 — ENTENDENDO
+        </div>
+
+        <div class="sobre-grid">
+
+            <div class="sobre-text">
+
+                <h2>
+                    O QUE É O<br>
+                    <span>DALTONISMO?</span>
+                </h2>
+
+                <p>
+                    O daltonismo é uma alteração na percepção das cores.
+                    Pessoas com daltonismo podem enxergar algumas cores
+                    de maneira diferente ou ter dificuldade para diferenciá-las.
+                </p>
+
+                <p>
+                    Isso acontece porque existem células nos olhos,
+                    chamadas cones, responsáveis pela percepção das cores.
+                    Quando alguma delas funciona de forma diferente,
+                    a visão das cores também pode mudar.
+                </p>
+
+                <div class="info-box">
+
+                    <div>
+                        <strong>👁</strong>
+                        <span>PERCEPÇÃO</span>
+                    </div>
+
+                    <div>
+                        <strong>🎨</strong>
+                        <span>CORES</span>
+                    </div>
+
+                    <div>
+                        <strong>🧬</strong>
+                        <span>GENÉTICA</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sobre-image">
+
+                <img src="img/ishihara.png"
+                    alt="Teste de Ishihara">
+
+                <div class="image-label">
+                    TESTE DE CORES
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TIPOS -->
+
+    <section id="tipos" class="section tipos">
+
+        <div class="section-number">
+            02 — DIFERENTES FORMAS DE VER
+        </div>
+
+        <h2>
+            TIPOS DE<br>
+            <span>DALTONISMO</span>
+        </h2>
+
+        <p class="section-description">
+            Nem todas as pessoas com daltonismo enxergam as cores da mesma forma.
+            Existem diferentes tipos de alterações na percepção visual.
+        </p>
+
+
+        <div class="types-grid">
+
+            <article class="type-card red-card">
+
+                <div class="type-number">01</div>
+
+                <h3>PROTANOPIA</h3>
+
+                <p>
+                    Dificuldade relacionada principalmente
+                    à percepção dos tons avermelhados.
+                </p>
+
+            </article>
+
+
+            <article class="type-card green-card">
+
+                <div class="type-number">02</div>
+
+                <h3>DEUTERANOPIA</h3>
+
+                <p>
+                    Alteração principalmente na percepção
+                    de alguns tons de verde.
+                </p>
+
+            </article>
+
+
+            <article class="type-card blue-card">
+
+                <div class="type-number">03</div>
+
+                <h3>TRITANOPIA</h3>
+
+                <p>
+                    Tipo mais raro relacionado à dificuldade
+                    na percepção entre tons azulados e amarelados.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="types-image">
+
+            <img src="img/tipos-daltonismo.png"
+                alt="Tipos de daltonismo">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TESTE -->
+
+    <section id="teste" class="section teste">
+
+        <div class="section-number">
+            03 — EXPERIÊNCIA VISUAL
+        </div>
+
+        <div class="teste-grid">
+
+            <div class="teste-text">
+
+                <h2>
+                    O QUE VOCÊ<br>
+                    <span>CONSEGUE VER?</span>
+                </h2>
+
+                <p>
+                    As placas de Ishihara são conhecidas por utilizar
+                    diferentes pontos coloridos para formar números e
+                    figuras. Elas ajudam na identificação de alterações
+                    na percepção das cores.
+                </p>
+
+                <p class="small-warning">
+                    Este é apenas um exemplo visual e não substitui
+                    uma avaliação profissional.
+                </p>
+
+            </div>
+
+
+            <div class="test-card">
+
+                <img src="img/ishihara.png"
+                    alt="Teste de Ishihara">
+
+                <h3>QUAL NÚMERO VOCÊ VÊ?</h3>
+
+                <div class="answers">
+
+                    <button onclick="answer('12')">12</button>
+                    <button onclick="answer('8')">8</button>
+                    <button onclick="answer('29')">29</button>
+                    <button onclick="answer('Não consigo ver')">
+                        NÃO VEJO
+                    </button>
+
+                </div>
+
+                <p id="result"></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJETO -->
+
+    <section id="projeto" class="section projeto">
+
+        <div class="section-number">
+            04 — NOSSO EXPERIMENTO
+        </div>
+
+        <h2>
+            DA IDEIA<br>
+            <span>À PRÁTICA.</span>
+        </h2>
+
+        <p class="section-description">
+            Nosso projeto une ciência, tecnologia e criatividade para
+            demonstrar, de forma prática, como podemos explorar a percepção
+            das cores utilizando componentes eletrônicos e programação.
+        </p>
+
+
+        <div class="project-story">
+
+            <div class="story-card">
+
+                <span>01</span>
+
+                <h3>A IDEIA</h3>
+
+                <p>
+                    Primeiro pensamos em uma forma de transformar
+                    o estudo sobre daltonismo em uma experiência prática.
+                </p>
+
+            </div>
+
+
+            <div class="story-card">
+
+                <span>02</span>
+
+                <h3>A MONTAGEM</h3>
+
+                <p>
+                    Utilizamos componentes eletrônicos, Arduino,
+                    LEDs e conexões para construir nosso experimento.
+                </p>
+
+            </div>
+
+
+            <div class="story-card">
+
+                <span>03</span>
+
+                <h3>O RESULTADO</h3>
+
+                <p>
+                    Criamos um projeto visual e interativo para apresentar
+                    nosso aprendizado de uma forma diferente.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-feature">
+
+            <img src="img/projeto1.png"
+                alt="Montagem do projeto">
+
+            <div class="project-feature-text">
+
+                <span>PROJETO PRÁTICO</span>
+
+                <h3>
+                    TECNOLOGIA<br>
+                    + CIÊNCIA
+                </h3>
+
+                <p>
+                    Da programação à montagem dos componentes,
+                    cada etapa fez parte da construção do nosso experimento.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GALERIA -->
+
+    <section id="galeria" class="section galeria">
+
+        <div class="section-number">
+            05 — BASTIDORES DO PROJETO
+        </div>
+
+        <h2>
+            NOSSA<br>
+            <span>GALERIA.</span>
+        </h2>
+
+        <p class="section-description">
+            Algumas imagens do processo de criação,
+            montagem e apresentação do nosso projeto.
+        </p>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item big">
+                <img src="img/projeto1.png" alt="Projeto Daltonismo">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/projeto2.png" alt="Montagem Arduino">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/projeto3.png" alt="Experimento">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/projeto4.png" alt="Projeto eletrônico">
+            </div>
+
+            <div class="gallery-item wide">
+                <img src="img/projeto5.png" alt="Montagem do projeto">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/projeto6.png" alt="Arduino">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL -->
+
+    <section class="final-section">
+
+        <div class="final-eye">◉</div>
+
+        <p>UMA EXPERIÊNCIA SOBRE</p>
+
+        <h2>
+            COMO CADA PESSOA<br>
+            <span>PODE VER O MUNDO.</span>
+        </h2>
+
+        <button onclick="goTo('inicio')">
+            VOLTAR AO INÍCIO ↑
+        </button>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="logo">
+            <span class="logo-dot"></span>
+            DALTONISMO
+        </div>
+
+        <p>
+            Projeto escolar • Ciência • Tecnologia • Percepção visual
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
