@@ -1,494 +1,608 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Daltonismo | Enxergamos as mesmas cores?</title>
+    <title>Sociologia | Marx, Durkheim e Weber</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- FUNDO -->
-    <div class="background">
-        <div class="blob red"></div>
-        <div class="blob blue"></div>
-        <div class="blob green"></div>
-        <div class="blob yellow"></div>
-    </div>
-
-
     <!-- MENU -->
-    <header>
 
-        <a href="#inicio" class="logo">
-            <span class="logo-dot"></span>
-            DALTONISMO
-        </a>
+    <header>
+        <div class="logo">
+            SOCIO<span>LAB</span>
+        </div>
 
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#tipos">Tipos</a>
-            <a href="#teste">Teste</a>
-            <a href="#projeto">Projeto</a>
-            <a href="#galeria">Galeria</a>
+            <a href="#pensadores">Pensadores</a>
+            <a href="#flashcards">Mito ou Verdade</a>
+            <a href="#musical">Musical</a>
         </nav>
 
-        <button class="menu-btn" onclick="goTo('sobre')">
-            EXPLORAR
-        </button>
-
+        <button class="menu-mobile" id="menuBtn">☰</button>
     </header>
 
 
     <!-- INÍCIO -->
-    <main id="inicio">
 
-        <div class="hero-content">
+    <main>
 
-            <div class="tag">
-                <span></span>
-                PROJETO DE CIÊNCIAS E TECNOLOGIA
+        <section class="hero" id="inicio">
+
+            <div class="hero-text">
+
+                <p class="tag">PROJETO DE SOCIOLOGIA</p>
+
+                <h1>
+                    Três pensadores.
+                    <br>
+                    <span>Uma sociedade para entender.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Karl Marx, Émile Durkheim e Max Weber foram alguns dos
+                    principais pensadores responsáveis pelo desenvolvimento
+                    da Sociologia e pela forma como entendemos a sociedade.
+                </p>
+
+                <a href="#pensadores" class="btn">
+                    Conhecer os pensadores ↓
+                </a>
+
             </div>
 
-            <h1>
-                NEM TODOS<br>
-                <span>ENXERGAM</span><br>
-                AS MESMAS CORES.
-            </h1>
+            <div class="hero-circle">
+
+                <div class="circle-text">
+                    <span>MARX</span>
+                    <span>•</span>
+                    <span>DURKHEIM</span>
+                    <span>•</span>
+                    <span>WEBER</span>
+                </div>
+
+                <div class="hero-icon">
+                    ⚖
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="intro">
+
+            <p class="section-tag">
+                SOBRE O PROJETO
+            </p>
+
+            <h2>
+                Como a Sociologia tenta explicar o mundo?
+            </h2>
 
             <p>
-                Uma experiência sobre percepção visual, tecnologia
-                e as diferentes formas de enxergar o mundo.
+                A Sociologia surgiu como uma forma de compreender as mudanças
+                que aconteciam na sociedade. Karl Marx, Émile Durkheim e Max Weber
+                desenvolveram diferentes maneiras de analisar as relações sociais,
+                o trabalho, a economia, a cultura e o comportamento das pessoas.
             </p>
 
-            <div class="hero-buttons">
+        </section>
 
-                <button class="primary-btn" onclick="goTo('sobre')">
-                    EXPLORAR O PROJETO ↓
-                </button>
 
-                <button class="secondary-btn" onclick="goTo('teste')">
-                    <span class="play">▶</span>
-                    FAZER O TESTE
-                </button>
+        <!-- PENSADORES -->
+
+        <section class="thinkers" id="pensadores">
+
+            <div class="section-title">
+
+                <p class="section-tag">
+                    OS PENSADORES
+                </p>
+
+                <h2>
+                    Conheça os grandes nomes da Sociologia
+                </h2>
 
             </div>
 
-        </div>
 
+            <!-- MARX -->
 
-        <div class="vision">
+            <article class="thinker-card marx">
 
-            <div class="circle circle1"></div>
-            <div class="circle circle2"></div>
-            <div class="circle circle3"></div>
+                <div class="thinker-image">
 
-            <div class="eye">
-                <div class="iris">
-                    <div class="pupil"></div>
+                    <img src="img/marx.jpg" alt="Karl Marx">
+
                 </div>
-            </div>
 
-            <p class="vision-text">
-                PERCEPÇÃO<br>
-                VISUAL
+                <div class="thinker-content">
+
+                    <span class="number">
+                        01
+                    </span>
+
+                    <h3>
+                        Karl Marx
+                    </h3>
+
+                    <p class="date">
+                        1818 — 1883
+                    </p>
+
+                    <p>
+                        Karl Marx foi um filósofo, economista e sociólogo alemão.
+                        Ele ficou conhecido principalmente por estudar as relações
+                        entre as classes sociais e as desigualdades existentes
+                        dentro do sistema capitalista.
+                    </p>
+
+                    <p>
+                        Para Marx, a sociedade era marcada pela luta de classes.
+                        De um lado estavam os proprietários dos meios de produção,
+                        chamados de burguesia. Do outro, os trabalhadores,
+                        conhecidos como proletariado.
+                    </p>
+
+                    <div class="topics">
+
+                        <span>Capitalismo</span>
+                        <span>Luta de Classes</span>
+                        <span>Desigualdade</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DURKHEIM -->
+
+            <article class="thinker-card durkheim">
+
+                <div class="thinker-content">
+
+                    <span class="number">
+                        02
+                    </span>
+
+                    <h3>
+                        Émile Durkheim
+                    </h3>
+
+                    <p class="date">
+                        1858 — 1917
+                    </p>
+
+                    <p>
+                        Émile Durkheim foi um dos responsáveis por estabelecer
+                        a Sociologia como uma ciência. Ele acreditava que os
+                        fenômenos sociais poderiam ser estudados de forma
+                        científica.
+                    </p>
+
+                    <p>
+                        Um dos seus principais conceitos é o fato social.
+                        Segundo Durkheim, existem regras, costumes e maneiras
+                        de agir que influenciam os indivíduos dentro da sociedade.
+                    </p>
+
+                    <div class="topics">
+
+                        <span>Fato Social</span>
+                        <span>Sociedade</span>
+                        <span>Solidariedade</span>
+
+                    </div>
+
+                </div>
+
+                <div class="thinker-image">
+
+                    <img src="img/durkheim.jpg" alt="Émile Durkheim">
+
+                </div>
+
+            </article>
+
+
+            <!-- WEBER -->
+
+            <article class="thinker-card weber">
+
+                <div class="thinker-image">
+
+                    <img src="img/weber.jpg" alt="Max Weber">
+
+                </div>
+
+                <div class="thinker-content">
+
+                    <span class="number">
+                        03
+                    </span>
+
+                    <h3>
+                        Max Weber
+                    </h3>
+
+                    <p class="date">
+                        1864 — 1920
+                    </p>
+
+                    <p>
+                        Max Weber foi um sociólogo alemão que estudou principalmente
+                        a forma como os indivíduos agem dentro da sociedade.
+                        Para ele, era importante entender o significado das
+                        ações realizadas pelas pessoas.
+                    </p>
+
+                    <p>
+                        Weber desenvolveu o conceito de ação social, que acontece
+                        quando uma pessoa realiza uma ação levando em consideração
+                        o comportamento ou a reação de outras pessoas.
+                    </p>
+
+                    <div class="topics">
+
+                        <span>Ação Social</span>
+                        <span>Poder</span>
+                        <span>Cultura</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- COMPARAÇÃO -->
+
+        <section class="comparison">
+
+            <p class="section-tag">
+                DIFERENTES VISÕES
             </p>
 
-        </div>
+            <h2>
+                Cada um observava a sociedade de uma maneira
+            </h2>
+
+            <div class="comparison-grid">
+
+                <div class="comparison-card">
+
+                    <h3>Marx</h3>
+
+                    <p>
+                        Estudava principalmente as relações econômicas,
+                        as desigualdades e a luta entre as classes sociais.
+                    </p>
+
+                </div>
+
+                <div class="comparison-card">
+
+                    <h3>Durkheim</h3>
+
+                    <p>
+                        Analisava a sociedade como algo que influencia
+                        diretamente os comportamentos dos indivíduos.
+                    </p>
+
+                </div>
+
+                <div class="comparison-card">
+
+                    <h3>Weber</h3>
+
+                    <p>
+                        Buscava compreender os significados e os motivos
+                        por trás das ações realizadas pelas pessoas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FLASHCARDS -->
+
+        <section class="flashcards-section" id="flashcards">
+
+            <p class="section-tag">
+                TESTE SEU CONHECIMENTO
+            </p>
+
+            <h2>
+                Mito ou Verdade?
+            </h2>
+
+            <p class="flashcards-info">
+                Clique nos cards para descobrir a resposta.
+            </p>
+
+
+            <div class="flashcards-container">
+
+
+                <!-- CARD 1 -->
+
+                <div class="flashcard">
+
+                    <div class="flashcard-inner">
+
+                        <div class="flashcard-front">
+
+                            <span class="card-number">
+                                01
+                            </span>
+
+                            <h3>
+                                Mito ou Verdade?
+                            </h3>
+
+                            <p>
+                                Karl Marx acreditava que
+                                as desigualdades sociais
+                                estavam relacionadas às
+                                classes sociais.
+                            </p>
+
+                            <span class="click">
+                                Clique para virar ↻
+                            </span>
+
+                        </div>
+
+                        <div class="flashcard-back verdade">
+
+                            <h3>
+                                ✓ VERDADE
+                            </h3>
+
+                            <p>
+                                Marx estudou a luta entre
+                                diferentes classes sociais,
+                                principalmente entre a burguesia
+                                e o proletariado.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="flashcard">
+
+                    <div class="flashcard-inner">
+
+                        <div class="flashcard-front">
+
+                            <span class="card-number">
+                                02
+                            </span>
+
+                            <h3>
+                                Mito ou Verdade?
+                            </h3>
+
+                            <p>
+                                Para Durkheim, a sociedade
+                                não influencia as escolhas
+                                e comportamentos das pessoas.
+                            </p>
+
+                            <span class="click">
+                                Clique para virar ↻
+                            </span>
+
+                        </div>
+
+                        <div class="flashcard-back mito">
+
+                            <h3>
+                                ✕ MITO
+                            </h3>
+
+                            <p>
+                                Durkheim defendia que existem
+                                fatos sociais, como costumes,
+                                regras e normas, que influenciam
+                                os indivíduos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="flashcard">
+
+                    <div class="flashcard-inner">
+
+                        <div class="flashcard-front">
+
+                            <span class="card-number">
+                                03
+                            </span>
+
+                            <h3>
+                                Mito ou Verdade?
+                            </h3>
+
+                            <p>
+                                Max Weber desenvolveu o conceito
+                                de ação social para compreender
+                                o comportamento das pessoas.
+                            </p>
+
+                            <span class="click">
+                                Clique para virar ↻
+                            </span>
+
+                        </div>
+
+                        <div class="flashcard-back verdade">
+
+                            <h3>
+                                ✓ VERDADE
+                            </h3>
+
+                            <p>
+                                Weber buscava entender os motivos
+                                e significados das ações realizadas
+                                pelos indivíduos dentro da sociedade.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- MUSICAL -->
+
+        <section class="musical" id="musical">
+
+            <div class="musical-text">
+
+                <p class="section-tag">
+                    ATIVIDADE DA TURMA
+                </p>
+
+                <h2>
+                    Musical de Sociologia
+                </h2>
+
+                <p>
+                    Além da pesquisa sobre os principais pensadores da Sociologia,
+                    nossa turma realizou uma atividade diferente: o Musical de
+                    Sociologia.
+                </p>
+
+                <p>
+                    A atividade envolveu organização, criatividade, apresentações
+                    e trabalho em equipe para transformar conteúdos sociológicos
+                    em uma experiência mais dinâmica e divertida.
+                </p>
+
+                <div class="musical-line"></div>
+
+                <p class="quote">
+                    “Aprender também pode ser uma experiência coletiva.”
+                </p>
+
+            </div>
+
+
+            <!-- GALERIA -->
+
+            <div class="gallery">
+
+                <div class="gallery-item big">
+
+                    <img src="img/musical1.jpg" alt="Musical de Sociologia">
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="img/musical2.jpg" alt="Organização do Musical">
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="img/musical3.jpg" alt="Apresentação do Musical">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="final-section">
+
+            <p class="section-tag">
+                CONCLUSÃO
+            </p>
+
+            <h2>
+                Entender a sociedade é entender também o nosso papel dentro dela.
+            </h2>
+
+            <p>
+                As ideias de Karl Marx, Émile Durkheim e Max Weber continuam
+                importantes para analisar diversos aspectos da sociedade atual,
+                como desigualdade, cultura, trabalho, comportamento e relações sociais.
+            </p>
+
+        </section>
 
     </main>
 
 
-
-    <!-- SOBRE -->
-    <section id="sobre" class="section sobre">
-
-        <div class="section-number">
-            01 — ENTENDENDO
-        </div>
-
-        <div class="sobre-grid">
-
-            <div class="sobre-text">
-
-                <h2>
-                    O QUE É O<br>
-                    <span>DALTONISMO?</span>
-                </h2>
-
-                <p>
-                    O daltonismo é uma alteração na percepção das cores.
-                    Pessoas com daltonismo podem enxergar algumas cores de
-                    maneira diferente ou ter dificuldade para diferenciá-las.
-                </p>
-
-                <p>
-                    Isso acontece porque existem células nos olhos chamadas
-                    cones, responsáveis pela percepção das cores. Quando alguma
-                    delas funciona de forma diferente, a visão das cores também
-                    pode mudar.
-                </p>
-
-                <div class="info-box">
-
-                    <div>
-                        <strong>👁</strong>
-                        <span>PERCEPÇÃO</span>
-                    </div>
-
-                    <div>
-                        <strong>🎨</strong>
-                        <span>CORES</span>
-                    </div>
-
-                    <div>
-                        <strong>🧬</strong>
-                        <span>GENÉTICA</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="sobre-image">
-
-                <img src="ishihara.png.png"
-                    alt="Teste de Ishihara">
-
-                <div class="image-label">
-                    TESTE DE CORES
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- TIPOS -->
-    <section id="tipos" class="section tipos">
-
-        <div class="section-number">
-            02 — DIFERENTES FORMAS DE VER
-        </div>
-
-        <h2>
-            TIPOS DE<br>
-            <span>DALTONISMO</span>
-        </h2>
-
-        <p class="section-description">
-            Nem todas as pessoas com daltonismo enxergam as cores da mesma forma.
-            Existem diferentes tipos de alterações na percepção visual.
-        </p>
-
-
-        <div class="types-grid">
-
-            <article class="type-card red-card">
-
-                <div class="type-number">01</div>
-
-                <h3>PROTANOPIA</h3>
-
-                <p>
-                    Dificuldade relacionada principalmente à percepção
-                    dos tons avermelhados.
-                </p>
-
-            </article>
-
-
-            <article class="type-card green-card">
-
-                <div class="type-number">02</div>
-
-                <h3>DEUTERANOPIA</h3>
-
-                <p>
-                    Alteração principalmente na percepção de alguns
-                    tons de verde.
-                </p>
-
-            </article>
-
-
-            <article class="type-card blue-card">
-
-                <div class="type-number">03</div>
-
-                <h3>TRITANOPIA</h3>
-
-                <p>
-                    Tipo mais raro relacionado à dificuldade na percepção
-                    entre tons azulados e amarelados.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div class="types-image">
-
-            <img src="tipos-daltonismo.png.png"
-                alt="Tipos de daltonismo">
-
-        </div>
-
-    </section>
-
-
-
-    <!-- TESTE -->
-    <section id="teste" class="section teste">
-
-        <div class="section-number">
-            03 — EXPERIÊNCIA VISUAL
-        </div>
-
-        <div class="teste-grid">
-
-            <div class="teste-text">
-
-                <h2>
-                    O QUE VOCÊ<br>
-                    <span>CONSEGUE VER?</span>
-                </h2>
-
-                <p>
-                    As placas de Ishihara utilizam diferentes pontos coloridos
-                    para formar números e figuras. Elas ajudam a identificar
-                    possíveis alterações na percepção das cores.
-                </p>
-
-                <p class="small-warning">
-                    Este é apenas um exemplo visual e não substitui
-                    uma avaliação profissional.
-                </p>
-
-            </div>
-
-
-            <div class="test-card">
-
-                <img src="ishihara.png.png"
-                    alt="Teste de Ishihara">
-
-                <h3>QUAL NÚMERO VOCÊ VÊ?</h3>
-
-                <div class="answers">
-
-                    <button onclick="answer('12')">12</button>
-                    <button onclick="answer('8')">8</button>
-                    <button onclick="answer('29')">29</button>
-                    <button onclick="answer('Não consigo ver')">
-                        NÃO VEJO
-                    </button>
-
-                </div>
-
-                <p id="result"></p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- PROJETO -->
-    <section id="projeto" class="section projeto">
-
-        <div class="section-number">
-            04 — NOSSO EXPERIMENTO
-        </div>
-
-        <h2>
-            DA IDEIA<br>
-            <span>À PRÁTICA.</span>
-        </h2>
-
-        <p class="section-description">
-            Nosso projeto une ciência, tecnologia e criatividade para demonstrar
-            de forma prática como podemos explorar a percepção das cores utilizando
-            componentes eletrônicos e programação.
-        </p>
-
-
-        <div class="project-story">
-
-            <div class="story-card">
-
-                <span>01</span>
-
-                <h3>A IDEIA</h3>
-
-                <p>
-                    Primeiro pensamos em uma forma de transformar o estudo
-                    sobre daltonismo em uma experiência prática.
-                </p>
-
-            </div>
-
-
-            <div class="story-card">
-
-                <span>02</span>
-
-                <h3>A MONTAGEM</h3>
-
-                <p>
-                    Utilizamos componentes eletrônicos, Arduino, LEDs e conexões
-                    para construir nosso experimento.
-                </p>
-
-            </div>
-
-
-            <div class="story-card">
-
-                <span>03</span>
-
-                <h3>O RESULTADO</h3>
-
-                <p>
-                    Criamos um projeto visual e interativo para apresentar
-                    nosso aprendizado de uma forma diferente.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="project-feature">
-
-            <img src="projeto1.png.png"
-                alt="Montagem do projeto">
-
-            <div class="project-feature-text">
-
-                <span>PROJETO PRÁTICO</span>
-
-                <h3>
-                    TECNOLOGIA<br>
-                    + CIÊNCIA
-                </h3>
-
-                <p>
-                    Da programação à montagem dos componentes, cada etapa fez
-                    parte da construção do nosso experimento.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- GALERIA -->
-    <section id="galeria" class="section galeria">
-
-        <div class="section-number">
-            05 — BASTIDORES DO PROJETO
-        </div>
-
-        <h2>
-            NOSSA<br>
-            <span>GALERIA.</span>
-        </h2>
-
-        <p class="section-description">
-            Algumas imagens do processo de criação, montagem e apresentação
-            do nosso projeto.
-        </p>
-
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item big">
-                <img src="projeto1.png.png" alt="Projeto Daltonismo">
-            </div>
-
-            <div class="gallery-item">
-                <img src="projeto2.png.png" alt="Montagem Arduino">
-            </div>
-
-            <div class="gallery-item">
-                <img src="projeto3.png.png" alt="Experimento">
-            </div>
-
-            <div class="gallery-item">
-                <img src="projeto4.png.png" alt="Projeto eletrônico">
-            </div>
-
-            <div class="gallery-item wide">
-                <img src="projeto5.png.png" alt="Montagem do projeto">
-            </div>
-
-            <div class="gallery-item">
-                <img src="projeto6.png.png" alt="Arduino">
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- FINAL -->
-    <section class="final-section">
-
-        <div class="final-eye">◉</div>
-
-        <p>UMA EXPERIÊNCIA SOBRE</p>
-
-        <h2>
-            COMO CADA PESSOA<br>
-            <span>PODE VER O MUNDO.</span>
-        </h2>
-
-        <button onclick="goTo('inicio')">
-            VOLTAR AO INÍCIO ↑
-        </button>
-
-    </section>
-
-
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="logo">
-            <span class="logo-dot"></span>
-            DALTONISMO
+        <div>
+
+            <h2>
+                SOCIO<span>LAB</span>
+            </h2>
+
+            <p>
+                Projeto individual de Sociologia
+            </p>
+
         </div>
 
         <p>
-            Projeto escolar • Ciência • Tecnologia • Percepção visual
+            Karl Marx • Émile Durkheim • Max Weber
         </p>
 
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
