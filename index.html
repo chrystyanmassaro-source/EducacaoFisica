@@ -1,605 +1,2463 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
+```
+<!-- =========================================
+     CONFIGURAÇÕES BÁSICAS
+========================================== -->
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sociologia | Marx, Durkheim e Weber</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<meta name="description"
+      content="Prova Paraná - Informações, objetivos, disciplinas, dicas e resultados.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-<link rel="preconnect" href="https://fonts.gstatic.com&quot; crossorigin>
+<meta name="keywords"
+      content="Prova Paraná, Educação, Paraná, Matemática, Português">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap&quot; rel="stylesheet">
+<meta name="author"
+      content="Chrystyan Massaro">
+
+<title>Prova Paraná | Central do Estudante</title>
+
+
+<!-- =========================================
+     FONTES
+========================================== -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+
+<!-- =========================================
+     ÍCONES
+========================================== -->
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<!-- =========================================
+     CSS PRINCIPAL
+========================================== -->
+
+<link rel="stylesheet"
+      href="style.css">
+```
+
 </head>
 
 <body>
 
-<!
--MENU -->
-<header>
-<div class="logo">
-SOCIO<span>LAB</span>
+```
+<!-- =========================================
+     BARRA DE PROGRESSO
+========================================== -->
+
+<div class="scroll-progress"
+     id="scrollProgress"></div>
+
+
+
+<!-- =========================================
+     TELA DE CARREGAMENTO
+========================================== -->
+
+<div class="loader"
+     id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+        </div>
+
+        <h2>PROVA PARANÁ</h2>
+
+        <p>Preparando sua experiência...</p>
+
+        <div class="loader-bar">
+
+            <div class="loader-bar-progress"></div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<nav>
-<a href="#inicio">Início</a>
-<a href="#pensadores">Pensadores</a>
-<a href="#flashcards">Mito ou Verdade</a>
-<a href="#musical">Musical</a>
-</nav>
 
-<button class="menu-mobile" id="menuBtn">☰</button>
+
+<!-- =========================================
+     HEADER
+========================================== -->
+
+<header class="header"
+        id="header">
+
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <a href="#inicio"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <span class="logo-main">
+
+                    PROVA
+
+                </span>
+
+                <span class="logo-highlight">
+
+                    PARANÁ
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MENU DESKTOP -->
+
+        <nav class="desktop-nav">
+
+
+            <ul class="nav-list">
+
+
+                <li>
+
+                    <a href="#inicio"
+                       class="nav-link active">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Início
+
+                    </a>
+
+                </li>
+
+
+
+                <!-- DROPDOWN -->
+
+                <li class="dropdown">
+
+
+                    <button class="dropdown-button">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Sobre
+
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+
+                    </button>
+
+
+                    <ul class="dropdown-menu">
+
+
+                        <li>
+
+                            <a href="#o-que-e">
+
+                                <i class="fa-solid fa-lightbulb"></i>
+
+                                O que é?
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#objetivos">
+
+                                <i class="fa-solid fa-bullseye"></i>
+
+                                Objetivos
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#resultados">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                Resultados
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+
+                </li>
+
+
+
+                <li>
+
+                    <a href="#disciplinas"
+                       class="nav-link">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        Disciplinas
+
+                    </a>
+
+                </li>
+
+
+
+                <li>
+
+                    <a href="#dicas"
+                       class="nav-link">
+
+                        <i class="fa-solid fa-star"></i>
+
+                        Dicas
+
+                    </a>
+
+                </li>
+
+
+
+                <li>
+
+                    <a href="#quiz"
+                       class="nav-link">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                        Quiz
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+
+
+        <!-- BOTÃO DESTAQUE -->
+
+        <a href="#dicas"
+           class="header-button">
+
+            Preparar-se
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+
+        <!-- MENU HAMBÚRGUER -->
+
+        <button class="hamburger"
+                id="hamburger"
+                aria-label="Abrir menu">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </button>
+
+
+    </div>
+
+
 </header>
 
 
-<!
--INÍCIO -->
+
+<!-- =========================================
+     MENU MOBILE
+========================================== -->
+
+<div class="mobile-overlay"
+     id="mobileOverlay"></div>
+
+
+
+<aside class="mobile-menu"
+       id="mobileMenu">
+
+
+    <div class="mobile-menu-header">
+
+
+        <div class="mobile-logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>
+
+                PROVA PARANÁ
+
+            </span>
+
+        </div>
+
+
+        <button class="close-menu"
+                id="closeMenu">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+    </div>
+
+
+
+    <nav class="mobile-nav">
+
+
+        <a href="#inicio"
+           class="mobile-link">
+
+            <i class="fa-solid fa-house"></i>
+
+            Início
+
+        </a>
+
+
+        <a href="#o-que-e"
+           class="mobile-link">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            O que é a Prova Paraná
+
+        </a>
+
+
+        <a href="#objetivos"
+           class="mobile-link">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            Objetivos
+
+        </a>
+
+
+        <a href="#disciplinas"
+           class="mobile-link">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Disciplinas
+
+        </a>
+
+
+        <a href="#dicas"
+           class="mobile-link">
+
+            <i class="fa-solid fa-star"></i>
+
+            Dicas
+
+        </a>
+
+
+        <a href="#resultados"
+           class="mobile-link">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Resultados
+
+        </a>
+
+
+        <a href="#quiz"
+           class="mobile-link">
+
+            <i class="fa-solid fa-brain"></i>
+
+            Quiz
+
+        </a>
+
+
+    </nav>
+
+
+
+    <div class="mobile-menu-footer">
+
+        <p>
+
+            Educação transforma o futuro.
+
+        </p>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN
+========================================== -->
+
 <main>
 
-<section class="hero" id="inicio">
 
-<div class="hero-text">
 
-<p class="tag">PROJETO DE SOCIOLOGIA</p>
+    <!-- =====================================
+         HERO
+    ====================================== -->
 
-<h1>
-Três pensadores.
-<br>
-<span>Uma sociedade para entender.</span>
-</h1>
+    <section class="hero"
+             id="inicio">
 
-<p class="hero-description">
-Karl Marx, Émile Durkheim e Max Weber foram alguns dos
-principais pensadores responsáveis pelo desenvolvimento
-da Sociologia e pela forma como entendemos a sociedade.
-</p>
 
-<a href="#pensadores" class="btn">
-Conhecer os pensadores ↓
-</a>
+        <div class="hero-background">
 
-</div>
 
-<div class="hero-circle">
+            <div class="hero-orb orb-1"></div>
 
-<div class="circle-text">
-<span>MARX</span>
-<span>•</span>
-<span>DURKHEIM</span>
-<span>•</span>
-<span>WEBER</span>
-</div>
+            <div class="hero-orb orb-2"></div>
 
-<div class="hero-icon">
-⚖
-</div>
+            <div class="hero-orb orb-3"></div>
 
-</div>
 
-</section>
+        </div>
 
 
-<!
--INTRODUÇÃO -->
-<section class="intro">
 
-<p class="section-tag">
-SOBRE O PROJETO
-</p>
+        <div class="hero-container">
 
-<h2>
-Como a Sociologia tenta explicar o mundo?
-</h2>
 
-<p>
-A Sociologia surgiu como uma forma de compreender as mudanças
-que aconteciam na sociedade. Karl Marx, Émile Durkheim e Max Weber
-desenvolveram diferentes maneiras de analisar as relações sociais,
-o trabalho, a economia, a cultura e o comportamento das pessoas.
-</p>
 
-</section>
+            <!-- TEXTO -->
 
+            <div class="hero-content">
 
-<!
--PENSADORES -->
-<section class="thinkers" id="pensadores">
 
-<div class="section-title">
+                <div class="hero-badge">
 
-<p class="section-tag">
-OS PENSADORES
-</p>
+                    <span class="badge-dot"></span>
 
-<h2>
-Conheça os grandes nomes da Sociologia
-</h2>
+                    EDUCAÇÃO EM MOVIMENTO
 
-</div>
+                </div>
 
 
-<!
--MARX -->
-<article class="thinker-card marx">
 
-<div class="thinker-image">
+                <h1>
 
-<img src="img/marx.jpg" alt="Karl Marx">
+                    Entenda a
 
-</div>
+                    <span>
 
-<div class="thinker-content">
+                        Prova Paraná
 
-<span class="number">
-01
-</span>
+                    </span>
 
-<h3>
-Karl Marx
-</h3>
+                    e prepare-se para o seu futuro.
 
-<p class="date">
-1818 — 1883
-</p>
+                </h1>
 
-<p>
-Karl Marx foi um filósofo, economista e sociólogo alemão.
-Ele ficou conhecido principalmente por estudar as relações
-entre as classes sociais e as desigualdades existentes
-dentro do sistema capitalista.
-</p>
 
-<p>
-Para Marx, a sociedade era marcada pela luta de classes.
-De um lado estavam os proprietários dos meios de produção,
-chamados de burguesia. Do outro, os trabalhadores,
-conhecidos como proletariado.
-</p>
 
-<div class="topics">
+                <p class="hero-description">
 
-<span>Capitalismo</span>
-<span>Luta de Classes</span>
-<span>Desigualdade</span>
+                    Uma plataforma criada para explicar, de forma simples
+                    e moderna, tudo sobre a avaliação que ajuda estudantes,
+                    professores e escolas a construírem uma educação cada
+                    vez melhor.
 
-</div>
+                </p>
 
-</div>
 
-</article>
 
+                <div class="hero-buttons">
 
-<!
--DURKHEIM -->
-<article class="thinker-card durkheim">
 
-<div class="thinker-content">
+                    <a href="#o-que-e"
+                       class="btn btn-primary">
 
-<span class="number">
-02
-</span>
+                        <i class="fa-solid fa-rocket"></i>
 
-<h3>
-Émile Durkheim
-</h3>
+                        Começar agora
 
-<p class="date">
-1858 — 1917
-</p>
+                    </a>
 
-<p>
-Émile Durkheim foi um dos responsáveis por estabelecer
-a Sociologia como uma ciência. Ele acreditava que os
-fenômenos sociais poderiam ser estudados de forma
-científica.
-</p>
 
-<p>
-Um dos seus principais conceitos é o fato social.
-Segundo Durkheim, existem regras, costumes e maneiras
-de agir que influenciam os indivíduos dentro da sociedade.
-</p>
 
-<div class="topics">
+                    <a href="#disciplinas"
+                       class="btn btn-secondary">
 
-<span>Fato Social</span>
-<span>Sociedade</span>
-<span>Solidariedade</span>
+                        <i class="fa-solid fa-play"></i>
 
-</div>
+                        Explorar conteúdo
 
-</div>
+                    </a>
 
-<div class="thinker-image">
 
-<img src="img/durkheim.jpg" alt="Émile Durkheim">
+                </div>
 
-</div>
 
-</article>
 
+                <!-- ESTATÍSTICAS -->
 
-<!
--WEBER -->
-<article class="thinker-card weber">
+                <div class="hero-stats">
 
-<div class="thinker-image">
 
-<img src="img/weber.jpg" alt="Max Weber">
+                    <div class="hero-stat">
 
-</div>
+                        <strong>
 
-<div class="thinker-content">
+                            02
 
-<span class="number">
-03
-</span>
+                        </strong>
 
-<h3>
-Max Weber
-</h3>
+                        <span>
 
-<p class="date">
-1864 — 1920
-</p>
+                            Disciplinas principais
 
-<p>
-Max Weber foi um sociólogo alemão que estudou principalmente
-a forma como os indivíduos agem dentro da sociedade.
-Para ele, era importante entender o significado das
-ações realizadas pelas pessoas.
-</p>
+                        </span>
 
-<p>
-Weber desenvolveu o conceito de ação social, que acontece
-quando uma pessoa realiza uma ação levando em consideração
-o comportamento ou a reação de outras pessoas.
-</p>
+                    </div>
 
-<div class="topics">
 
-<span>Ação Social</span>
-<span>Poder</span>
-<span>Cultura</span>
 
-</div>
+                    <div class="hero-stat-line"></div>
 
-</div>
 
-</article>
 
-</section>
+                    <div class="hero-stat">
 
+                        <strong>
 
-<!
--COMPARAÇÃO -->
-<section class="comparison">
+                            100%
 
-<p class="section-tag">
-DIFERENTES VISÕES
-</p>
+                        </strong>
 
-<h2>
-Cada um observava a sociedade de uma maneira
-</h2>
+                        <span>
 
-<div class="comparison-grid">
+                            Foco no aprendizado
 
-<div class="comparison-card">
+                        </span>
 
-<h3>Marx</h3>
+                    </div>
 
-<p>
-Estudava principalmente as relações econômicas,
-as desigualdades e a luta entre as classes sociais.
-</p>
 
-</div>
 
-<div class="comparison-card">
+                    <div class="hero-stat-line"></div>
 
-<h3>Durkheim</h3>
 
-<p>
-Analisava a sociedade como algo que influencia
-diretamente os comportamentos dos indivíduos.
-</p>
 
-</div>
+                    <div class="hero-stat">
 
-<div class="comparison-card">
+                        <strong>
 
-<h3>Weber</h3>
+                            ∞
 
-<p>
-Buscava compreender os significados e os motivos
-por trás das ações realizadas pelas pessoas.
-</p>
+                        </strong>
 
-</div>
+                        <span>
 
-</div>
+                            Possibilidades
 
-</section>
+                        </span>
 
+                    </div>
 
-<!
--FLASHCARDS -->
-<section class="flashcards-section" id="flashcards">
 
-<p class="section-tag">
-TESTE SEU CONHECIMENTO
-</p>
+                </div>
 
-<h2>
-Mito ou Verdade?
-</h2>
 
-<p class="flashcards-info">
-Clique nos cards para descobrir a resposta.
-</p>
+            </div>
 
-<div class="flashcards-container">
 
-<!
--CARD 1 -->
-<div class="flashcard">
 
-<div class="flashcard-inner">
+            <!-- CARD VISUAL -->
 
-<div class="flashcard-front">
+            <div class="hero-visual">
 
-<span class="card-number">
-01
-</span>
 
-<h3>
-Mito ou Verdade?
-</h3>
+                <div class="floating-card card-top">
 
-<p>
-Karl Marx acreditava que
-as desigualdades sociais
-estavam relacionadas às
-classes sociais.
-</p>
+                    <i class="fa-solid fa-book"></i>
 
-<span class="click">
-Clique para virar ↻
-</span>
+                    <span>
 
-</div>
+                        Conhecimento
 
-<div class="flashcard-back verdade">
+                    </span>
 
-<h3>
-✓ VERDADE
-</h3>
+                </div>
 
-<p>
-Marx estudou a luta entre
-diferentes classes sociais,
-principalmente entre a burguesia
-e o proletariado.
-</p>
 
-</div>
 
-</div>
+                <div class="hero-main-card">
 
-</div>
 
+                    <div class="main-card-header">
 
-<!
--CARD 2 -->
-<div class="flashcard">
+                        <div class="student-avatar">
 
-<div class="flashcard-inner">
+                            <i class="fa-solid fa-user-graduate"></i>
 
-<div class="flashcard-front">
+                        </div>
 
-<span class="card-number">
-02
-</span>
 
-<h3>
-Mito ou Verdade?
-</h3>
+                        <div>
 
-<p>
-Para Durkheim, a sociedade
-não influencia as escolhas
-e comportamentos das pessoas.
-</p>
+                            <span>
 
-<span class="click">
-Clique para virar ↻
-</span>
+                                CENTRAL DO ESTUDANTE
 
-</div>
+                            </span>
 
-<div class="flashcard-back mito">
+                            <h3>
 
-<h3>
-✕ MITO
-</h3>
+                                Seu aprendizado importa.
 
-<p>
-Durkheim defendia que existem
-fatos sociais, como costumes,
-regras e normas, que influenciam
-os indivíduos.
-</p>
+                            </h3>
 
-</div>
+                        </div>
 
-</div>
 
-</div>
+                    </div>
 
 
-<!
--CARD 3 -->
-<div class="flashcard">
 
-<div class="flashcard-inner">
+                    <div class="progress-area">
 
-<div class="flashcard-front">
 
-<span class="card-number">
-03
-</span>
+                        <div class="progress-title">
 
-<h3>
-Mito ou Verdade?
-</h3>
+                            <span>
 
-<p>
-Max Weber desenvolveu o conceito
-de ação social para compreender
-o comportamento das pessoas.
-</p>
+                                Jornada de preparação
 
-<span class="click">
-Clique para virar ↻
-</span>
+                            </span>
 
-</div>
+                            <strong>
 
-<div class="flashcard-back verdade">
+                                75%
 
-<h3>
-✓ VERDADE
-</h3>
+                            </strong>
 
-<p>
-Weber buscava entender os motivos
-e significados das ações realizadas
-pelos indivíduos dentro da sociedade.
-</p>
+                        </div>
 
-</div>
 
-</div>
 
-</div>
+                        <div class="progress-bar">
 
-</div>
+                            <div class="progress-fill"></div>
 
-</section>
+                        </div>
 
 
-<!
--MUSICAL -->
-<section class="musical" id="musical">
+                    </div>
 
-<div class="musical-text">
 
-<p class="section-tag">
-ATIVIDADE DA TURMA
-</p>
 
-<h2>
-Musical de Sociologia
-</h2>
+                    <div class="subjects-mini">
 
-<p>
-Além da pesquisa sobre os principais pensadores da Sociologia,
-nossa turma realizou uma atividade diferente: o Musical de
-Sociologia.
-</p>
 
-<p>
-A atividade envolveu organização, criatividade, apresentações
-e trabalho em equipe para transformar conteúdos sociológicos
-em uma experiência mais dinâmica e divertida.
-</p>
+                        <div class="subject-mini portugues-mini">
 
-<div class="musical-line"></div>
+                            <div class="subject-icon">
 
-<p class="quote">
-“Aprender também pode ser uma experiência coletiva.”
-</p>
+                                <i class="fa-solid fa-book-open"></i>
 
-</div>
+                            </div>
 
+                            <span>
 
-<!
--GALERIA -->
-<div class="gallery">
+                                Português
 
-<div class="gallery-item big">
+                            </span>
 
-<img src="img/musical1.jpg" alt="Musical de Sociologia">
+                        </div>
 
-</div>
 
-<div class="gallery-item">
 
-<img src="img/musical2.jpg" alt="Organização do Musical">
+                        <div class="subject-mini matematica-mini">
 
-</div>
+                            <div class="subject-icon">
 
-<div class="gallery-item">
+                                <i class="fa-solid fa-calculator"></i>
 
-<img src="img/musical3.jpg" alt="Apresentação do Musical">
+                            </div>
 
-</div>
+                            <span>
 
-</div>
+                                Matemática
 
-</section>
+                            </span>
 
+                        </div>
 
-<!
--FINAL -->
-<section class="final-section">
 
-<p class="section-tag">
-CONCLUSÃO
-</p>
+                    </div>
 
-<h2>
-Entender a sociedade é entender também o nosso papel dentro dela.
-</h2>
 
-<p>
-As ideias de Karl Marx, Émile Durkheim e Max Weber continuam
-importantes para analisar diversos aspectos da sociedade atual,
-como desigualdade, cultura, trabalho, comportamento e relações sociais.
-</p>
 
-</section>
+                    <div class="card-message">
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                        <p>
+
+                            Cada resultado é uma oportunidade
+                            para aprender ainda mais.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="floating-card card-bottom">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    <span>
+
+                        Evolução
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SCROLL -->
+
+        <a href="#o-que-e"
+           class="scroll-indicator">
+
+            <span>
+
+                Role para explorar
+
+            </span>
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         O QUE É
+    ====================================== -->
+
+    <section class="section about-section"
+             id="o-que-e">
+
+
+        <div class="section-container">
+
+
+            <div class="section-image-area">
+
+
+                <div class="about-decoration decoration-one"></div>
+
+                <div class="about-decoration decoration-two"></div>
+
+
+                <div class="about-icon-large">
+
+                    <i class="fa-solid fa-school"></i>
+
+                </div>
+
+
+
+                <div class="about-image-card">
+
+
+                    <div class="about-card-top">
+
+                        <span class="small-label">
+
+                            AVALIAÇÃO EDUCACIONAL
+
+                        </span>
+
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                    </div>
+
+
+
+                    <h3>
+
+                        Diagnosticar para melhorar.
+
+                    </h3>
+
+
+
+                    <p>
+
+                        A avaliação ajuda a compreender
+                        o desenvolvimento da aprendizagem.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="section-content">
+
+
+                <span class="section-eyebrow">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    ENTENDA
+
+                </span>
+
+
+
+                <h2>
+
+                    Afinal, o que é a
+
+                    <span>
+
+                        Prova Paraná?
+
+                    </span>
+
+                </h2>
+
+
+
+                <p>
+
+                    A Prova Paraná é uma avaliação educacional realizada
+                    pela Secretaria de Educação do Estado do Paraná.
+                    Ela tem como principal função acompanhar o aprendizado
+                    dos estudantes e identificar pontos que podem ser
+                    melhorados no processo de ensino.
+
+                </p>
+
+
+
+                <p>
+
+                    Diferente de uma prova comum, seu objetivo não é apenas
+                    dar uma nota. Os resultados ajudam escolas e professores
+                    a entenderem quais conteúdos os estudantes dominam e
+                    quais precisam receber mais atenção.
+
+                </p>
+
+
+
+                <div class="info-list">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Avaliação diagnóstica
+
+                            </h4>
+
+                            <p>
+
+                                Ajuda a identificar o nível de aprendizagem.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Apoio às escolas
+
+                            </h4>
+
+                            <p>
+
+                                Os dados ajudam a melhorar estratégias de ensino.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         OBJETIVOS
+    ====================================== -->
+
+    <section class="section objectives-section"
+             id="objetivos">
+
+
+        <div class="section-container">
+
+
+
+            <div class="section-header centered">
+
+
+                <span class="section-eyebrow">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    PROPÓSITO
+
+                </span>
+
+
+                <h2>
+
+                    Por que essa avaliação é
+
+                    <span>
+
+                        importante?
+
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    A Prova Paraná vai além dos números.
+                    Ela fornece informações importantes para
+                    melhorar a educação.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="objectives-grid">
+
+
+                <article class="objective-card">
+
+
+                    <div class="objective-number">
+
+                        01
+
+                    </div>
+
+
+                    <div class="objective-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        Acompanhar o aprendizado
+
+                    </h3>
+
+
+                    <p>
+
+                        Identificar como os estudantes estão desenvolvendo
+                        seus conhecimentos durante o processo escolar.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="objective-card featured-objective">
+
+
+                    <div class="objective-number">
+
+                        02
+
+                    </div>
+
+
+                    <div class="objective-icon">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        Identificar dificuldades
+
+                    </h3>
+
+
+                    <p>
+
+                        Mostrar quais conteúdos precisam de mais atenção
+                        para que os estudantes possam continuar evoluindo.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="objective-card">
+
+
+                    <div class="objective-number">
+
+                        03
+
+                    </div>
+
+
+                    <div class="objective-icon">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        Apoiar professores
+
+                    </h3>
+
+
+                    <p>
+
+                        Oferecer informações que ajudam educadores a
+                        planejar aulas e estratégias mais eficientes.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="objective-card">
+
+
+                    <div class="objective-number">
+
+                        04
+
+                    </div>
+
+
+                    <div class="objective-icon">
+
+                        <i class="fa-solid fa-school"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        Melhorar a educação
+
+                    </h3>
+
+
+                    <p>
+
+                        Utilizar os resultados para criar ações que
+                        contribuam para uma educação pública cada vez melhor.
+
+                    </p>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         DISCIPLINAS
+    ====================================== -->
+
+    <section class="section subjects-section"
+             id="disciplinas">
+
+
+        <div class="section-container">
+
+
+            <div class="section-header centered">
+
+
+                <span class="section-eyebrow">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    CONHECIMENTO
+
+                </span>
+
+
+                <h2>
+
+                    As disciplinas que fazem parte da
+
+                    <span>
+
+                        avaliação.
+
+                    </span>
+
+                </h2>
+
+
+            </div>
+
+
+
+            <div class="subjects-grid">
+
+
+
+                <!-- PORTUGUÊS -->
+
+                <article class="subject-card portuguese-card">
+
+
+                    <div class="subject-card-background">
+
+                        <div class="subject-pattern"></div>
+
+                    </div>
+
+
+                    <div class="subject-card-content">
+
+
+                        <div class="subject-card-icon">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+
+                        <span class="subject-tag">
+
+                            DISCIPLINA 01
+
+                        </span>
+
+
+                        <h3>
+
+                            Língua Portuguesa
+
+                        </h3>
+
+
+                        <p>
+
+                            Avalia habilidades relacionadas à leitura,
+                            interpretação de textos e compreensão da
+                            língua portuguesa.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Interpretação de textos
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Compreensão leitora
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Uso da linguagem
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <button class="subject-button"
+                                data-modal="portugues">
+
+                            Explorar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- MATEMÁTICA -->
+
+                <article class="subject-card math-card">
+
+
+                    <div class="subject-card-background">
+
+                        <div class="subject-pattern"></div>
+
+                    </div>
+
+
+                    <div class="subject-card-content">
+
+
+                        <div class="subject-card-icon">
+
+                            <i class="fa-solid fa-calculator"></i>
+
+                        </div>
+
+
+                        <span class="subject-tag">
+
+                            DISCIPLINA 02
+
+                        </span>
+
+
+                        <h3>
+
+                            Matemática
+
+                        </h3>
+
+
+                        <p>
+
+                            Avalia conhecimentos matemáticos e a capacidade
+                            de utilizar o raciocínio lógico para resolver
+                            diferentes situações.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Raciocínio lógico
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Resolução de problemas
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Cálculos e interpretação
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <button class="subject-button"
+                                data-modal="matematica">
+
+                            Explorar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         MODAL
+    ====================================== -->
+
+    <div class="modal"
+         id="subjectModal">
+
+
+        <div class="modal-overlay"
+             id="modalOverlay"></div>
+
+
+        <div class="modal-box">
+
+
+            <button class="modal-close"
+                    id="modalClose">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div id="modalContent"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         DICAS
+    ====================================== -->
+
+    <section class="section tips-section"
+             id="dicas">
+
+
+        <div class="section-container">
+
+
+            <div class="tips-intro">
+
+
+                <span class="section-eyebrow">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    PREPARE-SE
+
+                </span>
+
+
+                <h2>
+
+                    Dicas para fazer a prova com
+
+                    <span>
+
+                        tranquilidade.
+
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Não precisa entrar em pânico.
+                    Uma boa preparação começa com organização,
+                    descanso e confiança.
+
+                </p>
+
+
+                <a href="#quiz"
+                   class="btn btn-primary">
+
+                    Testar conhecimentos
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="tips-grid">
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 01
+
+                        </span>
+
+
+                        <h3>
+
+                            Organize seus estudos
+
+                        </h3>
+
+
+                        <p>
+
+                            Reserve um tempo para revisar conteúdos
+                            sem deixar tudo para o último momento.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-bed"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 02
+
+                        </span>
+
+
+                        <h3>
+
+                            Durma bem
+
+                        </h3>
+
+
+                        <p>
+
+                            Uma boa noite de sono ajuda a manter
+                            a concentração durante a avaliação.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 03
+
+                        </span>
+
+
+                        <h3>
+
+                            Alimente-se
+
+                        </h3>
+
+
+                        <p>
+
+                            Comer bem antes da prova ajuda
+                            a manter energia e atenção.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 04
+
+                        </span>
+
+
+                        <h3>
+
+                            Leia com calma
+
+                        </h3>
+
+
+                        <p>
+
+                            Leia cada questão com atenção
+                            antes de escolher sua resposta.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-check-double"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 05
+
+                        </span>
+
+
+                        <h3>
+
+                            Revise suas respostas
+
+                        </h3>
+
+
+                        <p>
+
+                            Se houver tempo, volte às questões
+                            e confira suas escolhas.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="tip-card">
+
+
+                    <div class="tip-icon">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+
+                            DICA 06
+
+                        </span>
+
+
+                        <h3>
+
+                            Confie em você
+
+                        </h3>
+
+
+                        <p>
+
+                            Respire fundo e faça o seu melhor.
+                            Você se preparou para esse momento.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         RESULTADOS
+    ====================================== -->
+
+    <section class="section results-section"
+             id="resultados">
+
+
+        <div class="section-container">
+
+
+            <div class="section-header centered light-header">
+
+
+                <span class="section-eyebrow light">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    RESULTADOS
+
+                </span>
+
+
+                <h2>
+
+                    O que acontece
+
+                    <span>
+
+                        depois da prova?
+
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Os resultados não servem apenas para gerar números.
+                    Eles ajudam a construir novas estratégias para a educação.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+
+                <div class="timeline-line"></div>
+
+
+
+                <article class="timeline-item">
+
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            ETAPA 01
+
+                        </span>
+
+
+                        <h3>
+
+                            Resultados são analisados
+
+                        </h3>
+
+
+                        <p>
+
+                            Os dados mostram como os estudantes estão
+                            se desenvolvendo em diferentes conteúdos.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="timeline-item">
+
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            ETAPA 02
+
+                        </span>
+
+
+                        <h3>
+
+                            Professores planejam ações
+
+                        </h3>
+
+
+                        <p>
+
+                            Os educadores utilizam as informações para
+                            identificar conteúdos que precisam ser retomados.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="timeline-item">
+
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            ETAPA 03
+
+                        </span>
+
+
+                        <h3>
+
+                            Escolas corrigem rotas
+
+                        </h3>
+
+
+                        <p>
+
+                            Diretores e equipes pedagógicas podem criar
+                            estratégias para melhorar o aprendizado.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="timeline-item">
+
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            ETAPA 04
+
+                        </span>
+
+
+                        <h3>
+
+                            Estudantes evoluem
+
+                        </h3>
+
+
+                        <p>
+
+                            Com novas estratégias e apoio, os estudantes
+                            têm mais oportunidades para desenvolver seus conhecimentos.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         QUIZ
+    ====================================== -->
+
+    <section class="section quiz-section"
+             id="quiz">
+
+
+        <div class="section-container quiz-container">
+
+
+            <div class="quiz-intro">
+
+
+                <span class="section-eyebrow">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    DESAFIO
+
+                </span>
+
+
+                <h2>
+
+                    Teste o que você
+
+                    <span>
+
+                        aprendeu.
+
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Responda algumas perguntas rápidas sobre
+                    a Prova Paraná.
+
+                </p>
+
+
+                <div class="quiz-score-box">
+
+                    <span>
+
+                        SUA PONTUAÇÃO
+
+                    </span>
+
+                    <strong id="quizScore">
+
+                        0
+
+                    </strong>
+
+                    <small>
+
+                        pontos
+
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="quiz-box"
+                 id="quizBox">
+
+
+                <div class="quiz-progress-top">
+
+                    <span id="questionNumber">
+
+                        Pergunta 1 de 3
+
+                    </span>
+
+
+                    <div class="quiz-progress-line">
+
+                        <div id="quizProgress"></div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div id="quizContent">
+
+
+                    <!-- JAVASCRIPT VAI INSERIR AS PERGUNTAS -->
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         FRASE FINAL
+    ====================================== -->
+
+    <section class="final-section">
+
+
+        <div class="final-container">
+
+
+            <div class="final-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <h2>
+
+                Cada prova é uma oportunidade.
+
+                <span>
+
+                    Cada aprendizado é um passo para o futuro.
+
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                A educação não é apenas sobre acertar respostas.
+                É sobre continuar aprendendo.
+
+            </p>
+
+
+            <a href="#inicio"
+               class="btn btn-primary">
+
+                Voltar ao início
+
+                <i class="fa-solid fa-arrow-up"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
 
 </main>
 
 
-<!
--FOOTER -->
-<footer>
 
-<div>
+<!-- =========================================
+     FOOTER
+========================================== -->
 
-<h2>
-SOCIO<span>LAB</span>
-</h2>
+<footer class="footer">
 
-<p>
-Projeto individual de Sociologia
-</p>
 
-</div>
+    <div class="footer-container">
 
-<p>
-Karl Marx • Émile Durkheim • Max Weber
-</p>
+
+        <div class="footer-main">
+
+
+            <!-- MARCA -->
+
+            <div class="footer-brand">
+
+
+                <div class="footer-logo">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span>
+
+                        PROVA PARANÁ
+
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Uma plataforma informativa criada para apresentar,
+                    de forma simples e moderna, informações sobre a
+                    Prova Paraná e sua importância para a educação.
+
+                </p>
+
+
+                <div class="social-links">
+
+
+                    <a href="#"
+                       aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LINKS -->
+
+            <div class="footer-column">
+
+
+                <h4>
+
+                    Navegação
+
+                </h4>
+
+
+                <a href="#inicio">
+
+                    Início
+
+                </a>
+
+
+                <a href="#o-que-e">
+
+                    Sobre a prova
+
+                </a>
+
+
+                <a href="#disciplinas">
+
+                    Disciplinas
+
+                </a>
+
+
+                <a href="#dicas">
+
+                    Dicas
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="footer-column">
+
+
+                <h4>
+
+                    Conteúdo
+
+                </h4>
+
+
+                <a href="#objetivos">
+
+                    Objetivos
+
+                </a>
+
+
+                <a href="#resultados">
+
+                    Resultados
+
+                </a>
+
+
+                <a href="#quiz">
+
+                    Quiz
+
+                </a>
+
+
+                <a href="#dicas">
+
+                    Preparação
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- CONTATO -->
+
+            <div class="footer-column contact-column">
+
+
+                <h4>
+
+                    Contato
+
+                </h4>
+
+
+                <p>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Paraná, Brasil
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    contato@provaparana.com
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    Projeto Escolar
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © <span id="currentYear"></span>
+                Prova Paraná — Central do Estudante.
+
+                Todos os direitos reservados.
+
+            </p>
+
+
+            <p>
+
+                Desenvolvido por
+
+                <strong>
+
+                    Chrystyan Massaro
+
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
 
 </footer>
 
 
+
+<!-- =========================================
+     BOTÃO VOLTAR AO TOPO
+========================================== -->
+
+<button class="back-to-top"
+        id="backToTop"
+        aria-label="Voltar ao topo">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
 <script src="script.js"></script>
+```
 
 </body>
+
 </html>
