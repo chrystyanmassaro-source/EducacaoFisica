@@ -1,82 +1,39 @@
 /* =========================================================
-   PROVA PARANÁ
-   SCRIPT PRINCIPAL — VERSÃO CORRIGIDA
+   PROVA PARANÁ — SCRIPT.JS
    ========================================================= */
 
 
 /* =========================================================
-   ELEMENTOS PRINCIPAIS
+   ELEMENTOS
    ========================================================= */
 
 const body = document.body;
 
-const loader = document.querySelector(".loader");
+const header =
+    document.getElementById("header");
 
-const hamburger = document.querySelector(".hamburger");
+const hamburger =
+    document.getElementById("hamburger");
 
-const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-const mobileOverlay = document.querySelector(".mobile-menu-overlay");
+const mobileOverlay =
+    document.getElementById("mobileOverlay");
 
-const mobileClose = document.querySelector(".mobile-menu-close");
+const closeMenu =
+    document.getElementById("closeMenu");
 
-const backToTop = document.querySelector(".back-to-top");
+const scrollProgress =
+    document.getElementById("scrollProgress");
 
-const scrollProgress = document.querySelector(".scroll-progress");
-
-const header = document.querySelector(".site-header");
-
-const navLinks = document.querySelectorAll(".desktop-nav a");
-
-const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
-
-
-
-/* =========================================================
-   LOADING SCREEN — CORRIGIDO
-   NUNCA FICA PRESO
-   ========================================================= */
-
-function hideLoader() {
-
-    if (!loader) return;
-
-    loader.classList.add("hide");
-
-    setTimeout(() => {
-
-        loader.style.display = "none";
-
-    }, 800);
-
-}
-
-
-/* Executa quando o HTML estiver pronto */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    setTimeout(() => {
-
-        hideLoader();
-
-    }, 1200);
-
-});
-
-
-/* Segurança extra */
-
-setTimeout(() => {
-
-    hideLoader();
-
-}, 3000);
+const backToTop =
+    document.getElementById("backToTop");
 
 
 
 /* =========================================================
-   MENU HAMBÚRGUER
+   MENU MOBILE
    ========================================================= */
 
 function openMobileMenu() {
@@ -85,13 +42,9 @@ function openMobileMenu() {
 
     mobileMenu.classList.add("active");
 
-    if (mobileOverlay) {
+    mobileOverlay?.classList.add("active");
 
-        mobileOverlay.classList.add("active");
-
-    }
-
-    body.style.overflow = "hidden";
+    body.classList.add("no-scroll");
 
 }
 
@@ -102,155 +55,68 @@ function closeMobileMenu() {
 
     mobileMenu.classList.remove("active");
 
-    if (mobileOverlay) {
+    mobileOverlay?.classList.remove("active");
 
-        mobileOverlay.classList.remove("active");
+    body.classList.remove("no-scroll");
+
+}
+
+
+hamburger?.addEventListener(
+    "click",
+    openMobileMenu
+);
+
+
+closeMenu?.addEventListener(
+    "click",
+    closeMobileMenu
+);
+
+
+mobileOverlay?.addEventListener(
+    "click",
+    closeMobileMenu
+);
+
+
+document
+    .querySelectorAll(".mobile-nav a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+
+            closeMobileMenu();
+
+        }
 
     }
-
-    body.style.overflow = "";
-
-}
-
-
-if (hamburger) {
-
-    hamburger.addEventListener("click", () => {
-
-        openMobileMenu();
-
-    });
-
-}
-
-
-if (mobileClose) {
-
-    mobileClose.addEventListener("click", () => {
-
-        closeMobileMenu();
-
-    });
-
-}
-
-
-if (mobileOverlay) {
-
-    mobileOverlay.addEventListener("click", () => {
-
-        closeMobileMenu();
-
-    });
-
-}
-
-
-mobileLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        closeMobileMenu();
-
-    });
-
-});
-
-
-/* =========================================================
-   TECLA ESC
-   ========================================================= */
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        closeMobileMenu();
-
-    }
-
-});
+);
 
 
 
 /* =========================================================
-   BARRA DE PROGRESSO DO SCROLL
-   ========================================================= */
-
-function updateScrollProgress() {
-
-    const scrollTop = window.scrollY;
-
-    const documentHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const progress =
-        documentHeight > 0
-            ? (scrollTop / documentHeight) * 100
-            : 0;
-
-    if (scrollProgress) {
-
-        scrollProgress.style.width =
-            `${progress}%`;
-
-    }
-
-}
-
-
-
-/* =========================================================
-   BOTÃO VOLTAR AO TOPO
-   ========================================================= */
-
-function updateBackToTop() {
-
-    if (!backToTop) return;
-
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add("show");
-
-    } else {
-
-        backToTop.classList.remove("show");
-
-    }
-
-}
-
-
-if (backToTop) {
-
-    backToTop.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-}
-
-
-
-/* =========================================================
-   HEADER DINÂMICO
+   HEADER
    ========================================================= */
 
 function updateHeader() {
 
     if (!header) return;
 
-    if (window.scrollY > 50) {
+
+    if (window.scrollY > 60) {
 
         header.classList.add("scrolled");
 
@@ -265,175 +131,184 @@ function updateHeader() {
 
 
 /* =========================================================
-   SCROLL SUAVE
+   PROGRESSO DA PÁGINA
    ========================================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+function updateScrollProgress() {
 
-    link.addEventListener("click", event => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        if (
-            !targetId ||
-            targetId === "#"
-        ) return;
+    if (!scrollProgress) return;
 
 
-        const target =
-            document.querySelector(targetId);
-
-        if (!target) return;
-
-        event.preventDefault();
+    const scrollTop =
+        window.scrollY;
 
 
-        const headerOffset = 90;
+    const pageHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
 
 
-        const position =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerOffset;
+    let progress = 0;
 
 
-        window.scrollTo({
+    if (pageHeight > 0) {
 
-            top: position,
+        progress =
+            (scrollTop / pageHeight) *
+            100;
 
-            behavior: "smooth"
-
-        });
-
-    });
-
-});
+    }
 
 
-
-/* =========================================================
-   MENU ATIVO
-   ========================================================= */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-
-function updateActiveLink() {
-
-    const scrollPosition =
-        window.scrollY + 150;
-
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-        const sectionId =
-            section.getAttribute("id");
-
-
-        if (
-
-            scrollPosition >= sectionTop &&
-            scrollPosition <
-            sectionTop + sectionHeight
-
-        ) {
-
-            navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-
-                if (
-                    link.getAttribute("href") ===
-                    `#${sectionId}`
-                ) {
-
-                    link.classList.add("active");
-
-                }
-
-            });
-
-        }
-
-    });
+    scrollProgress.style.width =
+        `${progress}%`;
 
 }
 
 
 
 /* =========================================================
-   SCROLL PRINCIPAL
+   BOTÃO VOLTAR AO TOPO
    ========================================================= */
 
-window.addEventListener("scroll", () => {
+function updateBackToTop() {
 
-    updateScrollProgress();
+    if (!backToTop) return;
 
-    updateBackToTop();
 
-    updateHeader();
+    if (window.scrollY > 600) {
 
-    updateActiveLink();
+        backToTop.classList.add("show");
 
-});
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+}
+
+
+backToTop?.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+);
 
 
 
 /* =========================================================
-   ANIMAÇÕES AO APARECER NA TELA
+   LINKS INTERNOS
    ========================================================= */
 
-const animatedElements =
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                const offset = 85;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    offset;
+
+
+                window.scrollTo({
+
+                    top: targetPosition,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   REVEAL AO ROLAR
+   ========================================================= */
+
+const revealElements =
     document.querySelectorAll(
-
-        `
-        .objective-card,
-        .subject-premium-card,
-        .timeline-item,
-        .tip-item,
-        .result-card,
-        .myth-card,
-        .checklist-box,
-        .about-content,
-        .about-visual,
-        .tips-visual,
-        .tips-content
-        `
-
+        ".reveal, .reveal-left, .reveal-right"
     );
 
 
 if ("IntersectionObserver" in window) {
 
-    const observer =
+    const revealObserver =
         new IntersectionObserver(
 
             entries => {
 
-                entries.forEach(entry => {
+                entries.forEach(
+                    entry => {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.classList.add(
-                            "reveal"
-                        );
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
-                        observer.unobserve(
-                            entry.target
-                        );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
 
@@ -444,53 +319,76 @@ if ("IntersectionObserver" in window) {
         );
 
 
-    animatedElements.forEach(element => {
+    revealElements.forEach(
+        element => {
 
-        observer.observe(element);
+            revealObserver.observe(
+                element
+            );
 
-    });
+        }
+    );
+
+} else {
+
+    revealElements.forEach(
+        element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        }
+    );
 
 }
 
 
 
 /* =========================================================
-   CONTADORES ANIMADOS
+   CONTADORES
    ========================================================= */
 
 const counters =
-    document.querySelectorAll("[data-count]");
+    document.querySelectorAll(
+        ".counter[data-count]"
+    );
 
 
-function animateCounter(counter) {
+function animateCounter(
+    element
+) {
 
     const target =
-        Number(counter.dataset.count);
+        Number(
+            element.dataset.count
+        );
 
 
-    if (isNaN(target)) return;
+    if (isNaN(target)) {
+
+        return;
+
+    }
 
 
-    const duration = 1500;
+    const duration = 1400;
 
-    const startTime =
+    const start =
         performance.now();
 
 
-    function update(currentTime) {
-
-        const elapsed =
-            currentTime - startTime;
-
+    function update(time) {
 
         const progress =
             Math.min(
-                elapsed / duration,
+                (time - start) /
+                duration,
                 1
             );
 
 
-        const easeOut =
+        const eased =
             1 -
             Math.pow(
                 1 - progress,
@@ -500,29 +398,30 @@ function animateCounter(counter) {
 
         const value =
             Math.floor(
-                target * easeOut
+                target * eased
             );
 
 
-        counter.textContent =
-            value.toLocaleString("pt-BR");
+        element.textContent =
+            value.toLocaleString(
+                "pt-BR"
+            );
 
 
         if (progress < 1) {
 
-            requestAnimationFrame(update);
-
-        } else {
-
-            counter.textContent =
-                target.toLocaleString("pt-BR");
+            requestAnimationFrame(
+                update
+            );
 
         }
 
     }
 
 
-    requestAnimationFrame(update);
+    requestAnimationFrame(
+        update
+    );
 
 }
 
@@ -534,62 +433,85 @@ if ("IntersectionObserver" in window) {
 
             entries => {
 
-                entries.forEach(entry => {
+                entries.forEach(
+                    entry => {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        animateCounter(
-                            entry.target
-                        );
+                            animateCounter(
+                                entry.target
+                            );
 
-                        counterObserver.unobserve(
-                            entry.target
-                        );
+
+                            counterObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
 
             {
-                threshold: 0.5
+                threshold: .7
             }
 
         );
 
 
-    counters.forEach(counter => {
+    counters.forEach(
+        counter => {
 
-        counterObserver.observe(counter);
+            counterObserver.observe(
+                counter
+            );
 
-    });
+        }
+    );
 
 }
 
 
 
 /* =========================================================
-   CHECKLIST INTERATIVO
+   CHECKLIST
    ========================================================= */
 
 const checkItems =
-    document.querySelectorAll(".check-item");
-
-const checklistFill =
-    document.querySelector(
-        ".checklist-progress-fill"
+    document.querySelectorAll(
+        ".check-item"
     );
+
+
+const checklistProgress =
+    document.getElementById(
+        "checklistProgress"
+    );
+
 
 const checklistPercentage =
-    document.querySelector(
-        ".checklist-percentage"
+    document.getElementById(
+        "checklistPercentage"
     );
 
 
-function updateChecklistProgress() {
+const checklistMessage =
+    document.getElementById(
+        "checklistMessage"
+    );
 
-    if (!checkItems.length) return;
+
+function updateChecklist() {
+
+    if (!checkItems.length) {
+
+        return;
+
+    }
 
 
     const checked =
@@ -604,13 +526,14 @@ function updateChecklistProgress() {
 
     const percentage =
         Math.round(
-            (checked / total) * 100
+            (checked / total) *
+            100
         );
 
 
-    if (checklistFill) {
+    if (checklistProgress) {
 
-        checklistFill.style.width =
+        checklistProgress.style.width =
             `${percentage}%`;
 
     }
@@ -619,27 +542,595 @@ function updateChecklistProgress() {
     if (checklistPercentage) {
 
         checklistPercentage.textContent =
-            `${percentage}% concluído`;
+            `${percentage}%`;
+
+    }
+
+
+    if (checklistMessage) {
+
+        if (percentage === 0) {
+
+            checklistMessage.textContent =
+                "Comece marcando os itens acima.";
+
+        }
+
+        else if (percentage < 50) {
+
+            checklistMessage.textContent =
+                "Boa! Você já começou sua preparação.";
+
+        }
+
+        else if (percentage < 100) {
+
+            checklistMessage.textContent =
+                "Muito bem! Falta pouco para completar.";
+
+        }
+
+        else {
+
+            checklistMessage.textContent =
+                "Tudo pronto! Você fez seu checklist completo. 🚀";
+
+        }
 
     }
 
 }
 
 
-checkItems.forEach(item => {
+checkItems.forEach(
+    item => {
 
-    item.addEventListener("click", () => {
+        const input =
+            item.querySelector(
+                "input"
+            );
 
-        item.classList.toggle("checked");
 
-        updateChecklistProgress();
+        input?.addEventListener(
+            "change",
+            () => {
+
+                item.classList.toggle(
+                    "checked",
+                    input.checked
+                );
+
+
+                updateChecklist();
+
+            }
+        );
+
+    }
+);
+
+
+updateChecklist();
+
+
+
+/* =========================================================
+   DICAS
+   ========================================================= */
+
+const tipData = {
+
+    sono: {
+
+        icon:
+            "fa-moon",
+
+        color:
+            "linear-gradient(135deg,#2861d0,#123a8c)",
+
+        title:
+            "Descanse bem",
+
+        text:
+            "Uma boa preparação também envolve descanso. Dormir bem ajuda você a chegar mais descansado e concentrado no momento da avaliação.",
+
+        items: [
+
+            "Evite deixar toda a preparação para a última hora.",
+
+            "Procure manter uma rotina de sono adequada.",
+
+            "Chegue para a avaliação sem virar a noite estudando."
+
+        ]
+
+    },
+
+
+    calma: {
+
+        icon:
+            "fa-heart",
+
+        color:
+            "linear-gradient(135deg,#ff647c,#ff8b6a)",
+
+        title:
+            "Mantenha a calma",
+
+        text:
+            "A ansiedade pode atrapalhar a atenção. Respirar fundo e fazer cada questão no seu ritmo pode ajudar.",
+
+        items: [
+
+            "Leia as instruções com tranquilidade.",
+
+            "Não se preocupe com a velocidade dos outros.",
+
+            "Concentre-se na questão que está resolvendo."
+
+        ]
+
+    },
+
+
+    leitura: {
+
+        icon:
+            "fa-book-reader",
+
+        color:
+            "linear-gradient(135deg,#6c4cff,#8a66ff)",
+
+        title:
+            "Leia com atenção",
+
+        text:
+            "Muitas questões exigem interpretação. Antes de responder, procure compreender exatamente o que está sendo perguntado.",
+
+        items: [
+
+            "Leia todo o enunciado.",
+
+            "Procure palavras importantes na questão.",
+
+            "Evite responder sem compreender o problema."
+
+        ]
+
+    },
+
+
+    revisao: {
+
+        icon:
+            "fa-check-double",
+
+        color:
+            "linear-gradient(135deg,#00b987,#00d9a0)",
+
+        title:
+            "Revise",
+
+        text:
+            "Caso tenha tempo disponível, retorne às respostas para verificar se marcou aquilo que realmente queria.",
+
+        items: [
+
+            "Confira as questões que geraram dúvida.",
+
+            "Verifique se não deixou alguma questão sem resposta.",
+
+            "Não altere uma resposta sem motivo."
+
+        ]
+
+    }
+
+};
+
+
+const tipModal =
+    document.getElementById(
+        "tipModal"
+    );
+
+
+const tipModalContent =
+    document.getElementById(
+        "tipModalContent"
+    );
+
+
+const tipModalClose =
+    document.getElementById(
+        "tipModalClose"
+    );
+
+
+const tipModalOverlay =
+    document.getElementById(
+        "tipModalOverlay"
+    );
+
+
+document
+    .querySelectorAll(".tip-card")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const key =
+                    button.dataset.tip;
+
+
+                const data =
+                    tipData[key];
+
+
+                if (!data || !tipModal) {
+
+                    return;
+
+                }
+
+
+                const items =
+                    data.items
+                        .map(
+                            item => `
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    ${item}
+                                </li>
+                            `
+                        )
+                        .join("");
+
+
+                tipModalContent.innerHTML = `
+
+                    <div
+                        class="modal-content-icon"
+                        style="background:${data.color}"
+                    >
+                        <i class="fa-solid ${data.icon}"></i>
+                    </div>
+
+                    <h3>
+                        ${data.title}
+                    </h3>
+
+                    <p>
+                        ${data.text}
+                    </p>
+
+                    <ul>
+                        ${items}
+                    </ul>
+
+                `;
+
+
+                tipModal.classList.add(
+                    "active"
+                );
+
+
+                body.classList.add(
+                    "no-scroll"
+                );
+
+            }
+        );
 
     });
 
+
+function closeTipModal() {
+
+    tipModal?.classList.remove(
+        "active"
+    );
+
+    body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+tipModalClose?.addEventListener(
+    "click",
+    closeTipModal
+);
+
+
+tipModalOverlay?.addEventListener(
+    "click",
+    closeTipModal
+);
+
+
+
+/* =========================================================
+   MODAL DAS DISCIPLINAS
+   ========================================================= */
+
+const subjectData = {
+
+    portugues: {
+
+        icon:
+            "fa-book-open",
+
+        color:
+            "linear-gradient(135deg,#6c4cff,#4230b8)",
+
+        title:
+            "Língua Portuguesa",
+
+        text:
+            "A área trabalha habilidades relacionadas à leitura, compreensão, interpretação e análise de diferentes textos.",
+
+        items: [
+
+            "Interpretação de textos",
+
+            "Compreensão leitora",
+
+            "Identificação de informações",
+
+            "Análise de diferentes gêneros",
+
+            "Uso da linguagem"
+
+        ]
+
+    },
+
+
+    matematica: {
+
+        icon:
+            "fa-calculator",
+
+        color:
+            "linear-gradient(135deg,#00b99a,#007f70)",
+
+        title:
+            "Matemática",
+
+        text:
+            "A Matemática envolve conhecimentos usados para interpretar informações, resolver problemas e utilizar o raciocínio lógico.",
+
+        items: [
+
+            "Raciocínio lógico",
+
+            "Resolução de problemas",
+
+            "Cálculos",
+
+            "Interpretação de dados",
+
+            "Aplicação no cotidiano"
+
+        ]
+
+    }
+
+};
+
+
+const subjectModal =
+    document.getElementById(
+        "subjectModal"
+    );
+
+
+const modalContent =
+    document.getElementById(
+        "modalContent"
+    );
+
+
+const modalClose =
+    document.getElementById(
+        "modalClose"
+    );
+
+
+const modalOverlay =
+    document.getElementById(
+        "modalOverlay"
+    );
+
+
+document
+    .querySelectorAll(
+        ".discipline-button"
+    )
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const key =
+                    button.dataset.subject;
+
+
+                const data =
+                    subjectData[key];
+
+
+                if (!data || !subjectModal) {
+
+                    return;
+
+                }
+
+
+                const items =
+                    data.items
+                        .map(
+                            item => `
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    ${item}
+                                </li>
+                            `
+                        )
+                        .join("");
+
+
+                modalContent.innerHTML = `
+
+                    <div
+                        class="modal-content-icon"
+                        style="background:${data.color}"
+                    >
+
+                        <i class="fa-solid ${data.icon}"></i>
+
+                    </div>
+
+
+                    <h3>
+                        ${data.title}
+                    </h3>
+
+
+                    <p>
+                        ${data.text}
+                    </p>
+
+
+                    <ul>
+                        ${items}
+                    </ul>
+
+                `;
+
+
+                subjectModal.classList.add(
+                    "active"
+                );
+
+
+                body.classList.add(
+                    "no-scroll"
+                );
+
+            }
+        );
+
+    });
+
+
+function closeSubjectModal() {
+
+    subjectModal?.classList.remove(
+        "active"
+    );
+
+    body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+modalClose?.addEventListener(
+    "click",
+    closeSubjectModal
+);
+
+
+modalOverlay?.addEventListener(
+    "click",
+    closeSubjectModal
+);
+
+
+
+/* =========================================================
+   MITOS E VERDADES
+   ========================================================= */
+
+document
+    .querySelectorAll(".myth-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                card.classList.toggle(
+                    "flipped"
+                );
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+const faqItems =
+    document.querySelectorAll(
+        ".faq-item"
+    );
+
+
+faqItems.forEach(item => {
+
+    const question =
+        item.querySelector(
+            ".faq-question"
+        );
+
+
+    question?.addEventListener(
+        "click",
+        () => {
+
+            const wasActive =
+                item.classList.contains(
+                    "active"
+                );
+
+
+            faqItems.forEach(
+                current => {
+
+                    current.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            if (!wasActive) {
+
+                item.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
 });
-
-
-updateChecklistProgress();
 
 
 
@@ -647,76 +1138,115 @@ updateChecklistProgress();
    QUIZ
    ========================================================= */
 
-const quizData = [
+const quizQuestions = [
 
     {
+
         question:
             "Qual é uma das principais funções da Prova Paraná?",
 
         options: [
-            "Punir estudantes com notas baixas",
-            "Avaliar informações para ajudar no ensino",
-            "Substituir completamente as aulas",
-            "Escolher apenas os melhores alunos"
+
+            "Escolher somente os melhores estudantes.",
+
+            "Acompanhar informações sobre a aprendizagem.",
+
+            "Substituir todas as aulas.",
+
+            "Punir estudantes com notas baixas."
+
         ],
 
         answer: 1
+
     },
 
-    {
-        question:
-            "Quais são algumas das áreas avaliadas na Prova Paraná?",
-
-        options: [
-            "Língua Portuguesa e Matemática",
-            "Somente Educação Física",
-            "Somente Artes",
-            "Apenas História"
-        ],
-
-        answer: 0
-    },
 
     {
+
         question:
-            "Os resultados da avaliação podem ajudar principalmente em quê?",
+            "Quais disciplinas são destacadas neste projeto?",
 
         options: [
-            "Melhorar estratégias pedagógicas",
-            "Cancelar matérias",
-            "Diminuir o tempo das aulas",
-            "Eliminar professores"
-        ],
 
-        answer: 0
-    },
+            "História e Geografia.",
 
-    {
-        question:
-            "Qual é uma boa atitude antes da avaliação?",
+            "Educação Física e Artes.",
 
-        options: [
-            "Não dormir para estudar",
-            "Ficar extremamente preocupado",
-            "Descansar e manter a calma",
-            "Não se alimentar"
+            "Língua Portuguesa e Matemática.",
+
+            "Química e Física."
+
         ],
 
         answer: 2
+
     },
 
+
     {
+
         question:
-            "Como os resultados podem ser utilizados?",
+            "Por que os resultados podem ser importantes para professores?",
 
         options: [
-            "Para identificar pontos que precisam melhorar",
-            "Apenas para criar rankings",
-            "Somente para dar punições",
-            "Para substituir o ensino regular"
+
+            "Para ajudar no planejamento pedagógico.",
+
+            "Para cancelar conteúdos.",
+
+            "Para substituir as aulas.",
+
+            "Para eliminar estudantes."
+
         ],
 
         answer: 0
+
+    },
+
+
+    {
+
+        question:
+            "Qual atitude pode ajudar antes da avaliação?",
+
+        options: [
+
+            "Não dormir.",
+
+            "Deixar tudo para a última hora.",
+
+            "Descansar e manter a calma.",
+
+            "Não ler as questões."
+
+        ],
+
+        answer: 2
+
+    },
+
+
+    {
+
+        question:
+            "O que o estudante pode fazer durante a avaliação?",
+
+        options: [
+
+            "Responder sem ler.",
+
+            "Ler as questões com atenção.",
+
+            "Ignorar as instruções.",
+
+            "Terminar o mais rápido possível sem revisar."
+
+        ],
+
+        answer: 1
+
     }
 
 ];
@@ -726,82 +1256,125 @@ let currentQuestion = 0;
 
 let score = 0;
 
-let answered = false;
+let quizAnswered = false;
 
 
-const quizQuestion =
-    document.querySelector(".quiz-question");
+const quizQuestionElement =
+    document.getElementById(
+        "quizQuestion"
+    );
 
-const quizOptions =
-    document.querySelector(".quiz-options");
 
-const quizCounter =
-    document.querySelector(".quiz-counter");
+const quizOptionsElement =
+    document.getElementById(
+        "quizOptions"
+    );
+
+
+const quizFeedback =
+    document.getElementById(
+        "quizFeedback"
+    );
+
+
+const quizNext =
+    document.getElementById(
+        "quizNext"
+    );
+
 
 const quizScore =
-    document.querySelector(".quiz-score");
-
-const quizProgressBar =
-    document.querySelector(".quiz-progress-bar");
-
+    document.getElementById(
+        "quizScore"
+    );
 
 
-/* =========================================================
-   MOSTRAR QUESTÃO
-   ========================================================= */
-
-function renderQuestion() {
-
-    if (!quizQuestion || !quizOptions) return;
+const quizProgress =
+    document.getElementById(
+        "quizProgress"
+    );
 
 
-    answered = false;
+const quizQuestionNumber =
+    document.getElementById(
+        "quizQuestionNumber"
+    );
 
 
-    const current =
-        quizData[currentQuestion];
+function renderQuiz() {
 
+    if (
+        !quizQuestionElement ||
+        !quizOptionsElement
+    ) {
 
-    quizQuestion.textContent =
-        current.question;
-
-
-    if (quizCounter) {
-
-        quizCounter.textContent =
-            `QUESTÃO ${currentQuestion + 1} DE ${quizData.length}`;
+        return;
 
     }
 
 
-    if (quizProgressBar) {
+    const question =
+        quizQuestions[currentQuestion];
+
+
+    quizAnswered = false;
+
+
+    if (quizQuestionNumber) {
+
+        quizQuestionNumber.textContent =
+            `QUESTÃO ${String(currentQuestion + 1).padStart(2,"0")} DE ${String(quizQuestions.length).padStart(2,"0")}`;
+
+    }
+
+
+    if (quizProgress) {
 
         const progress =
-            ((currentQuestion + 1) /
-            quizData.length) * 100;
+            (
+                (currentQuestion + 1) /
+                quizQuestions.length
+            ) *
+            100;
 
 
-        quizProgressBar.style.width =
+        quizProgress.style.width =
             `${progress}%`;
 
     }
 
 
-    quizOptions.innerHTML = "";
+    quizQuestionElement.textContent =
+        question.question;
+
+
+    quizOptionsElement.innerHTML = "";
+
+
+    quizFeedback.textContent =
+        "";
+
+
+    quizNext.hidden =
+        true;
 
 
     const letters =
-        ["A", "B", "C", "D"];
+        ["A","B","C","D"];
 
 
-    current.options.forEach(
-        (option, index) => {
+    question.options.forEach(
+        (option,index) => {
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
 
-            button.type = "button";
+            button.type =
+                "button";
+
 
             button.className =
                 "quiz-option";
@@ -824,15 +1397,18 @@ function renderQuestion() {
                 "click",
                 () => {
 
-                    selectAnswer(
-                        index
+                    answerQuiz(
+                        index,
+                        button
                     );
 
                 }
             );
 
 
-            quizOptions.appendChild(button);
+            quizOptionsElement.appendChild(
+                button
+            );
 
         }
     );
@@ -840,83 +1416,133 @@ function renderQuestion() {
 }
 
 
+function answerQuiz(
+    selectedIndex,
+    selectedButton
+) {
 
-/* =========================================================
-   VERIFICAR RESPOSTA
-   ========================================================= */
+    if (quizAnswered) {
 
-function selectAnswer(selectedIndex) {
-
-    if (answered) return;
-
-    answered = true;
-
-
-    const correctAnswer =
-        quizData[currentQuestion].answer;
-
-
-    const buttons =
-        document.querySelectorAll(
-            ".quiz-option"
-        );
-
-
-    buttons.forEach((button, index) => {
-
-        button.style.pointerEvents =
-            "none";
-
-
-        if (index === correctAnswer) {
-
-            button.classList.add(
-                "correct"
-            );
-
-        }
-
-
-        if (
-            index === selectedIndex &&
-            selectedIndex !== correctAnswer
-        ) {
-
-            button.classList.add(
-                "wrong"
-            );
-
-        }
-
-    });
-
-
-    if (selectedIndex === correctAnswer) {
-
-        score++;
-
-
-        if (quizScore) {
-
-            quizScore.textContent =
-                `PONTOS: ${score}`;
-
-        }
+        return;
 
     }
 
 
-    setTimeout(() => {
+    quizAnswered = true;
 
-        currentQuestion++;
 
+    const correct =
+        quizQuestions[currentQuestion]
+            .answer;
+
+
+    const options =
+        quizOptionsElement.querySelectorAll(
+            ".quiz-option"
+        );
+
+
+    options.forEach(
+        (option,index) => {
+
+            option.disabled =
+                true;
+
+
+            if (
+                index === correct
+            ) {
+
+                option.classList.add(
+                    "correct"
+                );
+
+            }
+
+        }
+    );
+
+
+    if (
+        selectedIndex === correct
+    ) {
+
+        score++;
+
+
+        selectedButton.classList.add(
+            "correct"
+        );
+
+
+        quizFeedback.textContent =
+            "Muito bem! Você acertou.";
+
+    } else {
+
+        selectedButton.classList.add(
+            "wrong"
+        );
+
+
+        quizFeedback.textContent =
+            "Quase! A resposta correta foi destacada.";
+
+    }
+
+
+    if (quizScore) {
+
+        quizScore.textContent =
+            score;
+
+    }
+
+
+    quizNext.hidden =
+        false;
+
+
+    if (
+        currentQuestion ===
+        quizQuestions.length - 1
+    ) {
+
+        quizNext.innerHTML = `
+
+            Ver resultado
+
+            <i class="fa-solid fa-trophy"></i>
+
+        `;
+
+    } else {
+
+        quizNext.innerHTML = `
+
+            Próxima pergunta
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        `;
+
+    }
+
+}
+
+
+quizNext?.addEventListener(
+    "click",
+    () => {
 
         if (
             currentQuestion <
-            quizData.length
+            quizQuestions.length - 1
         ) {
 
-            renderQuestion();
+            currentQuestion++;
+
+            renderQuiz();
 
         } else {
 
@@ -924,82 +1550,83 @@ function selectAnswer(selectedIndex) {
 
         }
 
-    }, 1300);
+    }
+);
 
-}
-
-
-
-/* =========================================================
-   RESULTADO FINAL
-   ========================================================= */
 
 function showQuizResult() {
 
-    if (!quizQuestion || !quizOptions) return;
-
-
     const percentage =
         Math.round(
-            (score / quizData.length) * 100
+            (score /
+            quizQuestions.length) *
+            100
         );
 
 
     let message = "";
 
+    let icon =
+        "fa-graduation-cap";
+
 
     if (percentage === 100) {
 
         message =
-            "PERFEITO! Você está muito bem preparado! 🚀";
+            "Perfeito! Você mandou muito bem.";
+
+        icon =
+            "fa-trophy";
 
     }
 
     else if (percentage >= 60) {
 
         message =
-            "MUITO BEM! Você já sabe bastante sobre a Prova Paraná! 👏";
+            "Muito bem! Você já entendeu bastante.";
+
+        icon =
+            "fa-medal";
 
     }
 
     else {
 
         message =
-            "Bom começo! Explore o site novamente e tente melhorar! 📚";
+            "Bom começo! Explore o conteúdo e tente novamente.";
+
+        icon =
+            "fa-book-open";
 
     }
 
 
-    quizQuestion.innerHTML = `
+    quizQuestionElement.innerHTML = `
 
-        <span style="color:#00e5a0; font-size:42px;">
-            ${percentage}%
-        </span>
+        <div class="quiz-result">
 
-        <br><br>
+            <div class="quiz-result-icon">
 
-        ${message}
+                <i class="fa-solid ${icon}"></i>
+
+            </div>
+
+
+            <h3>
+                Você fez ${score} de ${quizQuestions.length} pontos.
+            </h3>
+
+
+            <p>
+                ${message}
+            </p>
+
+        </div>
 
     `;
 
 
-    if (quizCounter) {
-
-        quizCounter.textContent =
-            "QUIZ FINALIZADO";
-
-    }
-
-
-    if (quizProgressBar) {
-
-        quizProgressBar.style.width =
-            "100%";
-
-    }
-
-
-    quizOptions.innerHTML = `
+    quizOptionsElement.innerHTML = `
 
         <button
             type="button"
@@ -1012,7 +1639,7 @@ function showQuizResult() {
             </span>
 
             <span>
-                TENTAR NOVAMENTE
+                Tentar novamente
             </span>
 
         </button>
@@ -1020,26 +1647,38 @@ function showQuizResult() {
     `;
 
 
-    const restartButton =
-        document.querySelector("#restartQuiz");
+    quizFeedback.textContent =
+        `${percentage}% de aproveitamento.`;
+
+    quizNext.hidden =
+        true;
 
 
-    if (restartButton) {
+    if (quizQuestionNumber) {
 
-        restartButton.addEventListener(
+        quizQuestionNumber.textContent =
+            "QUIZ FINALIZADO";
+
+    }
+
+
+    if (quizProgress) {
+
+        quizProgress.style.width =
+            "100%";
+
+    }
+
+
+    document
+        .getElementById("restartQuiz")
+        ?.addEventListener(
             "click",
             restartQuiz
         );
 
-    }
-
 }
 
-
-
-/* =========================================================
-   REINICIAR QUIZ
-   ========================================================= */
 
 function restartQuiz() {
 
@@ -1047,80 +1686,82 @@ function restartQuiz() {
 
     score = 0;
 
-    answered = false;
+    quizAnswered = false;
 
 
     if (quizScore) {
 
         quizScore.textContent =
-            "PONTOS: 0";
+            "0";
 
     }
 
 
-    renderQuestion();
+    renderQuiz();
 
 }
 
 
-/* Iniciar quiz */
-
-renderQuestion();
+renderQuiz();
 
 
 
 /* =========================================================
-   EFEITO PARALLAX NO HERO
+   FECHAR MODAL COM ESC
    ========================================================= */
 
-const heroVisual =
-    document.querySelector(".hero-visual");
+document.addEventListener(
+    "keydown",
+    event => {
 
+        if (event.key === "Escape") {
 
-if (
-    heroVisual &&
-    window.innerWidth > 850
-) {
+            closeSubjectModal();
 
-    window.addEventListener(
-        "mousemove",
-        event => {
-
-            const x =
-                (window.innerWidth / 2 -
-                event.clientX) / 45;
-
-
-            const y =
-                (window.innerHeight / 2 -
-                event.clientY) / 45;
-
-
-            heroVisual.style.transform =
-                `translate(${x}px, ${y}px)`;
+            closeTipModal();
 
         }
-    );
 
-}
+    }
+);
 
 
 
 /* =========================================================
-   CARDS INTERATIVOS
+   EVENTO SCROLL
    ========================================================= */
 
-const interactiveCards =
+window.addEventListener(
+    "scroll",
+    () => {
+
+        updateHeader();
+
+        updateScrollProgress();
+
+        updateBackToTop();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+
+/* =========================================================
+   EFEITO 3D DOS CARDS
+   ========================================================= */
+
+const tiltCards =
     document.querySelectorAll(
-
-        ".objective-card, .result-card, .subject-premium-card"
-
+        ".objective-card, .result-card"
     );
 
 
-if (window.innerWidth > 850) {
+if (window.innerWidth > 900) {
 
-    interactiveCards.forEach(card => {
+    tiltCards.forEach(card => {
 
         card.addEventListener(
             "mousemove",
@@ -1140,25 +1781,19 @@ if (window.innerWidth > 850) {
                     rect.top;
 
 
-                const centerX =
-                    rect.width / 2;
-
-
-                const centerY =
-                    rect.height / 2;
-
-
                 const rotateX =
-                    (y - centerY) / -25;
+                    (y - rect.height / 2) /
+                    -28;
 
 
                 const rotateY =
-                    (x - centerX) / 25;
+                    (x - rect.width / 2) /
+                    28;
 
 
                 card.style.transform =
                     `
-                    perspective(1000px)
+                    perspective(900px)
                     rotateX(${rotateX}deg)
                     rotateY(${rotateY}deg)
                     translateY(-8px)
@@ -1172,7 +1807,8 @@ if (window.innerWidth > 850) {
             "mouseleave",
             () => {
 
-                card.style.transform = "";
+                card.style.transform =
+                    "";
 
             }
         );
@@ -1187,22 +1823,34 @@ if (window.innerWidth > 850) {
    INICIALIZAÇÃO
    ========================================================= */
 
+updateHeader();
+
 updateScrollProgress();
 
 updateBackToTop();
 
-updateHeader();
 
-updateActiveLink();
+const currentYear =
+    document.getElementById(
+        "currentYear"
+    );
+
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
 
 
 console.log(
     "%cPROVA PARANÁ",
-    "color:#00c2ff;font-size:28px;font-weight:bold;"
+    "color:#00c2ff;font-size:28px;font-weight:900;"
 );
 
 
 console.log(
-    "%cSistema carregado com sucesso! 🚀",
-    "color:#6c4cff;font-size:14px;"
+    "%cCentral do Estudante carregada.",
+    "color:#6c4cff;font-size:14px;font-weight:bold;"
 );
