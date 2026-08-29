@@ -1,1482 +1,3180 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 
-```
-<!-- =========================================
-     CONFIGURAÇÕES BÁSICAS
-========================================== -->
+    <!-- =====================================================
+         CONFIGURAÇÕES PRINCIPAIS
+    ====================================================== -->
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Prova Paraná - Informações, objetivos, disciplinas, dicas e resultados.">
+    <meta name="theme-color"
+        content="#071a3d">
 
-<meta name="keywords"
-      content="Prova Paraná, Educação, Paraná, Matemática, Português">
+    <meta name="description"
+        content="Prova Paraná - Central do Estudante. Um portal interativo sobre a avaliação diagnóstica do Paraná.">
 
-<meta name="author"
-      content="Chrystyan Massaro">
+    <meta name="keywords"
+        content="Prova Paraná, educação, estudantes, matemática, português, escola">
 
-<title>Prova Paraná | Central do Estudante</title>
+    <meta name="author"
+        content="Chrystyan">
 
-
-<!-- =========================================
-     FONTES
-========================================== -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
+    <title>
+        Prova Paraná | Central do Estudante
+    </title>
 
 
-<!-- =========================================
-     ÍCONES
-========================================== -->
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
 
-<!-- =========================================
-     CSS PRINCIPAL
-========================================== -->
+    <!-- =====================================================
+         ÍCONES
+    ====================================================== -->
 
-<link rel="stylesheet"
-      href="style.css">
-```
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
+
 <body>
 
-```
-<!-- =========================================
-     BARRA DE PROGRESSO
-========================================== -->
 
-<div class="scroll-progress"
-     id="scrollProgress"></div>
+    <!-- =====================================================
+         CURSOR DECORATIVO
+    ====================================================== -->
 
+    <div class="cursor-dot"
+        id="cursorDot"></div>
 
-
-<!-- =========================================
-     TELA DE CARREGAMENTO
-========================================== -->
-
-<div class="loader"
-     id="loader">
-
-    <div class="loader-content">
-
-        <div class="loader-logo">
-
-            <i class="fa-solid fa-graduation-cap"></i>
-
-        </div>
-
-        <h2>PROVA PARANÁ</h2>
-
-        <p>Preparando sua experiência...</p>
-
-        <div class="loader-bar">
-
-            <div class="loader-bar-progress"></div>
-
-        </div>
-
-    </div>
-
-</div>
+    <div class="cursor-outline"
+        id="cursorOutline"></div>
 
 
 
-<!-- =========================================
-     HEADER
-========================================== -->
+    <!-- =====================================================
+         LOADING SCREEN
+    ====================================================== -->
 
-<header class="header"
-        id="header">
+    <div id="loader">
 
-
-    <div class="header-container">
+        <div class="loader-background"></div>
 
 
-        <!-- LOGO -->
+        <div class="loader-content">
 
-        <a href="#inicio"
-           class="logo">
 
-            <div class="logo-icon">
+            <div class="loader-logo">
+
+                <div class="loader-circle"></div>
 
                 <i class="fa-solid fa-graduation-cap"></i>
 
             </div>
 
 
-            <div class="logo-text">
+            <div class="loader-text">
 
-                <span class="logo-main">
-
-                    PROVA
-
+                <span class="loader-small-text">
+                    CENTRAL DO ESTUDANTE
                 </span>
-
-                <span class="logo-highlight">
-
-                    PARANÁ
-
-                </span>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- MENU DESKTOP -->
-
-        <nav class="desktop-nav">
-
-
-            <ul class="nav-list">
-
-
-                <li>
-
-                    <a href="#inicio"
-                       class="nav-link active">
-
-                        <i class="fa-solid fa-house"></i>
-
-                        Início
-
-                    </a>
-
-                </li>
-
-
-
-                <!-- DROPDOWN -->
-
-                <li class="dropdown">
-
-
-                    <button class="dropdown-button">
-
-                        <i class="fa-solid fa-circle-info"></i>
-
-                        Sobre
-
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-
-                    </button>
-
-
-                    <ul class="dropdown-menu">
-
-
-                        <li>
-
-                            <a href="#o-que-e">
-
-                                <i class="fa-solid fa-lightbulb"></i>
-
-                                O que é?
-
-                            </a>
-
-                        </li>
-
-
-                        <li>
-
-                            <a href="#objetivos">
-
-                                <i class="fa-solid fa-bullseye"></i>
-
-                                Objetivos
-
-                            </a>
-
-                        </li>
-
-
-                        <li>
-
-                            <a href="#resultados">
-
-                                <i class="fa-solid fa-chart-line"></i>
-
-                                Resultados
-
-                            </a>
-
-                        </li>
-
-
-                    </ul>
-
-
-                </li>
-
-
-
-                <li>
-
-                    <a href="#disciplinas"
-                       class="nav-link">
-
-                        <i class="fa-solid fa-book-open"></i>
-
-                        Disciplinas
-
-                    </a>
-
-                </li>
-
-
-
-                <li>
-
-                    <a href="#dicas"
-                       class="nav-link">
-
-                        <i class="fa-solid fa-star"></i>
-
-                        Dicas
-
-                    </a>
-
-                </li>
-
-
-
-                <li>
-
-                    <a href="#quiz"
-                       class="nav-link">
-
-                        <i class="fa-solid fa-brain"></i>
-
-                        Quiz
-
-                    </a>
-
-                </li>
-
-
-            </ul>
-
-
-        </nav>
-
-
-
-        <!-- BOTÃO DESTAQUE -->
-
-        <a href="#dicas"
-           class="header-button">
-
-            Preparar-se
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-
-
-        <!-- MENU HAMBÚRGUER -->
-
-        <button class="hamburger"
-                id="hamburger"
-                aria-label="Abrir menu">
-
-            <span></span>
-
-            <span></span>
-
-            <span></span>
-
-        </button>
-
-
-    </div>
-
-
-</header>
-
-
-
-<!-- =========================================
-     MENU MOBILE
-========================================== -->
-
-<div class="mobile-overlay"
-     id="mobileOverlay"></div>
-
-
-
-<aside class="mobile-menu"
-       id="mobileMenu">
-
-
-    <div class="mobile-menu-header">
-
-
-        <div class="mobile-logo">
-
-            <i class="fa-solid fa-graduation-cap"></i>
-
-            <span>
-
-                PROVA PARANÁ
-
-            </span>
-
-        </div>
-
-
-        <button class="close-menu"
-                id="closeMenu">
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-
-    </div>
-
-
-
-    <nav class="mobile-nav">
-
-
-        <a href="#inicio"
-           class="mobile-link">
-
-            <i class="fa-solid fa-house"></i>
-
-            Início
-
-        </a>
-
-
-        <a href="#o-que-e"
-           class="mobile-link">
-
-            <i class="fa-solid fa-circle-info"></i>
-
-            O que é a Prova Paraná
-
-        </a>
-
-
-        <a href="#objetivos"
-           class="mobile-link">
-
-            <i class="fa-solid fa-bullseye"></i>
-
-            Objetivos
-
-        </a>
-
-
-        <a href="#disciplinas"
-           class="mobile-link">
-
-            <i class="fa-solid fa-book-open"></i>
-
-            Disciplinas
-
-        </a>
-
-
-        <a href="#dicas"
-           class="mobile-link">
-
-            <i class="fa-solid fa-star"></i>
-
-            Dicas
-
-        </a>
-
-
-        <a href="#resultados"
-           class="mobile-link">
-
-            <i class="fa-solid fa-chart-line"></i>
-
-            Resultados
-
-        </a>
-
-
-        <a href="#quiz"
-           class="mobile-link">
-
-            <i class="fa-solid fa-brain"></i>
-
-            Quiz
-
-        </a>
-
-
-    </nav>
-
-
-
-    <div class="mobile-menu-footer">
-
-        <p>
-
-            Educação transforma o futuro.
-
-        </p>
-
-    </div>
-
-
-</aside>
-
-
-
-<!-- =========================================
-     MAIN
-========================================== -->
-
-<main>
-
-
-
-    <!-- =====================================
-         HERO
-    ====================================== -->
-
-    <section class="hero"
-             id="inicio">
-
-
-        <div class="hero-background">
-
-
-            <div class="hero-orb orb-1"></div>
-
-            <div class="hero-orb orb-2"></div>
-
-            <div class="hero-orb orb-3"></div>
-
-
-        </div>
-
-
-
-        <div class="hero-container">
-
-
-
-            <!-- TEXTO -->
-
-            <div class="hero-content">
-
-
-                <div class="hero-badge">
-
-                    <span class="badge-dot"></span>
-
-                    EDUCAÇÃO EM MOVIMENTO
-
-                </div>
-
-
 
                 <h1>
-
-                    Entenda a
-
-                    <span>
-
-                        Prova Paraná
-
-                    </span>
-
-                    e prepare-se para o seu futuro.
-
+                    PROVA
+                    <span>PARANÁ</span>
                 </h1>
 
+            </div>
 
 
-                <p class="hero-description">
+            <div class="loader-progress">
 
-                    Uma plataforma criada para explicar, de forma simples
-                    e moderna, tudo sobre a avaliação que ajuda estudantes,
-                    professores e escolas a construírem uma educação cada
-                    vez melhor.
-
-                </p>
-
-
-
-                <div class="hero-buttons">
-
-
-                    <a href="#o-que-e"
-                       class="btn btn-primary">
-
-                        <i class="fa-solid fa-rocket"></i>
-
-                        Começar agora
-
-                    </a>
-
-
-
-                    <a href="#disciplinas"
-                       class="btn btn-secondary">
-
-                        <i class="fa-solid fa-play"></i>
-
-                        Explorar conteúdo
-
-                    </a>
-
+                <div class="loader-progress-bar"
+                    id="loaderProgressBar">
 
                 </div>
-
-
-
-                <!-- ESTATÍSTICAS -->
-
-                <div class="hero-stats">
-
-
-                    <div class="hero-stat">
-
-                        <strong>
-
-                            02
-
-                        </strong>
-
-                        <span>
-
-                            Disciplinas principais
-
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="hero-stat-line"></div>
-
-
-
-                    <div class="hero-stat">
-
-                        <strong>
-
-                            100%
-
-                        </strong>
-
-                        <span>
-
-                            Foco no aprendizado
-
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="hero-stat-line"></div>
-
-
-
-                    <div class="hero-stat">
-
-                        <strong>
-
-                            ∞
-
-                        </strong>
-
-                        <span>
-
-                            Possibilidades
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
 
             </div>
 
 
-
-            <!-- CARD VISUAL -->
-
-            <div class="hero-visual">
-
-
-                <div class="floating-card card-top">
-
-                    <i class="fa-solid fa-book"></i>
-
-                    <span>
-
-                        Conhecimento
-
-                    </span>
-
-                </div>
-
-
-
-                <div class="hero-main-card">
-
-
-                    <div class="main-card-header">
-
-                        <div class="student-avatar">
-
-                            <i class="fa-solid fa-user-graduate"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-
-                                CENTRAL DO ESTUDANTE
-
-                            </span>
-
-                            <h3>
-
-                                Seu aprendizado importa.
-
-                            </h3>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="progress-area">
-
-
-                        <div class="progress-title">
-
-                            <span>
-
-                                Jornada de preparação
-
-                            </span>
-
-                            <strong>
-
-                                75%
-
-                            </strong>
-
-                        </div>
-
-
-
-                        <div class="progress-bar">
-
-                            <div class="progress-fill"></div>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="subjects-mini">
-
-
-                        <div class="subject-mini portugues-mini">
-
-                            <div class="subject-icon">
-
-                                <i class="fa-solid fa-book-open"></i>
-
-                            </div>
-
-                            <span>
-
-                                Português
-
-                            </span>
-
-                        </div>
-
-
-
-                        <div class="subject-mini matematica-mini">
-
-                            <div class="subject-icon">
-
-                                <i class="fa-solid fa-calculator"></i>
-
-                            </div>
-
-                            <span>
-
-                                Matemática
-
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="card-message">
-
-                        <i class="fa-solid fa-sparkles"></i>
-
-                        <p>
-
-                            Cada resultado é uma oportunidade
-                            para aprender ainda mais.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="floating-card card-bottom">
-
-                    <i class="fa-solid fa-trophy"></i>
-
-                    <span>
-
-                        Evolução
-
-                    </span>
-
-                </div>
-
-
-            </div>
+            <p id="loaderStatus">
+                Preparando sua experiência...
+            </p>
 
 
         </div>
 
-
-
-        <!-- SCROLL -->
-
-        <a href="#o-que-e"
-           class="scroll-indicator">
-
-            <span>
-
-                Role para explorar
-
-            </span>
-
-            <i class="fa-solid fa-arrow-down"></i>
-
-        </a>
-
-
-    </section>
+    </div>
 
 
 
-    <!-- =====================================
-         O QUE É
-    ====================================== -->
+    <!-- =====================================================
+         BARRA DE PROGRESSO DO SITE
+    ====================================================== -->
 
-    <section class="section about-section"
-             id="o-que-e">
+    <div class="scroll-progress-container">
 
+        <div class="scroll-progress"
+            id="scrollProgress">
 
-        <div class="section-container">
+        </div>
 
-
-            <div class="section-image-area">
-
-
-                <div class="about-decoration decoration-one"></div>
-
-                <div class="about-decoration decoration-two"></div>
+    </div>
 
 
-                <div class="about-icon-large">
 
-                    <i class="fa-solid fa-school"></i>
+    <!-- =====================================================
+         PARTÍCULAS
+    ====================================================== -->
+
+    <div id="particles"></div>
+
+
+
+    <!-- =====================================================
+         OVERLAY MENU MOBILE
+    ====================================================== -->
+
+    <div id="mobileOverlay"
+        class="mobile-overlay">
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MENU MOBILE
+    ====================================================== -->
+
+    <aside id="mobileMenu"
+        class="mobile-menu">
+
+
+        <div class="mobile-menu-top">
+
+
+            <a href="#inicio"
+                class="mobile-brand">
+
+                <div class="mobile-brand-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
 
                 </div>
 
 
+                <div class="mobile-brand-text">
 
-                <div class="about-image-card">
+                    <strong>
+                        PROVA PARANÁ
+                    </strong>
 
-
-                    <div class="about-card-top">
-
-                        <span class="small-label">
-
-                            AVALIAÇÃO EDUCACIONAL
-
-                        </span>
-
-
-                        <i class="fa-solid fa-clipboard-check"></i>
-
-                    </div>
-
-
-
-                    <h3>
-
-                        Diagnosticar para melhorar.
-
-                    </h3>
-
-
-
-                    <p>
-
-                        A avaliação ajuda a compreender
-                        o desenvolvimento da aprendizagem.
-
-                    </p>
-
+                    <span>
+                        Central do Estudante
+                    </span>
 
                 </div>
 
+            </a>
 
-            </div>
 
-
-
-            <div class="section-content">
-
-
-                <span class="section-eyebrow">
-
-                    <i class="fa-solid fa-circle-question"></i>
-
-                    ENTENDA
-
-                </span>
-
-
-
-                <h2>
-
-                    Afinal, o que é a
-
-                    <span>
-
-                        Prova Paraná?
-
-                    </span>
-
-                </h2>
-
-
-
-                <p>
-
-                    A Prova Paraná é uma avaliação educacional realizada
-                    pela Secretaria de Educação do Estado do Paraná.
-                    Ela tem como principal função acompanhar o aprendizado
-                    dos estudantes e identificar pontos que podem ser
-                    melhorados no processo de ensino.
-
-                </p>
-
-
-
-                <p>
-
-                    Diferente de uma prova comum, seu objetivo não é apenas
-                    dar uma nota. Os resultados ajudam escolas e professores
-                    a entenderem quais conteúdos os estudantes dominam e
-                    quais precisam receber mais atenção.
-
-                </p>
-
-
-
-                <div class="info-list">
-
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <h4>
-
-                                Avaliação diagnóstica
-
-                            </h4>
-
-                            <p>
-
-                                Ajuda a identificar o nível de aprendizagem.
-
-                            </p>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-
-                            <i class="fa-solid fa-users"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <h4>
-
-                                Apoio às escolas
-
-                            </h4>
-
-                            <p>
-
-                                Os dados ajudam a melhorar estratégias de ensino.
-
-                            </p>
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         OBJETIVOS
-    ====================================== -->
-
-    <section class="section objectives-section"
-             id="objetivos">
-
-
-        <div class="section-container">
-
-
-
-            <div class="section-header centered">
-
-
-                <span class="section-eyebrow">
-
-                    <i class="fa-solid fa-bullseye"></i>
-
-                    PROPÓSITO
-
-                </span>
-
-
-                <h2>
-
-                    Por que essa avaliação é
-
-                    <span>
-
-                        importante?
-
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    A Prova Paraná vai além dos números.
-                    Ela fornece informações importantes para
-                    melhorar a educação.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="objectives-grid">
-
-
-                <article class="objective-card">
-
-
-                    <div class="objective-number">
-
-                        01
-
-                    </div>
-
-
-                    <div class="objective-icon">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                    </div>
-
-
-                    <h3>
-
-                        Acompanhar o aprendizado
-
-                    </h3>
-
-
-                    <p>
-
-                        Identificar como os estudantes estão desenvolvendo
-                        seus conhecimentos durante o processo escolar.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="objective-card featured-objective">
-
-
-                    <div class="objective-number">
-
-                        02
-
-                    </div>
-
-
-                    <div class="objective-icon">
-
-                        <i class="fa-solid fa-lightbulb"></i>
-
-                    </div>
-
-
-                    <h3>
-
-                        Identificar dificuldades
-
-                    </h3>
-
-
-                    <p>
-
-                        Mostrar quais conteúdos precisam de mais atenção
-                        para que os estudantes possam continuar evoluindo.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="objective-card">
-
-
-                    <div class="objective-number">
-
-                        03
-
-                    </div>
-
-
-                    <div class="objective-icon">
-
-                        <i class="fa-solid fa-people-group"></i>
-
-                    </div>
-
-
-                    <h3>
-
-                        Apoiar professores
-
-                    </h3>
-
-
-                    <p>
-
-                        Oferecer informações que ajudam educadores a
-                        planejar aulas e estratégias mais eficientes.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="objective-card">
-
-
-                    <div class="objective-number">
-
-                        04
-
-                    </div>
-
-
-                    <div class="objective-icon">
-
-                        <i class="fa-solid fa-school"></i>
-
-                    </div>
-
-
-                    <h3>
-
-                        Melhorar a educação
-
-                    </h3>
-
-
-                    <p>
-
-                        Utilizar os resultados para criar ações que
-                        contribuam para uma educação pública cada vez melhor.
-
-                    </p>
-
-
-                </article>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         DISCIPLINAS
-    ====================================== -->
-
-    <section class="section subjects-section"
-             id="disciplinas">
-
-
-        <div class="section-container">
-
-
-            <div class="section-header centered">
-
-
-                <span class="section-eyebrow">
-
-                    <i class="fa-solid fa-book"></i>
-
-                    CONHECIMENTO
-
-                </span>
-
-
-                <h2>
-
-                    As disciplinas que fazem parte da
-
-                    <span>
-
-                        avaliação.
-
-                    </span>
-
-                </h2>
-
-
-            </div>
-
-
-
-            <div class="subjects-grid">
-
-
-
-                <!-- PORTUGUÊS -->
-
-                <article class="subject-card portuguese-card">
-
-
-                    <div class="subject-card-background">
-
-                        <div class="subject-pattern"></div>
-
-                    </div>
-
-
-                    <div class="subject-card-content">
-
-
-                        <div class="subject-card-icon">
-
-                            <i class="fa-solid fa-book-open"></i>
-
-                        </div>
-
-
-                        <span class="subject-tag">
-
-                            DISCIPLINA 01
-
-                        </span>
-
-
-                        <h3>
-
-                            Língua Portuguesa
-
-                        </h3>
-
-
-                        <p>
-
-                            Avalia habilidades relacionadas à leitura,
-                            interpretação de textos e compreensão da
-                            língua portuguesa.
-
-                        </p>
-
-
-                        <ul>
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Interpretação de textos
-
-                            </li>
-
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Compreensão leitora
-
-                            </li>
-
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Uso da linguagem
-
-                            </li>
-
-
-                        </ul>
-
-
-                        <button class="subject-button"
-                                data-modal="portugues">
-
-                            Explorar
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-
-                    </div>
-
-
-                </article>
-
-
-
-                <!-- MATEMÁTICA -->
-
-                <article class="subject-card math-card">
-
-
-                    <div class="subject-card-background">
-
-                        <div class="subject-pattern"></div>
-
-                    </div>
-
-
-                    <div class="subject-card-content">
-
-
-                        <div class="subject-card-icon">
-
-                            <i class="fa-solid fa-calculator"></i>
-
-                        </div>
-
-
-                        <span class="subject-tag">
-
-                            DISCIPLINA 02
-
-                        </span>
-
-
-                        <h3>
-
-                            Matemática
-
-                        </h3>
-
-
-                        <p>
-
-                            Avalia conhecimentos matemáticos e a capacidade
-                            de utilizar o raciocínio lógico para resolver
-                            diferentes situações.
-
-                        </p>
-
-
-                        <ul>
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Raciocínio lógico
-
-                            </li>
-
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Resolução de problemas
-
-                            </li>
-
-
-                            <li>
-
-                                <i class="fa-solid fa-check"></i>
-
-                                Cálculos e interpretação
-
-                            </li>
-
-
-                        </ul>
-
-
-                        <button class="subject-button"
-                                data-modal="matematica">
-
-                            Explorar
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-
-                    </div>
-
-
-                </article>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         MODAL
-    ====================================== -->
-
-    <div class="modal"
-         id="subjectModal">
-
-
-        <div class="modal-overlay"
-             id="modalOverlay"></div>
-
-
-        <div class="modal-box">
-
-
-            <button class="modal-close"
-                    id="modalClose">
+            <button id="closeMenu"
+                class="close-menu"
+                aria-label="Fechar menu">
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
 
 
-            <div id="modalContent"></div>
+        </div>
+
+
+
+        <div class="mobile-menu-line"></div>
+
+
+
+        <nav class="mobile-nav">
+
+
+            <a href="#inicio"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </span>
+
+                <span>
+                    Início
+                </span>
+
+            </a>
+
+
+
+            <a href="#o-que-e"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </span>
+
+                <span>
+                    O que é?
+                </span>
+
+            </a>
+
+
+
+            <a href="#objetivos"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </span>
+
+                <span>
+                    Objetivos
+                </span>
+
+            </a>
+
+
+
+            <a href="#disciplinas"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </span>
+
+                <span>
+                    Disciplinas
+                </span>
+
+            </a>
+
+
+
+            <a href="#dicas"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </span>
+
+                <span>
+                    Dicas
+                </span>
+
+            </a>
+
+
+
+            <a href="#resultados"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Resultados
+                </span>
+
+            </a>
+
+
+
+            <a href="#quiz"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </span>
+
+                <span>
+                    Quiz
+                </span>
+
+            </a>
+
+
+
+            <a href="#faq"
+                class="mobile-link">
+
+                <span class="mobile-link-icon">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                </span>
+
+                <span>
+                    Perguntas
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="mobile-menu-bottom">
+
+
+            <div class="mobile-school-card">
+
+                <div class="mobile-school-icon">
+
+                    <i class="fa-solid fa-school"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Educação em foco
+                    </strong>
+
+                    <p>
+                        Informação para aprender melhor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header id="header"
+        class="site-header">
+
+
+        <div class="header-container">
+
+
+            <!-- LOGO -->
+
+            <a href="#inicio"
+                class="brand">
+
+
+                <div class="brand-symbol">
+
+                    <div class="brand-symbol-glow"></div>
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div class="brand-content">
+
+                    <strong>
+                        PROVA PARANÁ
+                    </strong>
+
+                    <span>
+                        CENTRAL DO ESTUDANTE
+                    </span>
+
+                </div>
+
+
+            </a>
+
+
+
+            <!-- MENU DESKTOP -->
+
+            <nav class="desktop-nav">
+
+
+                <a href="#inicio"
+                    class="nav-link active">
+
+                    Início
+
+                </a>
+
+
+
+                <!-- DROPDOWN -->
+
+                <div class="dropdown">
+
+
+                    <button class="dropdown-trigger">
+
+                        <span>
+                            Sobre
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+
+                        <a href="#o-que-e">
+
+                            <span class="dropdown-icon">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                            </span>
+
+
+                            <span>
+
+                                <strong>
+                                    O que é?
+                                </strong>
+
+                                <small>
+                                    Conheça a avaliação
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+
+                        <a href="#objetivos">
+
+                            <span class="dropdown-icon">
+
+                                <i class="fa-solid fa-bullseye"></i>
+
+                            </span>
+
+
+                            <span>
+
+                                <strong>
+                                    Objetivos
+                                </strong>
+
+                                <small>
+                                    Entenda sua importância
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+
+                        <a href="#resultados">
+
+                            <span class="dropdown-icon">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </span>
+
+
+                            <span>
+
+                                <strong>
+                                    Resultados
+                                </strong>
+
+                                <small>
+                                    Como são utilizados
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <a href="#disciplinas"
+                    class="nav-link">
+
+                    Disciplinas
+
+                </a>
+
+
+
+                <a href="#dicas"
+                    class="nav-link">
+
+                    Dicas
+
+                </a>
+
+
+
+                <a href="#quiz"
+                    class="nav-link">
+
+                    Quiz
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- AÇÕES HEADER -->
+
+            <div class="header-actions">
+
+
+                <a href="#quiz"
+                    class="header-cta">
+
+                    <span>
+                        Teste-se
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+
+                <button id="hamburger"
+                    class="hamburger"
+                    aria-label="Abrir menu">
+
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section id="inicio"
+            class="hero-section">
+
+
+            <!-- FUNDO -->
+
+            <div class="hero-image">
+
+                <img src="hero.jpg"
+                    alt="Estudantes em ambiente escolar">
+
+            </div>
+
+
+            <div class="hero-gradient"></div>
+
+            <div class="hero-grid"></div>
+
+
+            <!-- FORMAS -->
+
+            <div class="hero-orb orb-one"></div>
+
+            <div class="hero-orb orb-two"></div>
+
+            <div class="hero-orb orb-three"></div>
+
+
+
+            <div class="hero-container">
+
+
+                <!-- CONTEÚDO -->
+
+                <div class="hero-content">
+
+
+                    <div class="hero-eyebrow">
+
+                        <span class="live-dot"></span>
+
+                        <span>
+                            PORTAL EDUCACIONAL
+                        </span>
+
+                        <span class="hero-divider"></span>
+
+                        <span>
+                            PROVA PARANÁ
+                        </span>
+
+                    </div>
+
+
+
+                    <h1>
+
+                        Conhecimento
+                        <span class="hero-highlight">
+
+                            transforma
+
+                            <svg viewBox="0 0 300 30"
+                                preserveAspectRatio="none">
+
+                                <path d="M5 22 C60 2, 130 32, 295 10"></path>
+
+                            </svg>
+
+                        </span>
+
+                        o futuro.
+
+                    </h1>
+
+
+
+                    <p class="hero-description">
+
+                        Uma experiência interativa criada para você
+                        entender a <strong>Prova Paraná</strong>,
+                        descobrir seus objetivos e se preparar
+                        com mais tranquilidade.
+
+                    </p>
+
+
+
+                    <div class="hero-buttons">
+
+
+                        <a href="#o-que-e"
+                            class="hero-primary-button magnetic-button">
+
+                            <span>
+                                Explorar agora
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+
+                        <a href="#video"
+                            class="hero-play-button">
+
+                            <span class="play-circle">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </span>
+
+
+                            <span>
+
+                                <strong>
+                                    Descubra mais
+                                </strong>
+
+                                <small>
+                                    Role para explorar
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- ESTATÍSTICAS -->
+
+                    <div class="hero-stats">
+
+
+                        <div class="hero-stat">
+
+                            <strong class="counter"
+                                data-target="2">
+
+                                0
+
+                            </strong>
+
+                            <span>
+                                Disciplinas principais
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-stat-line"></div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                <span class="counter"
+                                    data-target="100">
+
+                                    0
+
+                                </span>%
+                            </strong>
+
+                            <span>
+                                Foco na aprendizagem
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-stat-line"></div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                <span class="counter"
+                                    data-target="1">
+
+                                    0
+
+                                </span>
+                            </strong>
+
+                            <span>
+                                Objetivo: evoluir
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CARD FLUTUANTE -->
+
+                <div class="hero-floating-panel">
+
+
+                    <div class="floating-panel-glow"></div>
+
+
+                    <div class="floating-panel-top">
+
+                        <span class="floating-label">
+
+                            <i class="fa-solid fa-sparkles"></i>
+
+                            APRENDIZAGEM
+
+                        </span>
+
+
+                        <span class="floating-status">
+
+                            <span></span>
+
+                            ONLINE
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="floating-panel-main">
+
+
+                        <div class="floating-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Cada resultado
+                                é uma oportunidade.
+                            </strong>
+
+                            <p>
+                                Descubra. Aprenda. Evolua.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="floating-progress">
+
+                        <div class="floating-progress-top">
+
+                            <span>
+                                Sua jornada
+                            </span>
+
+                            <strong>
+                                Começando
+                            </strong>
+
+                        </div>
+
+
+                        <div class="floating-progress-bar">
+
+                            <span></span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SCROLL -->
+
+            <a href="#o-que-e"
+                class="hero-scroll">
+
+                <span>
+                    ROLE PARA EXPLORAR
+                </span>
+
+                <div class="scroll-mouse">
+
+                    <span></span>
+
+                </div>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MARQUEE
+        ================================================== -->
+
+        <section class="marquee-section">
+
+
+            <div class="marquee-track">
+
+
+                <div class="marquee-content">
+
+                    <span>APRENDER</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>DESCOBRIR</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>EVOLUIR</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>CONHECER</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>APRENDER</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>DESCOBRIR</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>EVOLUIR</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>CONHECER</span>
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             O QUE É
+        ================================================== -->
+
+        <section id="o-que-e"
+            class="about-section section">
+
+
+            <div class="container">
+
+
+                <div class="section-intro reveal">
+
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+
+                    <div>
+
+                        <span class="section-eyebrow">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            ENTENDA
+
+                        </span>
+
+
+                        <h2>
+
+                            Afinal, o que é a
+                            <span>
+                                Prova Paraná?
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="about-layout">
+
+
+                    <!-- IMAGEM -->
+
+                    <div class="about-visual reveal-left">
+
+
+                        <div class="about-image-frame">
+
+                            <img src="prova-parana.jpg"
+                                alt="Estudantes realizando uma avaliação">
+
+                        </div>
+
+
+                        <div class="about-image-decoration"></div>
+
+
+                        <div class="about-floating-card card-one">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <span>
+                                Diagnóstico
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-floating-card card-two">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <span>
+                                Evolução
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- TEXTO -->
+
+                    <div class="about-text reveal-right">
+
+
+                        <p class="about-big-text">
+
+                            A Prova Paraná é uma avaliação
+                            <strong>
+                                diagnóstica
+                            </strong>
+                            que ajuda a compreender como está
+                            a aprendizagem dos estudantes.
+
+                        </p>
+
+
+                        <p>
+
+                            Em vez de representar apenas uma nota,
+                            seus resultados podem mostrar quais
+                            conhecimentos estão sendo desenvolvidos
+                            e quais conteúdos precisam receber
+                            mais atenção.
+
+                        </p>
+
+
+                        <p>
+
+                            Essas informações ajudam a escola a
+                            enxergar a aprendizagem de uma forma
+                            mais ampla e a pensar em estratégias
+                            para melhorar o ensino.
+
+                        </p>
+
+
+
+                        <div class="about-highlight-box">
+
+                            <div class="highlight-icon">
+
+                                <i class="fa-solid fa-lightbulb"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Mais que uma prova.
+                                </strong>
+
+                                <p>
+                                    Uma ferramenta para compreender,
+                                    planejar e evoluir.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             OBJETIVOS
+        ================================================== -->
+
+        <section id="objetivos"
+            class="objectives-section section">
+
+
+            <div class="objectives-background"></div>
+
+
+            <div class="container">
+
+
+                <div class="objectives-header reveal">
+
+
+                    <span class="section-number light-number">
+                        02
+                    </span>
+
+
+                    <span class="section-eyebrow light">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                        PROPÓSITO
+
+                    </span>
+
+
+                    <h2>
+
+                        Por que essa avaliação
+                        <span>
+                            é importante?
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Cada resultado pode ajudar a construir
+                        novas oportunidades para a educação.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="objectives-grid">
+
+
+                    <article class="objective-card reveal">
+
+
+                        <div class="objective-top">
+
+                            <span>
+                                01
+                            </span>
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Acompanhar
+                        </h3>
+
+
+                        <p>
+
+                            Observar como está o desenvolvimento
+                            dos estudantes durante sua jornada
+                            de aprendizagem.
+
+                        </p>
+
+
+                        <div class="objective-line"></div>
+
+
+                        <span class="objective-footer">
+
+                            Ver o aprendizado
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+
+                    </article>
+
+
+
+                    <article class="objective-card reveal delay-1">
+
+
+                        <div class="objective-top">
+
+                            <span>
+                                02
+                            </span>
+
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Identificar
+                        </h3>
+
+
+                        <p>
+
+                            Reconhecer conteúdos que precisam
+                            de maior atenção dentro do processo
+                            de ensino.
+
+                        </p>
+
+
+                        <div class="objective-line"></div>
+
+
+                        <span class="objective-footer">
+
+                            Encontrar desafios
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+
+                    </article>
+
+
+
+                    <article class="objective-card reveal delay-2">
+
+
+                        <div class="objective-top">
+
+                            <span>
+                                03
+                            </span>
+
+                            <i class="fa-solid fa-route"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Planejar
+                        </h3>
+
+
+                        <p>
+
+                            Utilizar as informações para orientar
+                            decisões e estratégias pedagógicas.
+
+                        </p>
+
+
+                        <div class="objective-line"></div>
+
+
+                        <span class="objective-footer">
+
+                            Criar caminhos
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+
+                    </article>
+
+
+
+                    <article class="objective-card reveal delay-3">
+
+
+                        <div class="objective-top">
+
+                            <span>
+                                04
+                            </span>
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Evoluir
+                        </h3>
+
+
+                        <p>
+
+                            Contribuir para a melhoria contínua
+                            da qualidade do ensino e da aprendizagem.
+
+                        </p>
+
+
+                        <div class="objective-line"></div>
+
+
+                        <span class="objective-footer">
+
+                            Continuar crescendo
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISCIPLINAS
+        ================================================== -->
+
+        <section id="disciplinas"
+            class="subjects-section section">
+
+
+            <div class="container">
+
+
+                <div class="subjects-heading reveal">
+
+
+                    <div>
+
+                        <span class="section-number">
+                            03
+                        </span>
+
+
+                        <span class="section-eyebrow">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                            CONHECIMENTO
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+
+                            Duas áreas.
+                            <span>
+                                Muitas habilidades.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Conheça as principais disciplinas
+                            abordadas na avaliação.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="subjects-showcase">
+
+
+                    <!-- PORTUGUÊS -->
+
+                    <article class="subject-premium-card portuguese reveal-left">
+
+
+                        <div class="subject-card-background">
+
+                            <div class="subject-pattern"></div>
+
+                        </div>
+
+
+                        <div class="subject-card-content">
+
+
+                            <div class="subject-card-header">
+
+
+                                <div class="subject-main-icon">
+
+                                    <i class="fa-solid fa-book-open"></i>
+
+                                </div>
+
+
+                                <span>
+                                    01
+                                </span>
+
+
+                            </div>
+
+
+                            <div class="subject-title-area">
+
+                                <span class="subject-label">
+                                    DISCIPLINA
+                                </span>
+
+
+                                <h3>
+                                    Língua
+                                    <br>
+                                    Portuguesa
+                                </h3>
+
+
+                            </div>
+
+
+                            <p>
+
+                                Leitura, interpretação, compreensão
+                                e análise de diferentes textos.
+
+                            </p>
+
+
+                            <div class="subject-tags">
+
+                                <span>Leitura</span>
+
+                                <span>Textos</span>
+
+                                <span>Interpretação</span>
+
+                            </div>
+
+
+                            <button class="subject-open-button"
+                                data-modal="portugues">
+
+                                Explorar disciplina
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                        <div class="subject-card-number">
+                            01
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- MATEMÁTICA -->
+
+                    <article class="subject-premium-card mathematics reveal-right">
+
+
+                        <div class="subject-card-background">
+
+                            <div class="subject-pattern"></div>
+
+                        </div>
+
+
+                        <div class="subject-card-content">
+
+
+                            <div class="subject-card-header">
+
+
+                                <div class="subject-main-icon">
+
+                                    <i class="fa-solid fa-calculator"></i>
+
+                                </div>
+
+
+                                <span>
+                                    02
+                                </span>
+
+
+                            </div>
+
+
+                            <div class="subject-title-area">
+
+                                <span class="subject-label">
+                                    DISCIPLINA
+                                </span>
+
+
+                                <h3>
+                                    Matemática
+                                </h3>
+
+
+                            </div>
+
+
+                            <p>
+
+                                Problemas, cálculos, lógica e
+                                interpretação de informações
+                                em diferentes situações.
+
+                            </p>
+
+
+                            <div class="subject-tags">
+
+                                <span>Lógica</span>
+
+                                <span>Problemas</span>
+
+                                <span>Dados</span>
+
+                            </div>
+
+
+                            <button class="subject-open-button"
+                                data-modal="matematica">
+
+                                Explorar disciplina
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                        <div class="subject-card-number">
+                            02
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             JORNADA DO ESTUDANTE
+        ================================================== -->
+
+        <section class="journey-section section">
+
+
+            <div class="container">
+
+
+                <div class="journey-header reveal">
+
+                    <span class="section-eyebrow">
+
+                        <i class="fa-solid fa-person-walking"></i>
+
+                        SUA JORNADA
+
+                    </span>
+
+
+                    <h2>
+
+                        Um passo de cada vez.
+                    </h2>
+
+
+                    <p>
+
+                        Veja como você pode encarar o momento
+                        da avaliação com mais tranquilidade.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="journey-timeline">
+
+
+                    <div class="timeline-line"></div>
+
+
+
+                    <article class="timeline-item reveal">
+
+
+                        <div class="timeline-marker">
+
+                            <span>
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                ANTES
+                            </span>
+
+                            <h3>
+                                Prepare-se
+                            </h3>
+
+                            <p>
+                                Organize seus estudos e mantenha
+                                uma rotina equilibrada.
+                            </p>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <article class="timeline-item reveal delay-1">
+
+
+                        <div class="timeline-marker">
+
+                            <span>
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                NO DIA
+                            </span>
+
+                            <h3>
+                                Mantenha a calma
+                            </h3>
+
+                            <p>
+                                Leia cada questão com atenção
+                                e não tenha pressa.
+                            </p>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <article class="timeline-item reveal delay-2">
+
+
+                        <div class="timeline-marker">
+
+                            <span>
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                DURANTE
+                            </span>
+
+                            <h3>
+                                Confie no processo
+                            </h3>
+
+                            <p>
+                                Utilize tudo o que você aprendeu
+                                durante sua jornada escolar.
+                            </p>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <article class="timeline-item reveal delay-3">
+
+
+                        <div class="timeline-marker">
+
+                            <span>
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                DEPOIS
+                            </span>
+
+                            <h3>
+                                Continue evoluindo
+                            </h3>
+
+                            <p>
+                                Os resultados ajudam a identificar
+                                novos caminhos para aprender.
+                            </p>
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DICAS
+        ================================================== -->
+
+        <section id="dicas"
+            class="tips-section section">
+
+
+            <div class="container">
+
+
+                <div class="tips-layout">
+
+
+                    <div class="tips-visual reveal-left">
+
+
+                        <div class="tips-image-wrapper">
+
+                            <img src="estudantes.jpg"
+                                alt="Estudantes estudando juntos">
+
+                        </div>
+
+
+                        <div class="tips-big-text">
+
+                            VOCÊ
+                            <br>
+                            CONSEGUE.
+
+                        </div>
+
+
+                        <div class="tips-floating-message">
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <span>
+                                Confie em você.
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="tips-content reveal-right">
+
+
+                        <span class="section-number">
+                            04
+                        </span>
+
+
+                        <span class="section-eyebrow">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            PREPARE-SE
+
+                        </span>
+
+
+                        <h2>
+
+                            Menos pressão.
+                            <span>
+                                Mais confiança.
+                            </span>
+
+                        </h2>
+
+
+                        <p class="tips-intro">
+
+                            Não existe fórmula mágica. Pequenas atitudes
+                            podem ajudar você a se sentir mais preparado.
+
+                        </p>
+
+
+
+                        <div class="tips-list">
+
+
+                            <button class="tip-card"
+                                data-tip="sono">
+
+                                <div class="tip-card-icon">
+
+                                    <i class="fa-solid fa-moon"></i>
+
+                                </div>
+
+
+                                <div class="tip-card-text">
+
+                                    <strong>
+                                        Descanse bem
+                                    </strong>
+
+                                    <span>
+                                        Uma boa noite de sono ajuda
+                                        na concentração.
+                                    </span>
+
+                                </div>
+
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+
+                            <button class="tip-card"
+                                data-tip="calma">
+
+                                <div class="tip-card-icon">
+
+                                    <i class="fa-solid fa-heart"></i>
+
+                                </div>
+
+
+                                <div class="tip-card-text">
+
+                                    <strong>
+                                        Mantenha a calma
+                                    </strong>
+
+                                    <span>
+                                        Respire e faça cada questão
+                                        tranquilamente.
+                                    </span>
+
+                                </div>
+
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+
+                            <button class="tip-card"
+                                data-tip="leitura">
+
+                                <div class="tip-card-icon">
+
+                                    <i class="fa-solid fa-glasses"></i>
+
+                                </div>
+
+
+                                <div class="tip-card-text">
+
+                                    <strong>
+                                        Leia com atenção
+                                    </strong>
+
+                                    <span>
+                                        Entenda a pergunta antes
+                                        de responder.
+                                    </span>
+
+                                </div>
+
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+
+                            <button class="tip-card"
+                                data-tip="revisao">
+
+                                <div class="tip-card-icon">
+
+                                    <i class="fa-solid fa-check-double"></i>
+
+                                </div>
+
+
+                                <div class="tip-card-text">
+
+                                    <strong>
+                                        Revise
+                                    </strong>
+
+                                    <span>
+                                        Se tiver tempo, confira
+                                        suas respostas.
+                                    </span>
+
+                                </div>
+
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHECKLIST
+        ================================================== -->
+
+        <section class="checklist-section section">
+
+
+            <div class="container">
+
+
+                <div class="checklist-box reveal">
+
+
+                    <div class="checklist-header">
+
+
+                        <div>
+
+                            <span class="section-eyebrow">
+
+                                <i class="fa-solid fa-list-check"></i>
+
+                                INTERATIVO
+
+                            </span>
+
+
+                            <h2>
+                                Meu checklist
+                                <span>
+                                    de preparação.
+                                </span>
+                            </h2>
+
+
+                        </div>
+
+
+                        <div class="checklist-progress-circle">
+
+                            <svg viewBox="0 0 36 36">
+
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+
+                                <path class="circle-progress"
+                                    id="checklistCircle"
+                                    stroke-dasharray="0, 100"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+
+                            </svg>
+
+
+                            <strong id="checklistPercentage">
+                                0%
+                            </strong>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="checklist-items">
+
+
+                        <label class="checklist-item">
+
+                            <input type="checkbox"
+                                class="checklist-checkbox">
+
+                            <span class="custom-checkbox">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </span>
+
+                            <span>
+                                Dormi bem e cuidei do meu descanso.
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="checklist-item">
+
+                            <input type="checkbox"
+                                class="checklist-checkbox">
+
+                            <span class="custom-checkbox">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </span>
+
+                            <span>
+                                Revisei alguns conteúdos importantes.
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="checklist-item">
+
+                            <input type="checkbox"
+                                class="checklist-checkbox">
+
+                            <span class="custom-checkbox">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </span>
+
+                            <span>
+                                Estou preparado para ler as questões com calma.
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="checklist-item">
+
+                            <input type="checkbox"
+                                class="checklist-checkbox">
+
+                            <span class="custom-checkbox">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </span>
+
+                            <span>
+                                Vou confiar no que aprendi.
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <div id="checklistMessage"
+                        class="checklist-message">
+
+                        Complete os itens no seu ritmo.
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTADOS
+        ================================================== -->
+
+        <section id="resultados"
+            class="results-section section">
+
+
+            <div class="results-background"></div>
+
+
+            <div class="container">
+
+
+                <div class="results-header reveal">
+
+
+                    <span class="section-number">
+                        05
+                    </span>
+
+
+                    <span class="section-eyebrow">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        DEPOIS DA PROVA
+
+                    </span>
+
+
+                    <h2>
+
+                        Um resultado.
+                        <span>
+                            Vários caminhos.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        As informações obtidas podem ajudar diferentes
+                        pessoas dentro da comunidade escolar.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="results-main-visual reveal">
+
+
+                    <img src="sala-de-aula.jpg"
+                        alt="Sala de aula com estudantes">
+
+
+                    <div class="results-image-overlay"></div>
+
+
+                    <div class="results-center-card">
+
+                        <div class="results-center-icon">
+
+                            <i class="fa-solid fa-file-chart-column"></i>
+
+                        </div>
+
+
+                        <strong>
+                            Resultados
+                        </strong>
+
+                        <span>
+                            Informação para evoluir
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="results-flow">
+
+
+                    <article class="result-flow-card reveal-left">
+
+
+                        <div class="result-flow-icon">
+
+                            <i class="fa-solid fa-chalkboard-user"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Professores
+                        </h3>
+
+
+                        <p>
+
+                            Podem identificar conteúdos que precisam
+                            de mais atenção durante as aulas.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <div class="flow-arrow">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+
+
+                    <article class="result-flow-card reveal">
+
+
+                        <div class="result-flow-icon">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Direção
+                        </h3>
+
+
+                        <p>
+
+                            Pode acompanhar informações e planejar
+                            estratégias para a escola.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <div class="flow-arrow">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+
+
+                    <article class="result-flow-card reveal-right">
+
+
+                        <div class="result-flow-icon">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Estudantes
+                        </h3>
+
+
+                        <p>
+
+                            Podem compreender melhor seus avanços
+                            e descobrir novos conteúdos para revisar.
+
+                        </p>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MITOS E VERDADES
+        ================================================== -->
+
+        <section class="myths-section section">
+
+
+            <div class="container">
+
+
+                <div class="myths-header reveal">
+
+                    <span class="section-eyebrow">
+
+                        <i class="fa-solid fa-shuffle"></i>
+
+                        INTERATIVO
+
+                    </span>
+
+
+                    <h2>
+
+                        Mito ou
+                        <span>
+                            verdade?
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Clique nos cartões e descubra.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="myths-grid">
+
+
+                    <button class="myth-card reveal"
+                        data-answer="verdade">
+
+
+                        <div class="myth-card-inner">
+
+
+                            <div class="myth-card-front">
+
+                                <span>
+                                    PERGUNTA 01
+                                </span>
+
+
+                                <h3>
+
+                                    Os resultados podem ajudar
+                                    professores a identificar
+                                    conteúdos que precisam de
+                                    mais atenção.
+
+                                </h3>
+
+
+                                <div class="flip-hint">
+
+                                    Clique para descobrir
+
+                                    <i class="fa-solid fa-rotate"></i>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="myth-card-back truth">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    VERDADE
+                                </span>
+
+                                <p>
+
+                                    As informações podem contribuir
+                                    para o planejamento pedagógico.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </button>
+
+
+
+                    <button class="myth-card reveal delay-1"
+                        data-answer="mito">
+
+
+                        <div class="myth-card-inner">
+
+
+                            <div class="myth-card-front">
+
+                                <span>
+                                    PERGUNTA 02
+                                </span>
+
+
+                                <h3>
+
+                                    A Prova Paraná existe apenas
+                                    para separar os estudantes
+                                    entre melhores e piores.
+
+                                </h3>
+
+
+                                <div class="flip-hint">
+
+                                    Clique para descobrir
+
+                                    <i class="fa-solid fa-rotate"></i>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="myth-card-back myth">
+
+                                <i class="fa-solid fa-xmark"></i>
+
+                                <span>
+                                    MITO
+                                </span>
+
+                                <p>
+
+                                    A proposta é acompanhar a
+                                    aprendizagem e apoiar melhorias.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </button>
+
+
+
+                    <button class="myth-card reveal delay-2"
+                        data-answer="verdade">
+
+
+                        <div class="myth-card-inner">
+
+
+                            <div class="myth-card-front">
+
+                                <span>
+                                    PERGUNTA 03
+                                </span>
+
+
+                                <h3>
+
+                                    Manter a calma e ler as questões
+                                    com atenção pode ajudar no momento
+                                    da avaliação.
+
+                                </h3>
+
+
+                                <div class="flip-hint">
+
+                                    Clique para descobrir
+
+                                    <i class="fa-solid fa-rotate"></i>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="myth-card-back truth">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    VERDADE
+                                </span>
+
+                                <p>
+
+                                    Uma postura tranquila ajuda você
+                                    a prestar mais atenção nas questões.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUIZ
+        ================================================== -->
+
+        <section id="quiz"
+            class="quiz-section section">
+
+
+            <div class="quiz-background"></div>
+
+
+            <div class="container">
+
+
+                <div class="quiz-intro reveal">
+
+
+                    <span class="section-number light-number">
+                        06
+                    </span>
+
+
+                    <span class="section-eyebrow light">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                        DESAFIO
+
+                    </span>
+
+
+                    <h2>
+
+                        Quanto você
+                        <span>
+                            aprendeu?
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Teste seus conhecimentos em um quiz
+                        interativo sobre a Prova Paraná.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="quiz-game reveal">
+
+
+                    <div class="quiz-topbar">
+
+
+                        <div class="quiz-question-info">
+
+                            <span id="quizQuestionNumber">
+                                QUESTÃO 01
+                            </span>
+
+
+                            <strong id="quizQuestionTotal">
+                                1 / 5
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="quiz-score">
+
+                            <span>
+                                PONTOS
+                            </span>
+
+                            <strong id="quizScore">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="quiz-progress-track">
+
+                        <div id="quizProgress"
+                            class="quiz-progress-fill">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="quizContent"
+                        class="quiz-content">
+
+
+                        <!-- JAVASCRIPT COLOCA AS QUESTÕES AQUI -->
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FRASE FINAL
+        ================================================== -->
+
+        <section id="video"
+            class="statement-section">
+
+
+            <div class="statement-background"></div>
+
+
+            <div class="container">
+
+
+                <div class="statement-content reveal">
+
+
+                    <div class="statement-quote">
+
+                        <i class="fa-solid fa-quote-left"></i>
+
+                    </div>
+
+
+                    <h2>
+
+                        <span>
+                            “
+                        </span>
+
+                        Aprender não é acertar tudo.
+                        É entender onde você está
+                        e descobrir para onde
+                        pode crescer.
+
+                        <span>
+                            ”
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        CENTRAL DO ESTUDANTE
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FAQ
+        ================================================== -->
+
+        <section id="faq"
+            class="faq-section section">
+
+
+            <div class="container">
+
+
+                <div class="faq-layout">
+
+
+                    <div class="faq-intro reveal-left">
+
+
+                        <span class="section-number">
+                            07
+                        </span>
+
+
+                        <span class="section-eyebrow">
+
+                            <i class="fa-solid fa-circle-question"></i>
+
+                            DÚVIDAS
+
+                        </span>
+
+
+                        <h2>
+
+                            Perguntas
+                            <span>
+                                frequentes.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Ainda ficou alguma dúvida?
+                            Confira algumas perguntas importantes
+                            sobre a Prova Paraná.
+
+                        </p>
+
+
+                        <div class="faq-decoration">
+
+                            <i class="fa-solid fa-question"></i>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="faq-list reveal-right">
+
+
+                        <div class="faq-item active">
+
+
+                            <button class="faq-question">
+
+                                <span>
+                                    O que é a Prova Paraná?
+                                </span>
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+                            <div class="faq-answer">
+
+                                <p>
+
+                                    É uma avaliação diagnóstica utilizada
+                                    para acompanhar informações sobre a
+                                    aprendizagem dos estudantes.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+
+                            <button class="faq-question">
+
+                                <span>
+                                    Quais disciplinas são destacadas?
+                                </span>
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+                            <div class="faq-answer">
+
+                                <p>
+
+                                    Entre as áreas apresentadas neste site
+                                    estão Língua Portuguesa e Matemática.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+
+                            <button class="faq-question">
+
+                                <span>
+                                    Preciso ficar nervoso com a prova?
+                                </span>
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+                            <div class="faq-answer">
+
+                                <p>
+
+                                    Não. O ideal é se preparar com calma,
+                                    descansar e fazer a avaliação com atenção.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+
+                            <button class="faq-question">
+
+                                <span>
+                                    Como os resultados podem ser usados?
+                                </span>
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            </button>
+
+
+                            <div class="faq-answer">
+
+                                <p>
+
+                                    Eles podem ajudar professores,
+                                    gestores e estudantes a identificar
+                                    pontos importantes da aprendizagem.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA FINAL
+        ================================================== -->
+
+        <section class="final-cta-section">
+
+
+            <div class="final-cta-background"></div>
+
+
+            <div class="container">
+
+
+                <div class="final-cta-content reveal">
+
+
+                    <div class="final-cta-icon">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+
+                    <span>
+                        SUA JORNADA CONTINUA
+                    </span>
+
+
+                    <h2>
+
+                        O futuro começa
+                        <strong>
+                            aprendendo hoje.
+                        </strong>
+
+                    </h2>
+
+
+                    <p>
+
+                        Continue explorando, aprendendo e
+                        descobrindo novas possibilidades.
+
+                    </p>
+
+
+                    <div class="final-cta-buttons">
+
+
+                        <a href="#inicio"
+                            class="final-main-button">
+
+                            <i class="fa-solid fa-arrow-up"></i>
+
+                            Voltar ao início
+
+                        </a>
+
+
+                        <a href="#quiz"
+                            class="final-secondary-button">
+
+                            Fazer o quiz novamente
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL DISCIPLINAS
+    ====================================================== -->
+
+    <div id="subjectModal"
+        class="modal">
+
+
+        <div class="modal-overlay"
+            id="modalOverlay"></div>
+
+
+        <div class="modal-container">
+
+
+            <button id="modalClose"
+                class="modal-close"
+                aria-label="Fechar modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div id="modalContent"
+                class="modal-content">
+
+
+                <!-- JAVASCRIPT -->
+
+
+            </div>
 
 
         </div>
@@ -1486,305 +3184,34 @@
 
 
 
-    <!-- =====================================
-         DICAS
-    ====================================== -->
+    <!-- =====================================================
+         MODAL DICAS
+    ====================================================== -->
 
-    <section class="section tips-section"
-             id="dicas">
+    <div id="tipModal"
+        class="modal">
 
 
-        <div class="section-container">
+        <div class="modal-overlay"
+            id="tipModalOverlay"></div>
 
 
-            <div class="tips-intro">
+        <div class="modal-container tip-modal-container">
 
 
-                <span class="section-eyebrow">
+            <button id="tipModalClose"
+                class="modal-close">
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-xmark"></i>
 
-                    PREPARE-SE
+            </button>
 
-                </span>
 
+            <div id="tipModalContent"
+                class="modal-content">
 
-                <h2>
 
-                    Dicas para fazer a prova com
-
-                    <span>
-
-                        tranquilidade.
-
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    Não precisa entrar em pânico.
-                    Uma boa preparação começa com organização,
-                    descanso e confiança.
-
-                </p>
-
-
-                <a href="#quiz"
-                   class="btn btn-primary">
-
-                    Testar conhecimentos
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-
-            </div>
-
-
-
-            <div class="tips-grid">
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-calendar-check"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 01
-
-                        </span>
-
-
-                        <h3>
-
-                            Organize seus estudos
-
-                        </h3>
-
-
-                        <p>
-
-                            Reserve um tempo para revisar conteúdos
-                            sem deixar tudo para o último momento.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-bed"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 02
-
-                        </span>
-
-
-                        <h3>
-
-                            Durma bem
-
-                        </h3>
-
-
-                        <p>
-
-                            Uma boa noite de sono ajuda a manter
-                            a concentração durante a avaliação.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-utensils"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 03
-
-                        </span>
-
-
-                        <h3>
-
-                            Alimente-se
-
-                        </h3>
-
-
-                        <p>
-
-                            Comer bem antes da prova ajuda
-                            a manter energia e atenção.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-clock"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 04
-
-                        </span>
-
-
-                        <h3>
-
-                            Leia com calma
-
-                        </h3>
-
-
-                        <p>
-
-                            Leia cada questão com atenção
-                            antes de escolher sua resposta.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-check-double"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 05
-
-                        </span>
-
-
-                        <h3>
-
-                            Revise suas respostas
-
-                        </h3>
-
-
-                        <p>
-
-                            Se houver tempo, volte às questões
-                            e confira suas escolhas.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <article class="tip-card">
-
-
-                    <div class="tip-icon">
-
-                        <i class="fa-solid fa-heart"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-
-                            DICA 06
-
-                        </span>
-
-
-                        <h3>
-
-                            Confie em você
-
-                        </h3>
-
-
-                        <p>
-
-                            Respire fundo e faça o seu melhor.
-                            Você se preparou para esse momento.
-
-                        </p>
-
-                    </div>
-
-
-                </article>
+                <!-- JAVASCRIPT -->
 
 
             </div>
@@ -1793,605 +3220,248 @@
         </div>
 
 
-    </section>
+    </div>
 
 
 
-    <!-- =====================================
-         RESULTADOS
-    ====================================== -->
+    <!-- =====================================================
+         BOTÃO VOLTAR AO TOPO
+    ====================================================== -->
 
-    <section class="section results-section"
-             id="resultados">
-
-
-        <div class="section-container">
+    <button id="backToTop"
+        class="back-to-top"
+        aria-label="Voltar ao topo">
 
 
-            <div class="section-header centered light-header">
+        <svg viewBox="0 0 100 100">
+
+            <circle class="back-circle"
+                cx="50"
+                cy="50"
+                r="45">
+
+            </circle>
 
 
-                <span class="section-eyebrow light">
+            <circle id="backProgress"
+                class="back-progress"
+                cx="50"
+                cy="50"
+                r="45">
 
-                    <i class="fa-solid fa-chart-pie"></i>
-
-                    RESULTADOS
-
-                </span>
-
-
-                <h2>
-
-                    O que acontece
-
-                    <span>
-
-                        depois da prova?
-
-                    </span>
-
-                </h2>
+            </circle>
 
 
-                <p>
-
-                    Os resultados não servem apenas para gerar números.
-                    Eles ajudam a construir novas estratégias para a educação.
-
-                </p>
+        </svg>
 
 
-            </div>
+        <i class="fa-solid fa-arrow-up"></i>
+
+
+    </button>
 
 
 
-            <div class="timeline">
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
 
 
-
-                <div class="timeline-line"></div>
-
+        <div class="footer-top">
 
 
-                <article class="timeline-item">
+            <div class="container">
 
 
-                    <div class="timeline-icon">
-
-                        <i class="fa-solid fa-file-circle-check"></i>
-
-                    </div>
+                <div class="footer-grid">
 
 
-                    <div class="timeline-content">
+                    <!-- MARCA -->
 
-                        <span>
-
-                            ETAPA 01
-
-                        </span>
+                    <div class="footer-brand-column">
 
 
-                        <h3>
+                        <a href="#inicio"
+                            class="footer-brand">
 
-                            Resultados são analisados
 
-                        </h3>
+                            <div class="footer-brand-icon">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    PROVA PARANÁ
+                                </strong>
+
+                                <span>
+                                    CENTRAL DO ESTUDANTE
+                                </span>
+
+                            </div>
+
+
+                        </a>
 
 
                         <p>
 
-                            Os dados mostram como os estudantes estão
-                            se desenvolvendo em diferentes conteúdos.
+                            Um projeto digital criado para apresentar
+                            informações sobre a Prova Paraná de forma
+                            moderna, visual e interativa.
 
                         </p>
 
-                    </div>
+
+                        <div class="footer-socials">
 
 
-                </article>
+                            <a href="#inicio"
+                                aria-label="Início">
+
+                                <i class="fa-solid fa-house"></i>
+
+                            </a>
 
 
+                            <a href="#quiz"
+                                aria-label="Quiz">
 
-                <article class="timeline-item">
+                                <i class="fa-solid fa-brain"></i>
 
-
-                    <div class="timeline-icon">
-
-                        <i class="fa-solid fa-chalkboard-user"></i>
-
-                    </div>
+                            </a>
 
 
-                    <div class="timeline-content">
+                            <a href="#dicas"
+                                aria-label="Dicas">
 
-                        <span>
+                                <i class="fa-solid fa-lightbulb"></i>
 
-                            ETAPA 02
-
-                        </span>
-
-
-                        <h3>
-
-                            Professores planejam ações
-
-                        </h3>
+                            </a>
 
 
-                        <p>
+                        </div>
 
-                            Os educadores utilizam as informações para
-                            identificar conteúdos que precisam ser retomados.
-
-                        </p>
 
                     </div>
 
 
-                </article>
+
+                    <!-- NAVEGAÇÃO -->
+
+                    <div class="footer-column">
 
 
+                        <h4>
+                            Navegação
+                        </h4>
 
-                <article class="timeline-item">
 
+                        <a href="#inicio">
+                            Início
+                        </a>
 
-                    <div class="timeline-icon">
+                        <a href="#o-que-e">
+                            O que é?
+                        </a>
 
-                        <i class="fa-solid fa-building-columns"></i>
+                        <a href="#objetivos">
+                            Objetivos
+                        </a>
+
+                        <a href="#disciplinas">
+                            Disciplinas
+                        </a>
+
 
                     </div>
 
 
-                    <div class="timeline-content">
 
-                        <span>
+                    <!-- ESTUDANTE -->
 
-                            ETAPA 03
-
-                        </span>
+                    <div class="footer-column">
 
 
-                        <h3>
-
-                            Escolas corrigem rotas
-
-                        </h3>
+                        <h4>
+                            Estudante
+                        </h4>
 
 
-                        <p>
+                        <a href="#dicas">
+                            Dicas
+                        </a>
 
-                            Diretores e equipes pedagógicas podem criar
-                            estratégias para melhorar o aprendizado.
+                        <a href="#resultados">
+                            Resultados
+                        </a>
 
-                        </p>
+                        <a href="#quiz">
+                            Quiz
+                        </a>
+
+                        <a href="#faq">
+                            Perguntas
+                        </a>
+
 
                     </div>
 
 
-                </article>
 
+                    <!-- CONTATO -->
 
+                    <div class="footer-column footer-contact">
 
-                <article class="timeline-item">
 
+                        <h4>
+                            Projeto
+                        </h4>
 
-                    <div class="timeline-icon">
 
-                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <div class="footer-contact-item">
 
-                    </div>
+                            <i class="fa-solid fa-school"></i>
 
+                            <span>
+                                Projeto escolar
+                            </span>
 
-                    <div class="timeline-content">
+                        </div>
 
-                        <span>
 
-                            ETAPA 04
+                        <div class="footer-contact-item">
 
-                        </span>
+                            <i class="fa-solid fa-code"></i>
 
+                            <span>
+                                Desenvolvido com HTML, CSS e JavaScript
+                            </span>
 
-                        <h3>
+                        </div>
 
-                            Estudantes evoluem
 
-                        </h3>
+                        <div class="footer-contact-item">
 
+                            <i class="fa-solid fa-heart"></i>
 
-                        <p>
+                            <span>
+                                Criado para aprender
+                            </span>
 
-                            Com novas estratégias e apoio, os estudantes
-                            têm mais oportunidades para desenvolver seus conhecimentos.
+                        </div>
 
-                        </p>
-
-                    </div>
-
-
-                </article>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         QUIZ
-    ====================================== -->
-
-    <section class="section quiz-section"
-             id="quiz">
-
-
-        <div class="section-container quiz-container">
-
-
-            <div class="quiz-intro">
-
-
-                <span class="section-eyebrow">
-
-                    <i class="fa-solid fa-brain"></i>
-
-                    DESAFIO
-
-                </span>
-
-
-                <h2>
-
-                    Teste o que você
-
-                    <span>
-
-                        aprendeu.
-
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    Responda algumas perguntas rápidas sobre
-                    a Prova Paraná.
-
-                </p>
-
-
-                <div class="quiz-score-box">
-
-                    <span>
-
-                        SUA PONTUAÇÃO
-
-                    </span>
-
-                    <strong id="quizScore">
-
-                        0
-
-                    </strong>
-
-                    <small>
-
-                        pontos
-
-                    </small>
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="quiz-box"
-                 id="quizBox">
-
-
-                <div class="quiz-progress-top">
-
-                    <span id="questionNumber">
-
-                        Pergunta 1 de 3
-
-                    </span>
-
-
-                    <div class="quiz-progress-line">
-
-                        <div id="quizProgress"></div>
 
                     </div>
 
 
                 </div>
-
-
-
-                <div id="quizContent">
-
-
-                    <!-- JAVASCRIPT VAI INSERIR AS PERGUNTAS -->
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         FRASE FINAL
-    ====================================== -->
-
-    <section class="final-section">
-
-
-        <div class="final-container">
-
-
-            <div class="final-icon">
-
-                <i class="fa-solid fa-graduation-cap"></i>
-
-            </div>
-
-
-            <h2>
-
-                Cada prova é uma oportunidade.
-
-                <span>
-
-                    Cada aprendizado é um passo para o futuro.
-
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                A educação não é apenas sobre acertar respostas.
-                É sobre continuar aprendendo.
-
-            </p>
-
-
-            <a href="#inicio"
-               class="btn btn-primary">
-
-                Voltar ao início
-
-                <i class="fa-solid fa-arrow-up"></i>
-
-            </a>
-
-
-        </div>
-
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================== -->
-
-<footer class="footer">
-
-
-    <div class="footer-container">
-
-
-        <div class="footer-main">
-
-
-            <!-- MARCA -->
-
-            <div class="footer-brand">
-
-
-                <div class="footer-logo">
-
-                    <i class="fa-solid fa-graduation-cap"></i>
-
-                    <span>
-
-                        PROVA PARANÁ
-
-                    </span>
-
-                </div>
-
-
-                <p>
-
-                    Uma plataforma informativa criada para apresentar,
-                    de forma simples e moderna, informações sobre a
-                    Prova Paraná e sua importância para a educação.
-
-                </p>
-
-
-                <div class="social-links">
-
-
-                    <a href="#"
-                       aria-label="Instagram">
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                    </a>
-
-
-                    <a href="#"
-                       aria-label="Facebook">
-
-                        <i class="fa-brands fa-facebook-f"></i>
-
-                    </a>
-
-
-                    <a href="#"
-                       aria-label="YouTube">
-
-                        <i class="fa-brands fa-youtube"></i>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- LINKS -->
-
-            <div class="footer-column">
-
-
-                <h4>
-
-                    Navegação
-
-                </h4>
-
-
-                <a href="#inicio">
-
-                    Início
-
-                </a>
-
-
-                <a href="#o-que-e">
-
-                    Sobre a prova
-
-                </a>
-
-
-                <a href="#disciplinas">
-
-                    Disciplinas
-
-                </a>
-
-
-                <a href="#dicas">
-
-                    Dicas
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- CONTEÚDO -->
-
-            <div class="footer-column">
-
-
-                <h4>
-
-                    Conteúdo
-
-                </h4>
-
-
-                <a href="#objetivos">
-
-                    Objetivos
-
-                </a>
-
-
-                <a href="#resultados">
-
-                    Resultados
-
-                </a>
-
-
-                <a href="#quiz">
-
-                    Quiz
-
-                </a>
-
-
-                <a href="#dicas">
-
-                    Preparação
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- CONTATO -->
-
-            <div class="footer-column contact-column">
-
-
-                <h4>
-
-                    Contato
-
-                </h4>
-
-
-                <p>
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    Paraná, Brasil
-
-                </p>
-
-
-                <p>
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    contato@provaparana.com
-
-                </p>
-
-
-                <p>
-
-                    <i class="fa-solid fa-graduation-cap"></i>
-
-                    Projeto Escolar
-
-                </p>
 
 
             </div>
@@ -2404,59 +3474,49 @@
         <div class="footer-bottom">
 
 
-            <p>
-
-                © <span id="currentYear"></span>
-                Prova Paraná — Central do Estudante.
-
-                Todos os direitos reservados.
-
-            </p>
+            <div class="container">
 
 
-            <p>
+                <div class="footer-bottom-content">
 
-                Desenvolvido por
 
-                <strong>
+                    <p>
 
-                    Chrystyan Massaro
+                        © <span id="currentYear"></span>
+                        Prova Paraná — Central do Estudante.
 
-                </strong>
+                    </p>
 
-            </p>
+
+                    <p>
+
+                        Desenvolvido por
+                        <strong>
+                            Chrystyan
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
 
 
         </div>
 
 
-    </div>
-
-
-</footer>
+    </footer>
 
 
 
-<!-- =========================================
-     BOTÃO VOLTAR AO TOPO
-========================================== -->
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-<button class="back-to-top"
-        id="backToTop"
-        aria-label="Voltar ao topo">
+    <script src="script.js"></script>
 
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================== -->
-
-<script src="script.js"></script>
-```
 
 </body>
 
