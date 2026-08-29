@@ -3,62 +3,66 @@
 
 <head>
 
-    <!-- =====================================================
-         CONFIGURAÇÕES PRINCIPAIS
-    ====================================================== -->
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="theme-color"
-        content="#071a3d">
+    <meta
+        name="description"
+        content="Prova Paraná — Central do Estudante"
+    >
 
-    <meta name="description"
-        content="Prova Paraná - Central do Estudante. Um portal interativo sobre a avaliação diagnóstica do Paraná.">
+    <meta
+        name="author"
+        content="Chrystyan"
+    >
 
-    <meta name="keywords"
-        content="Prova Paraná, educação, estudantes, matemática, português, escola">
-
-    <meta name="author"
-        content="Chrystyan">
+    <meta
+        name="theme-color"
+        content="#07152e"
+    >
 
     <title>
         Prova Paraná | Central do Estudante
     </title>
 
 
-    <!-- =====================================================
-         FONTES
-    ====================================================== -->
+    <!-- FONTES -->
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.gstatic.com"
-        crossorigin>
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
 
-    <!-- =====================================================
-         ÍCONES
-    ====================================================== -->
+    <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
 
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
+    <!-- CSS -->
 
-    <link rel="stylesheet"
-        href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -67,104 +71,24 @@
 
 
     <!-- =====================================================
-         CURSOR DECORATIVO
+         BARRA DE PROGRESSO
     ====================================================== -->
 
-    <div class="cursor-dot"
-        id="cursorDot"></div>
-
-    <div class="cursor-outline"
-        id="cursorOutline"></div>
+    <div
+        class="scroll-progress"
+        id="scrollProgress"
+    ></div>
 
 
 
     <!-- =====================================================
-         LOADING SCREEN
+         OVERLAY MOBILE
     ====================================================== -->
 
-    <div id="loader">
-
-        <div class="loader-background"></div>
-
-
-        <div class="loader-content">
-
-
-            <div class="loader-logo">
-
-                <div class="loader-circle"></div>
-
-                <i class="fa-solid fa-graduation-cap"></i>
-
-            </div>
-
-
-            <div class="loader-text">
-
-                <span class="loader-small-text">
-                    CENTRAL DO ESTUDANTE
-                </span>
-
-                <h1>
-                    PROVA
-                    <span>PARANÁ</span>
-                </h1>
-
-            </div>
-
-
-            <div class="loader-progress">
-
-                <div class="loader-progress-bar"
-                    id="loaderProgressBar">
-
-                </div>
-
-            </div>
-
-
-            <p id="loaderStatus">
-                Preparando sua experiência...
-            </p>
-
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         BARRA DE PROGRESSO DO SITE
-    ====================================================== -->
-
-    <div class="scroll-progress-container">
-
-        <div class="scroll-progress"
-            id="scrollProgress">
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         PARTÍCULAS
-    ====================================================== -->
-
-    <div id="particles"></div>
-
-
-
-    <!-- =====================================================
-         OVERLAY MENU MOBILE
-    ====================================================== -->
-
-    <div id="mobileOverlay"
-        class="mobile-overlay">
-
-    </div>
+    <div
+        class="mobile-overlay"
+        id="mobileOverlay"
+    ></div>
 
 
 
@@ -172,24 +96,22 @@
          MENU MOBILE
     ====================================================== -->
 
-    <aside id="mobileMenu"
-        class="mobile-menu">
+    <aside
+        class="mobile-menu"
+        id="mobileMenu"
+    >
 
+        <div class="mobile-menu-header">
 
-        <div class="mobile-menu-top">
+            <div class="mobile-brand">
 
-
-            <a href="#inicio"
-                class="mobile-brand">
-
-                <div class="mobile-brand-icon">
+                <div class="brand-icon">
 
                     <i class="fa-solid fa-graduation-cap"></i>
 
                 </div>
 
-
-                <div class="mobile-brand-text">
+                <div>
 
                     <strong>
                         PROVA PARANÁ
@@ -201,197 +123,88 @@
 
                 </div>
 
-            </a>
+            </div>
 
 
-            <button id="closeMenu"
-                class="close-menu"
-                aria-label="Fechar menu">
+            <button
+                class="mobile-close"
+                id="closeMenu"
+                aria-label="Fechar menu"
+            >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
 
-
         </div>
 
 
-
-        <div class="mobile-menu-line"></div>
-
+        <div class="mobile-menu-divider"></div>
 
 
         <nav class="mobile-nav">
 
-
-            <a href="#inicio"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-house"></i>
-
-                </span>
-
-                <span>
-                    Início
-                </span>
-
+            <a href="#inicio">
+                <i class="fa-solid fa-house"></i>
+                Início
             </a>
 
-
-
-            <a href="#o-que-e"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-circle-info"></i>
-
-                </span>
-
-                <span>
-                    O que é?
-                </span>
-
+            <a href="#o-que-e">
+                <i class="fa-solid fa-circle-info"></i>
+                O que é?
             </a>
 
-
-
-            <a href="#objetivos"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-bullseye"></i>
-
-                </span>
-
-                <span>
-                    Objetivos
-                </span>
-
+            <a href="#objetivos">
+                <i class="fa-solid fa-bullseye"></i>
+                Objetivos
             </a>
 
-
-
-            <a href="#disciplinas"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-book-open"></i>
-
-                </span>
-
-                <span>
-                    Disciplinas
-                </span>
-
+            <a href="#disciplinas">
+                <i class="fa-solid fa-book-open"></i>
+                Disciplinas
             </a>
 
-
-
-            <a href="#dicas"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                </span>
-
-                <span>
-                    Dicas
-                </span>
-
+            <a href="#jornada">
+                <i class="fa-solid fa-route"></i>
+                Jornada
             </a>
 
-
-
-            <a href="#resultados"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </span>
-
-                <span>
-                    Resultados
-                </span>
-
+            <a href="#dicas">
+                <i class="fa-solid fa-lightbulb"></i>
+                Dicas
             </a>
 
-
-
-            <a href="#quiz"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-brain"></i>
-
-                </span>
-
-                <span>
-                    Quiz
-                </span>
-
+            <a href="#resultados">
+                <i class="fa-solid fa-chart-line"></i>
+                Resultados
             </a>
 
-
-
-            <a href="#faq"
-                class="mobile-link">
-
-                <span class="mobile-link-icon">
-
-                    <i class="fa-solid fa-circle-question"></i>
-
-                </span>
-
-                <span>
-                    Perguntas
-                </span>
-
+            <a href="#quiz">
+                <i class="fa-solid fa-brain"></i>
+                Quiz
             </a>
 
+            <a href="#faq">
+                <i class="fa-solid fa-circle-question"></i>
+                FAQ
+            </a>
 
         </nav>
 
 
-
         <div class="mobile-menu-bottom">
 
+            <div class="mobile-note">
 
-            <div class="mobile-school-card">
+                <i class="fa-solid fa-sparkles"></i>
 
-                <div class="mobile-school-icon">
-
-                    <i class="fa-solid fa-school"></i>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Educação em foco
-                    </strong>
-
-                    <p>
-                        Informação para aprender melhor.
-                    </p>
-
-                </div>
+                <span>
+                    Informação para aprender melhor.
+                </span>
 
             </div>
 
-
         </div>
-
 
     </aside>
 
@@ -401,29 +214,28 @@
          HEADER
     ====================================================== -->
 
-    <header id="header"
-        class="site-header">
-
+    <header
+        class="site-header"
+        id="header"
+    >
 
         <div class="header-container">
 
 
             <!-- LOGO -->
 
-            <a href="#inicio"
-                class="brand">
+            <a
+                href="#inicio"
+                class="brand"
+            >
 
-
-                <div class="brand-symbol">
-
-                    <div class="brand-symbol-glow"></div>
+                <div class="brand-icon">
 
                     <i class="fa-solid fa-graduation-cap"></i>
 
                 </div>
 
-
-                <div class="brand-content">
+                <div class="brand-text">
 
                     <strong>
                         PROVA PARANÁ
@@ -435,35 +247,27 @@
 
                 </div>
 
-
             </a>
 
 
 
-            <!-- MENU DESKTOP -->
+            <!-- NAVEGAÇÃO -->
 
             <nav class="desktop-nav">
 
-
-                <a href="#inicio"
-                    class="nav-link active">
-
+                <a
+                    href="#inicio"
+                    class="nav-link active"
+                >
                     Início
-
                 </a>
 
 
-
-                <!-- DROPDOWN -->
-
                 <div class="dropdown">
-
 
                     <button class="dropdown-trigger">
 
-                        <span>
-                            Sobre
-                        </span>
+                        Sobre
 
                         <i class="fa-solid fa-chevron-down"></i>
 
@@ -472,18 +276,13 @@
 
                     <div class="dropdown-menu">
 
-
                         <a href="#o-que-e">
 
                             <span class="dropdown-icon">
-
                                 <i class="fa-solid fa-circle-info"></i>
-
                             </span>
 
-
                             <span>
-
                                 <strong>
                                     O que é?
                                 </strong>
@@ -491,24 +290,18 @@
                                 <small>
                                     Conheça a avaliação
                                 </small>
-
                             </span>
 
                         </a>
 
 
-
                         <a href="#objetivos">
 
                             <span class="dropdown-icon">
-
                                 <i class="fa-solid fa-bullseye"></i>
-
                             </span>
 
-
                             <span>
-
                                 <strong>
                                     Objetivos
                                 </strong>
@@ -516,24 +309,18 @@
                                 <small>
                                     Entenda sua importância
                                 </small>
-
                             </span>
 
                         </a>
 
 
-
                         <a href="#resultados">
 
                             <span class="dropdown-icon">
-
                                 <i class="fa-solid fa-chart-line"></i>
-
                             </span>
 
-
                             <span>
-
                                 <strong>
                                     Resultados
                                 </strong>
@@ -541,150 +328,133 @@
                                 <small>
                                     Como são utilizados
                                 </small>
-
                             </span>
 
                         </a>
 
-
                     </div>
-
 
                 </div>
 
 
-
-                <a href="#disciplinas"
-                    class="nav-link">
-
+                <a
+                    href="#disciplinas"
+                    class="nav-link"
+                >
                     Disciplinas
-
                 </a>
 
 
-
-                <a href="#dicas"
-                    class="nav-link">
-
+                <a
+                    href="#dicas"
+                    class="nav-link"
+                >
                     Dicas
-
                 </a>
 
 
-
-                <a href="#quiz"
-                    class="nav-link">
-
+                <a
+                    href="#quiz"
+                    class="nav-link"
+                >
                     Quiz
-
                 </a>
-
 
             </nav>
 
 
 
-            <!-- AÇÕES HEADER -->
+            <!-- AÇÕES -->
 
             <div class="header-actions">
 
+                <a
+                    href="#quiz"
+                    class="header-cta"
+                >
 
-                <a href="#quiz"
-                    class="header-cta">
-
-                    <span>
-                        Teste-se
-                    </span>
+                    Testar conhecimentos
 
                     <i class="fa-solid fa-arrow-right"></i>
 
                 </a>
 
 
-
-                <button id="hamburger"
+                <button
                     class="hamburger"
-                    aria-label="Abrir menu">
-
-
-                    <span></span>
-
-                    <span></span>
+                    id="hamburger"
+                    aria-label="Abrir menu"
+                >
 
                     <span></span>
-
+                    <span></span>
+                    <span></span>
 
                 </button>
-
 
             </div>
 
 
         </div>
 
-
     </header>
 
 
 
     <!-- =====================================================
-         MAIN
+         CONTEÚDO
     ====================================================== -->
 
     <main>
-
 
 
         <!-- =================================================
              HERO
         ================================================== -->
 
-        <section id="inicio"
-            class="hero-section">
-
-
-            <!-- FUNDO -->
+        <section
+            class="hero"
+            id="inicio"
+        >
 
             <div class="hero-image">
 
-                <img src="hero.jpg"
-                    alt="Estudantes em ambiente escolar">
+                <img
+                    src="hero.jpg"
+                    alt="Estudantes em ambiente escolar"
+                >
 
             </div>
 
 
-            <div class="hero-gradient"></div>
+            <div class="hero-overlay"></div>
+
 
             <div class="hero-grid"></div>
 
 
-            <!-- FORMAS -->
+            <div class="hero-orb hero-orb-one"></div>
 
-            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb hero-orb-two"></div>
 
-            <div class="hero-orb orb-two"></div>
-
-            <div class="hero-orb orb-three"></div>
+            <div class="hero-orb hero-orb-three"></div>
 
 
+            <div class="container hero-container">
 
-            <div class="hero-container">
-
-
-                <!-- CONTEÚDO -->
 
                 <div class="hero-content">
 
 
-                    <div class="hero-eyebrow">
+                    <div class="hero-badge">
 
-                        <span class="live-dot"></span>
+                        <span class="hero-live-dot"></span>
 
                         <span>
-                            PORTAL EDUCACIONAL
+                            CENTRAL DO ESTUDANTE
                         </span>
 
-                        <span class="hero-divider"></span>
+                        <span class="badge-separator"></span>
 
                         <span>
                             PROVA PARANÁ
@@ -693,48 +463,37 @@
                     </div>
 
 
-
                     <h1>
 
                         Conhecimento
-                        <span class="hero-highlight">
-
+                        <span>
                             transforma
-
-                            <svg viewBox="0 0 300 30"
-                                preserveAspectRatio="none">
-
-                                <path d="M5 22 C60 2, 130 32, 295 10"></path>
-
-                            </svg>
-
                         </span>
-
                         o futuro.
 
                     </h1>
 
 
-
                     <p class="hero-description">
 
-                        Uma experiência interativa criada para você
-                        entender a <strong>Prova Paraná</strong>,
-                        descobrir seus objetivos e se preparar
-                        com mais tranquilidade.
+                        Descubra de forma simples, visual e interativa
+                        o que é a Prova Paraná, por que ela é importante,
+                        quais áreas são avaliadas e como os resultados
+                        ajudam a melhorar a aprendizagem.
 
                     </p>
-
 
 
                     <div class="hero-buttons">
 
 
-                        <a href="#o-que-e"
-                            class="hero-primary-button magnetic-button">
+                        <a
+                            href="#o-que-e"
+                            class="primary-button"
+                        >
 
                             <span>
-                                Explorar agora
+                                Explorar o projeto
                             </span>
 
                             <i class="fa-solid fa-arrow-right"></i>
@@ -742,69 +501,83 @@
                         </a>
 
 
+                        <a
+                            href="#quiz"
+                            class="hero-play-button"
+                        >
 
-                        <a href="#video"
-                            class="hero-play-button">
-
-                            <span class="play-circle">
+                            <span class="hero-play-icon">
 
                                 <i class="fa-solid fa-play"></i>
 
                             </span>
 
-
                             <span>
 
                                 <strong>
-                                    Descubra mais
+                                    Fazer o quiz
                                 </strong>
 
                                 <small>
-                                    Role para explorar
+                                    Teste seus conhecimentos
                                 </small>
 
                             </span>
 
                         </a>
 
-
                     </div>
 
-
-
-                    <!-- ESTATÍSTICAS -->
 
                     <div class="hero-stats">
 
 
                         <div class="hero-stat">
 
-                            <strong class="counter"
-                                data-target="2">
-
-                                0
-
+                            <strong>
+                                <span
+                                    class="counter"
+                                    data-count="2"
+                                >
+                                    0
+                                </span>
                             </strong>
 
                             <span>
-                                Disciplinas principais
+                                Disciplinas destacadas
                             </span>
 
                         </div>
 
 
-                        <div class="hero-stat-line"></div>
+                        <div class="stat-separator"></div>
 
 
                         <div class="hero-stat">
 
                             <strong>
-                                <span class="counter"
-                                    data-target="100">
-
+                                <span
+                                    class="counter"
+                                    data-count="4"
+                                >
                                     0
+                                </span>
+                            </strong>
 
-                                </span>%
+                            <span>
+                                Etapas da jornada
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-separator"></div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                100%
                             </strong>
 
                             <span>
@@ -814,27 +587,6 @@
                         </div>
 
 
-                        <div class="hero-stat-line"></div>
-
-
-                        <div class="hero-stat">
-
-                            <strong>
-                                <span class="counter"
-                                    data-target="1">
-
-                                    0
-
-                                </span>
-                            </strong>
-
-                            <span>
-                                Objetivo: evoluir
-                            </span>
-
-                        </div>
-
-
                     </div>
 
 
@@ -842,109 +594,114 @@
 
 
 
-                <!-- CARD FLUTUANTE -->
+                <!-- CARD HERO -->
 
-                <div class="hero-floating-panel">
-
-
-                    <div class="floating-panel-glow"></div>
+                <div class="hero-card-wrapper">
 
 
-                    <div class="floating-panel-top">
+                    <div class="hero-card">
 
-                        <span class="floating-label">
-
-                            <i class="fa-solid fa-sparkles"></i>
-
-                            APRENDIZAGEM
-
-                        </span>
+                        <div class="hero-card-glow"></div>
 
 
-                        <span class="floating-status">
+                        <div class="hero-card-top">
 
-                            <span></span>
+                            <span>
+                                <i class="fa-solid fa-sparkles"></i>
+                                EXPERIÊNCIA
+                            </span>
 
-                            ONLINE
+                            <small>
+                                ONLINE
+                            </small>
 
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="floating-panel-main">
+                        </div>
 
 
-                        <div class="floating-icon">
+                        <div class="hero-card-icon">
 
                             <i class="fa-solid fa-brain"></i>
 
                         </div>
 
 
-                        <div>
+                        <h3>
+                            Aprender também
+                            é descobrir.
+                        </h3>
 
-                            <strong>
-                                Cada resultado
-                                é uma oportunidade.
-                            </strong>
 
-                            <p>
-                                Descubra. Aprenda. Evolua.
-                            </p>
+                        <p>
+                            Use este espaço para conhecer
+                            a avaliação e entender como cada
+                            resultado pode contribuir para a escola.
+                        </p>
+
+
+                        <div class="hero-card-progress">
+
+                            <div class="hero-progress-label">
+
+                                <span>
+                                    Jornada de aprendizado
+                                </span>
+
+                                <strong>
+                                    01
+                                </strong>
+
+                            </div>
+
+
+                            <div class="hero-progress">
+
+                                <span></span>
+
+                            </div>
 
                         </div>
 
 
-                    </div>
-
-
-
-                    <div class="floating-progress">
-
-                        <div class="floating-progress-top">
+                        <div class="hero-card-footer">
 
                             <span>
-                                Sua jornada
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Conteúdo educativo
+
                             </span>
 
-                            <strong>
-                                Começando
-                            </strong>
+                            <span>
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                Informativo
+
+                            </span>
 
                         </div>
-
-
-                        <div class="floating-progress-bar">
-
-                            <span></span>
-
-                        </div>
-
 
                     </div>
 
 
                 </div>
 
-
             </div>
 
 
-
-            <!-- SCROLL -->
-
-            <a href="#o-que-e"
-                class="hero-scroll">
+            <a
+                href="#o-que-e"
+                class="hero-scroll"
+            >
 
                 <span>
                     ROLE PARA EXPLORAR
                 </span>
 
-                <div class="scroll-mouse">
+                <div class="mouse">
 
-                    <span></span>
+                    <div></div>
 
                 </div>
 
@@ -959,51 +716,57 @@
              MARQUEE
         ================================================== -->
 
-        <section class="marquee-section">
-
+        <section class="marquee">
 
             <div class="marquee-track">
 
+                <span>
+                    APRENDER
+                </span>
 
-                <div class="marquee-content">
+                <i class="fa-solid fa-star"></i>
 
-                    <span>APRENDER</span>
+                <span>
+                    DESCOBRIR
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>DESCOBRIR</span>
+                <span>
+                    EVOLUIR
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>EVOLUIR</span>
+                <span>
+                    CONHECER
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>CONHECER</span>
+                <span>
+                    APRENDER
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>APRENDER</span>
+                <span>
+                    DESCOBRIR
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>DESCOBRIR</span>
+                <span>
+                    EVOLUIR
+                </span>
 
-                    <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
 
-                    <span>EVOLUIR</span>
-
-                    <i class="fa-solid fa-star"></i>
-
-                    <span>CONHECER</span>
-
-                    <i class="fa-solid fa-star"></i>
-
-                </div>
-
+                <span>
+                    CONHECER
+                </span>
 
             </div>
-
 
         </section>
 
@@ -1013,133 +776,117 @@
              O QUE É
         ================================================== -->
 
-        <section id="o-que-e"
-            class="about-section section">
-
+        <section
+            class="section about"
+            id="o-que-e"
+        >
 
             <div class="container">
 
 
-                <div class="section-intro reveal">
-
+                <div class="section-heading reveal">
 
                     <span class="section-number">
                         01
                     </span>
 
-
                     <div>
 
-                        <span class="section-eyebrow">
-
+                        <span class="eyebrow">
                             <i class="fa-solid fa-circle-info"></i>
-
                             ENTENDA
-
                         </span>
 
-
                         <h2>
-
                             Afinal, o que é a
                             <span>
                                 Prova Paraná?
                             </span>
-
                         </h2>
 
-                    </div>
+                        <p>
+                            Uma avaliação que ajuda a observar
+                            como está o aprendizado dos estudantes.
+                        </p>
 
+                    </div>
 
                 </div>
 
 
 
-                <div class="about-layout">
+                <div class="about-grid">
 
 
-                    <!-- IMAGEM -->
+                    <div class="about-image reveal-left">
 
-                    <div class="about-visual reveal-left">
+                        <div class="image-frame">
 
-
-                        <div class="about-image-frame">
-
-                            <img src="prova-parana.jpg"
-                                alt="Estudantes realizando uma avaliação">
-
-                        </div>
-
-
-                        <div class="about-image-decoration"></div>
-
-
-                        <div class="about-floating-card card-one">
-
-                            <i class="fa-solid fa-magnifying-glass"></i>
-
-                            <span>
-                                Diagnóstico
-                            </span>
+                            <img
+                                src="prova-parana.jpg"
+                                alt="Estudantes realizando uma avaliação"
+                            >
 
                         </div>
 
 
-                        <div class="about-floating-card card-two">
+                        <div class="image-label">
 
                             <i class="fa-solid fa-chart-line"></i>
 
-                            <span>
-                                Evolução
-                            </span>
+                            <div>
+
+                                <strong>
+                                    Avaliação diagnóstica
+                                </strong>
+
+                                <span>
+                                    Informação para melhorar
+                                </span>
+
+                            </div>
 
                         </div>
 
+
+                        <div class="image-decoration"></div>
 
                     </div>
 
 
 
-                    <!-- TEXTO -->
-
                     <div class="about-text reveal-right">
 
 
-                        <p class="about-big-text">
+                        <p class="lead-text">
 
-                            A Prova Paraná é uma avaliação
-                            <strong>
-                                diagnóstica
-                            </strong>
-                            que ajuda a compreender como está
-                            a aprendizagem dos estudantes.
+                            A Prova Paraná é uma avaliação educacional
+                            que ajuda a identificar como está o processo
+                            de aprendizagem dos estudantes.
 
                         </p>
 
 
                         <p>
 
-                            Em vez de representar apenas uma nota,
-                            seus resultados podem mostrar quais
-                            conhecimentos estão sendo desenvolvidos
-                            e quais conteúdos precisam receber
-                            mais atenção.
+                            Seus resultados podem mostrar quais conteúdos
+                            estão sendo desenvolvidos e quais precisam
+                            receber mais atenção.
 
                         </p>
 
 
                         <p>
 
-                            Essas informações ajudam a escola a
-                            enxergar a aprendizagem de uma forma
-                            mais ampla e a pensar em estratégias
-                            para melhorar o ensino.
+                            Dessa forma, a avaliação não precisa ser vista
+                            somente como uma nota. As informações podem
+                            ajudar professores e escolas a planejarem
+                            novas estratégias para o ensino.
 
                         </p>
 
 
-
-                        <div class="about-highlight-box">
+                        <div class="about-highlight">
 
                             <div class="highlight-icon">
 
@@ -1147,20 +894,18 @@
 
                             </div>
 
-
                             <div>
 
                                 <strong>
                                     Mais que uma prova.
                                 </strong>
 
-                                <p>
-                                    Uma ferramenta para compreender,
-                                    planejar e evoluir.
-                                </p>
+                                <span>
+                                    Uma oportunidade de entender
+                                    e melhorar a aprendizagem.
+                                </span>
 
                             </div>
-
 
                         </div>
 
@@ -1172,7 +917,6 @@
 
 
             </div>
-
 
         </section>
 
@@ -1182,97 +926,74 @@
              OBJETIVOS
         ================================================== -->
 
-        <section id="objetivos"
-            class="objectives-section section">
+        <section
+            class="section objectives"
+            id="objetivos"
+        >
 
-
-            <div class="objectives-background"></div>
+            <div class="objectives-glow"></div>
 
 
             <div class="container">
 
 
-                <div class="objectives-header reveal">
+                <div class="dark-heading reveal">
 
-
-                    <span class="section-number light-number">
+                    <span class="section-number light">
                         02
                     </span>
 
-
-                    <span class="section-eyebrow light">
-
+                    <span class="eyebrow dark">
                         <i class="fa-solid fa-bullseye"></i>
-
-                        PROPÓSITO
-
+                        OBJETIVOS
                     </span>
 
-
                     <h2>
-
                         Por que essa avaliação
                         <span>
                             é importante?
                         </span>
-
                     </h2>
 
-
                     <p>
-
-                        Cada resultado pode ajudar a construir
-                        novas oportunidades para a educação.
-
+                        A avaliação gera informações que podem
+                        ajudar a escola a compreender melhor
+                        os desafios da aprendizagem.
                     </p>
-
 
                 </div>
 
 
 
-                <div class="objectives-grid">
+                <div class="objective-grid">
 
 
                     <article class="objective-card reveal">
 
-
-                        <div class="objective-top">
-
-                            <span>
-                                01
-                            </span>
-
-                            <i class="fa-solid fa-chart-column"></i>
-
+                        <div class="objective-number">
+                            01
                         </div>
 
+                        <div class="objective-icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
 
                         <h3>
                             Acompanhar
                         </h3>
 
-
                         <p>
-
-                            Observar como está o desenvolvimento
-                            dos estudantes durante sua jornada
-                            de aprendizagem.
-
+                            Observar como os estudantes estão
+                            desenvolvendo seus conhecimentos.
                         </p>
 
-
-                        <div class="objective-line"></div>
-
-
-                        <span class="objective-footer">
-
-                            Ver o aprendizado
+                        <div class="objective-bottom">
+                            <span>
+                                Aprendizagem
+                            </span>
 
                             <i class="fa-solid fa-arrow-right"></i>
-
-                        </span>
-
+                        </div>
 
                     </article>
 
@@ -1280,43 +1001,30 @@
 
                     <article class="objective-card reveal delay-1">
 
-
-                        <div class="objective-top">
-
-                            <span>
-                                02
-                            </span>
-
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
-
+                        <div class="objective-number">
+                            02
                         </div>
 
+                        <div class="objective-icon">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
 
                         <h3>
                             Identificar
                         </h3>
 
-
                         <p>
-
-                            Reconhecer conteúdos que precisam
-                            de maior atenção dentro do processo
-                            de ensino.
-
+                            Encontrar conteúdos que precisam
+                            de mais atenção.
                         </p>
 
-
-                        <div class="objective-line"></div>
-
-
-                        <span class="objective-footer">
-
-                            Encontrar desafios
+                        <div class="objective-bottom">
+                            <span>
+                                Diagnóstico
+                            </span>
 
                             <i class="fa-solid fa-arrow-right"></i>
-
-                        </span>
-
+                        </div>
 
                     </article>
 
@@ -1324,42 +1032,30 @@
 
                     <article class="objective-card reveal delay-2">
 
-
-                        <div class="objective-top">
-
-                            <span>
-                                03
-                            </span>
-
-                            <i class="fa-solid fa-route"></i>
-
+                        <div class="objective-number">
+                            03
                         </div>
 
+                        <div class="objective-icon">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
 
                         <h3>
                             Planejar
                         </h3>
 
-
                         <p>
-
-                            Utilizar as informações para orientar
-                            decisões e estratégias pedagógicas.
-
+                            Utilizar as informações para pensar
+                            em estratégias pedagógicas.
                         </p>
 
-
-                        <div class="objective-line"></div>
-
-
-                        <span class="objective-footer">
-
-                            Criar caminhos
+                        <div class="objective-bottom">
+                            <span>
+                                Estratégia
+                            </span>
 
                             <i class="fa-solid fa-arrow-right"></i>
-
-                        </span>
-
+                        </div>
 
                     </article>
 
@@ -1367,51 +1063,37 @@
 
                     <article class="objective-card reveal delay-3">
 
-
-                        <div class="objective-top">
-
-                            <span>
-                                04
-                            </span>
-
-                            <i class="fa-solid fa-arrow-trend-up"></i>
-
+                        <div class="objective-number">
+                            04
                         </div>
 
+                        <div class="objective-icon">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
 
                         <h3>
-                            Evoluir
+                            Melhorar
                         </h3>
 
-
                         <p>
-
-                            Contribuir para a melhoria contínua
-                            da qualidade do ensino e da aprendizagem.
-
+                            Contribuir para o desenvolvimento
+                            contínuo da educação.
                         </p>
 
-
-                        <div class="objective-line"></div>
-
-
-                        <span class="objective-footer">
-
-                            Continuar crescendo
+                        <div class="objective-bottom">
+                            <span>
+                                Evolução
+                            </span>
 
                             <i class="fa-solid fa-arrow-right"></i>
-
-                        </span>
-
+                        </div>
 
                     </article>
 
 
                 </div>
 
-
             </div>
-
 
         </section>
 
@@ -1421,15 +1103,15 @@
              DISCIPLINAS
         ================================================== -->
 
-        <section id="disciplinas"
-            class="subjects-section section">
-
+        <section
+            class="section disciplines"
+            id="disciplinas"
+        >
 
             <div class="container">
 
 
-                <div class="subjects-heading reveal">
-
+                <div class="section-heading split-heading reveal">
 
                     <div>
 
@@ -1437,13 +1119,9 @@
                             03
                         </span>
 
-
-                        <span class="section-eyebrow">
-
+                        <span class="eyebrow">
                             <i class="fa-solid fa-book-open"></i>
-
-                            CONHECIMENTO
-
+                            DISCIPLINAS
                         </span>
 
                     </div>
@@ -1452,118 +1130,88 @@
                     <div>
 
                         <h2>
-
                             Duas áreas.
                             <span>
                                 Muitas habilidades.
                             </span>
-
                         </h2>
 
-
                         <p>
-
-                            Conheça as principais disciplinas
-                            abordadas na avaliação.
-
+                            Conheça as principais áreas destacadas
+                            neste projeto.
                         </p>
 
                     </div>
-
 
                 </div>
 
 
 
-                <div class="subjects-showcase">
+                <div class="discipline-grid">
 
 
                     <!-- PORTUGUÊS -->
 
-                    <article class="subject-premium-card portuguese reveal-left">
+                    <article class="discipline-card portuguese reveal-left">
 
+                        <div class="discipline-background"></div>
 
-                        <div class="subject-card-background">
-
-                            <div class="subject-pattern"></div>
-
-                        </div>
-
-
-                        <div class="subject-card-content">
-
-
-                            <div class="subject-card-header">
-
-
-                                <div class="subject-main-icon">
-
-                                    <i class="fa-solid fa-book-open"></i>
-
-                                </div>
-
-
-                                <span>
-                                    01
-                                </span>
-
-
-                            </div>
-
-
-                            <div class="subject-title-area">
-
-                                <span class="subject-label">
-                                    DISCIPLINA
-                                </span>
-
-
-                                <h3>
-                                    Língua
-                                    <br>
-                                    Portuguesa
-                                </h3>
-
-
-                            </div>
-
-
-                            <p>
-
-                                Leitura, interpretação, compreensão
-                                e análise de diferentes textos.
-
-                            </p>
-
-
-                            <div class="subject-tags">
-
-                                <span>Leitura</span>
-
-                                <span>Textos</span>
-
-                                <span>Interpretação</span>
-
-                            </div>
-
-
-                            <button class="subject-open-button"
-                                data-modal="portugues">
-
-                                Explorar disciplina
-
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            </button>
-
-
-                        </div>
-
-
-                        <div class="subject-card-number">
+                        <div class="discipline-number">
                             01
                         </div>
 
+
+                        <div class="discipline-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+
+                        <span class="discipline-label">
+                            DISCIPLINA
+                        </span>
+
+
+                        <h3>
+                            Língua
+                            <br>
+                            Portuguesa
+                        </h3>
+
+
+                        <p>
+                            Desenvolve habilidades relacionadas à
+                            leitura, interpretação e compreensão
+                            de diferentes textos.
+                        </p>
+
+
+                        <div class="discipline-tags">
+
+                            <span>
+                                Leitura
+                            </span>
+
+                            <span>
+                                Interpretação
+                            </span>
+
+                            <span>
+                                Textos
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="discipline-button"
+                            data-subject="portugues"
+                        >
+
+                            Explorar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
 
                     </article>
 
@@ -1571,89 +1219,64 @@
 
                     <!-- MATEMÁTICA -->
 
-                    <article class="subject-premium-card mathematics reveal-right">
+                    <article class="discipline-card mathematics reveal-right">
 
+                        <div class="discipline-background"></div>
 
-                        <div class="subject-card-background">
-
-                            <div class="subject-pattern"></div>
-
-                        </div>
-
-
-                        <div class="subject-card-content">
-
-
-                            <div class="subject-card-header">
-
-
-                                <div class="subject-main-icon">
-
-                                    <i class="fa-solid fa-calculator"></i>
-
-                                </div>
-
-
-                                <span>
-                                    02
-                                </span>
-
-
-                            </div>
-
-
-                            <div class="subject-title-area">
-
-                                <span class="subject-label">
-                                    DISCIPLINA
-                                </span>
-
-
-                                <h3>
-                                    Matemática
-                                </h3>
-
-
-                            </div>
-
-
-                            <p>
-
-                                Problemas, cálculos, lógica e
-                                interpretação de informações
-                                em diferentes situações.
-
-                            </p>
-
-
-                            <div class="subject-tags">
-
-                                <span>Lógica</span>
-
-                                <span>Problemas</span>
-
-                                <span>Dados</span>
-
-                            </div>
-
-
-                            <button class="subject-open-button"
-                                data-modal="matematica">
-
-                                Explorar disciplina
-
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            </button>
-
-
-                        </div>
-
-
-                        <div class="subject-card-number">
+                        <div class="discipline-number">
                             02
                         </div>
 
+
+                        <div class="discipline-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+
+                        <span class="discipline-label">
+                            DISCIPLINA
+                        </span>
+
+
+                        <h3>
+                            Matemática
+                        </h3>
+
+
+                        <p>
+                            Trabalha raciocínio lógico, resolução
+                            de problemas, cálculos e interpretação
+                            de informações.
+                        </p>
+
+
+                        <div class="discipline-tags">
+
+                            <span>
+                                Lógica
+                            </span>
+
+                            <span>
+                                Problemas
+                            </span>
+
+                            <span>
+                                Cálculos
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="discipline-button"
+                            data-subject="matematica"
+                        >
+
+                            Explorar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
 
                     </article>
 
@@ -1663,45 +1286,41 @@
 
             </div>
 
-
         </section>
 
 
 
         <!-- =================================================
-             JORNADA DO ESTUDANTE
+             JORNADA
         ================================================== -->
 
-        <section class="journey-section section">
-
+        <section
+            class="section journey"
+            id="jornada"
+        >
 
             <div class="container">
 
 
-                <div class="journey-header reveal">
+                <div class="center-heading reveal">
 
-                    <span class="section-eyebrow">
-
-                        <i class="fa-solid fa-person-walking"></i>
-
-                        SUA JORNADA
-
+                    <span class="section-number">
+                        04
                     </span>
 
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-route"></i>
+                        SUA JORNADA
+                    </span>
 
                     <h2>
-
                         Um passo de cada vez.
                     </h2>
 
-
                     <p>
-
-                        Veja como você pode encarar o momento
-                        da avaliação com mais tranquilidade.
-
+                        A preparação também faz parte
+                        do aprendizado.
                     </p>
-
 
                 </div>
 
@@ -1710,23 +1329,18 @@
                 <div class="journey-timeline">
 
 
-                    <div class="timeline-line"></div>
+                    <div class="journey-line"></div>
 
 
 
-                    <article class="timeline-item reveal">
+                    <article class="journey-item reveal">
 
-
-                        <div class="timeline-marker">
-
-                            <span>
-                                01
-                            </span>
-
+                        <div class="journey-marker">
+                            <span>01</span>
                         </div>
 
 
-                        <div class="timeline-content">
+                        <div class="journey-content">
 
                             <span>
                                 ANTES
@@ -1743,24 +1357,18 @@
 
                         </div>
 
-
                     </article>
 
 
 
-                    <article class="timeline-item reveal delay-1">
+                    <article class="journey-item reveal delay-1">
 
-
-                        <div class="timeline-marker">
-
-                            <span>
-                                02
-                            </span>
-
+                        <div class="journey-marker">
+                            <span>02</span>
                         </div>
 
 
-                        <div class="timeline-content">
+                        <div class="journey-content">
 
                             <span>
                                 NO DIA
@@ -1772,63 +1380,51 @@
 
                             <p>
                                 Leia cada questão com atenção
-                                e não tenha pressa.
+                                e evite a pressa.
                             </p>
 
                         </div>
-
 
                     </article>
 
 
 
-                    <article class="timeline-item reveal delay-2">
+                    <article class="journey-item reveal delay-2">
 
-
-                        <div class="timeline-marker">
-
-                            <span>
-                                03
-                            </span>
-
+                        <div class="journey-marker">
+                            <span>03</span>
                         </div>
 
 
-                        <div class="timeline-content">
+                        <div class="journey-content">
 
                             <span>
                                 DURANTE
                             </span>
 
                             <h3>
-                                Confie no processo
+                                Confie no que aprendeu
                             </h3>
 
                             <p>
-                                Utilize tudo o que você aprendeu
-                                durante sua jornada escolar.
+                                Use seus conhecimentos para
+                                resolver as questões.
                             </p>
 
                         </div>
-
 
                     </article>
 
 
 
-                    <article class="timeline-item reveal delay-3">
+                    <article class="journey-item reveal delay-3">
 
-
-                        <div class="timeline-marker">
-
-                            <span>
-                                04
-                            </span>
-
+                        <div class="journey-marker">
+                            <span>04</span>
                         </div>
 
 
-                        <div class="timeline-content">
+                        <div class="journey-content">
 
                             <span>
                                 DEPOIS
@@ -1839,12 +1435,11 @@
                             </h3>
 
                             <p>
-                                Os resultados ajudam a identificar
+                                Todo resultado pode indicar
                                 novos caminhos para aprender.
                             </p>
 
                         </div>
-
 
                     </article>
 
@@ -1853,7 +1448,6 @@
 
 
             </div>
-
 
         </section>
 
@@ -1863,46 +1457,52 @@
              DICAS
         ================================================== -->
 
-        <section id="dicas"
-            class="tips-section section">
-
+        <section
+            class="section tips"
+            id="dicas"
+        >
 
             <div class="container">
 
 
-                <div class="tips-layout">
+                <div class="tips-grid">
 
 
-                    <div class="tips-visual reveal-left">
+                    <div class="tips-image reveal-left">
 
+                        <div class="tips-image-frame">
 
-                        <div class="tips-image-wrapper">
+                            <img
+                                src="estudantes.jpg"
+                                alt="Estudantes estudando"
+                            >
 
-                            <img src="estudantes.jpg"
-                                alt="Estudantes estudando juntos">
+                            <div class="tips-image-dark"></div>
+
+                            <div class="tips-image-text">
+
+                                <span>
+                                    PREPARAÇÃO
+                                </span>
+
+                                <h3>
+                                    Você consegue.
+                                </h3>
+
+                            </div>
 
                         </div>
 
 
-                        <div class="tips-big-text">
+                        <div class="tips-floating">
 
-                            VOCÊ
-                            <br>
-                            CONSEGUE.
-
-                        </div>
-
-
-                        <div class="tips-floating-message">
-
-                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-heart"></i>
 
                             <span>
-                                Confie em você.
+                                Confie no seu processo.
                             </span>
 
                         </div>
-
 
                     </div>
 
@@ -1912,34 +1512,28 @@
 
 
                         <span class="section-number">
-                            04
+                            05
                         </span>
 
 
-                        <span class="section-eyebrow">
-
+                        <span class="eyebrow">
                             <i class="fa-solid fa-lightbulb"></i>
-
-                            PREPARE-SE
-
+                            DICAS
                         </span>
 
 
                         <h2>
-
                             Menos pressão.
                             <span>
                                 Mais confiança.
                             </span>
-
                         </h2>
 
 
-                        <p class="tips-intro">
-
-                            Não existe fórmula mágica. Pequenas atitudes
-                            podem ajudar você a se sentir mais preparado.
-
+                        <p class="tips-description">
+                            Algumas atitudes simples podem
+                            ajudar você a passar pelo momento
+                            da avaliação com mais tranquilidade.
                         </p>
 
 
@@ -1947,29 +1541,24 @@
                         <div class="tips-list">
 
 
-                            <button class="tip-card"
-                                data-tip="sono">
+                            <button
+                                class="tip-card"
+                                data-tip="sono"
+                            >
 
-                                <div class="tip-card-icon">
-
+                                <div class="tip-icon">
                                     <i class="fa-solid fa-moon"></i>
-
                                 </div>
 
-
-                                <div class="tip-card-text">
-
+                                <div>
                                     <strong>
                                         Descanse bem
                                     </strong>
 
                                     <span>
-                                        Uma boa noite de sono ajuda
-                                        na concentração.
+                                        Prepare seu corpo e sua mente.
                                     </span>
-
                                 </div>
-
 
                                 <i class="fa-solid fa-plus"></i>
 
@@ -1977,29 +1566,24 @@
 
 
 
-                            <button class="tip-card"
-                                data-tip="calma">
+                            <button
+                                class="tip-card"
+                                data-tip="calma"
+                            >
 
-                                <div class="tip-card-icon">
-
+                                <div class="tip-icon">
                                     <i class="fa-solid fa-heart"></i>
-
                                 </div>
 
-
-                                <div class="tip-card-text">
-
+                                <div>
                                     <strong>
                                         Mantenha a calma
                                     </strong>
 
                                     <span>
-                                        Respire e faça cada questão
-                                        tranquilamente.
+                                        Faça a avaliação no seu ritmo.
                                     </span>
-
                                 </div>
-
 
                                 <i class="fa-solid fa-plus"></i>
 
@@ -2007,29 +1591,24 @@
 
 
 
-                            <button class="tip-card"
-                                data-tip="leitura">
+                            <button
+                                class="tip-card"
+                                data-tip="leitura"
+                            >
 
-                                <div class="tip-card-icon">
-
-                                    <i class="fa-solid fa-glasses"></i>
-
+                                <div class="tip-icon">
+                                    <i class="fa-solid fa-book-reader"></i>
                                 </div>
 
-
-                                <div class="tip-card-text">
-
+                                <div>
                                     <strong>
                                         Leia com atenção
                                     </strong>
 
                                     <span>
-                                        Entenda a pergunta antes
-                                        de responder.
+                                        Entenda a questão antes de responder.
                                     </span>
-
                                 </div>
-
 
                                 <i class="fa-solid fa-plus"></i>
 
@@ -2037,29 +1616,24 @@
 
 
 
-                            <button class="tip-card"
-                                data-tip="revisao">
+                            <button
+                                class="tip-card"
+                                data-tip="revisao"
+                            >
 
-                                <div class="tip-card-icon">
-
+                                <div class="tip-icon">
                                     <i class="fa-solid fa-check-double"></i>
-
                                 </div>
 
-
-                                <div class="tip-card-text">
-
+                                <div>
                                     <strong>
                                         Revise
                                     </strong>
 
                                     <span>
-                                        Se tiver tempo, confira
-                                        suas respostas.
+                                        Confira suas respostas quando puder.
                                     </span>
-
                                 </div>
-
 
                                 <i class="fa-solid fa-plus"></i>
 
@@ -2076,7 +1650,6 @@
 
 
             </div>
-
 
         </section>
 
@@ -2086,156 +1659,159 @@
              CHECKLIST
         ================================================== -->
 
-        <section class="checklist-section section">
-
+        <section
+            class="section checklist"
+        >
 
             <div class="container">
 
 
-                <div class="checklist-box reveal">
+                <div class="checklist-wrapper reveal">
 
 
-                    <div class="checklist-header">
+                    <div class="checklist-heading">
+
+                        <span class="eyebrow dark">
+                            <i class="fa-solid fa-list-check"></i>
+                            INTERATIVO
+                        </span>
 
 
-                        <div>
-
-                            <span class="section-eyebrow">
-
-                                <i class="fa-solid fa-list-check"></i>
-
-                                INTERATIVO
-
+                        <h2>
+                            Meu checklist
+                            <span>
+                                de preparação.
                             </span>
+                        </h2>
 
 
-                            <h2>
-                                Meu checklist
-                                <span>
-                                    de preparação.
-                                </span>
-                            </h2>
+                        <p>
+                            Marque o que você já preparou
+                            antes da avaliação.
+                        </p>
+
+                    </div>
 
 
-                        </div>
+                    <div class="checklist-content">
 
 
-                        <div class="checklist-progress-circle">
+                        <div class="checklist-progress-info">
 
-                            <svg viewBox="0 0 36 36">
-
-                                <path class="circle-bg"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
-
-                                <path class="circle-progress"
-                                    id="checklistCircle"
-                                    stroke-dasharray="0, 100"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
-
-                            </svg>
-
+                            <span>
+                                PROGRESSO
+                            </span>
 
                             <strong id="checklistPercentage">
                                 0%
                             </strong>
 
+                        </div>
+
+
+                        <div class="checklist-progress-track">
+
+                            <div
+                                id="checklistProgress"
+                                class="checklist-progress-fill"
+                            ></div>
 
                         </div>
 
 
-                    </div>
+
+                        <div class="checklist-items">
+
+
+                            <label class="check-item">
+
+                                <input
+                                    type="checkbox"
+                                >
+
+                                <span class="checkbox">
+
+                                    <i class="fa-solid fa-check"></i>
+
+                                </span>
+
+                                <span>
+                                    Organizei meu tempo.
+                                </span>
+
+                            </label>
 
 
 
-                    <div class="checklist-items">
+                            <label class="check-item">
 
+                                <input
+                                    type="checkbox"
+                                >
 
-                        <label class="checklist-item">
+                                <span class="checkbox">
 
-                            <input type="checkbox"
-                                class="checklist-checkbox">
+                                    <i class="fa-solid fa-check"></i>
 
-                            <span class="custom-checkbox">
+                                </span>
 
-                                <i class="fa-solid fa-check"></i>
+                                <span>
+                                    Revisei alguns conteúdos.
+                                </span>
 
-                            </span>
-
-                            <span>
-                                Dormi bem e cuidei do meu descanso.
-                            </span>
-
-                        </label>
-
-
-
-                        <label class="checklist-item">
-
-                            <input type="checkbox"
-                                class="checklist-checkbox">
-
-                            <span class="custom-checkbox">
-
-                                <i class="fa-solid fa-check"></i>
-
-                            </span>
-
-                            <span>
-                                Revisei alguns conteúdos importantes.
-                            </span>
-
-                        </label>
+                            </label>
 
 
 
-                        <label class="checklist-item">
+                            <label class="check-item">
 
-                            <input type="checkbox"
-                                class="checklist-checkbox">
+                                <input
+                                    type="checkbox"
+                                >
 
-                            <span class="custom-checkbox">
+                                <span class="checkbox">
 
-                                <i class="fa-solid fa-check"></i>
+                                    <i class="fa-solid fa-check"></i>
 
-                            </span>
+                                </span>
 
-                            <span>
-                                Estou preparado para ler as questões com calma.
-                            </span>
+                                <span>
+                                    Vou descansar antes da prova.
+                                </span>
 
-                        </label>
-
-
-
-                        <label class="checklist-item">
-
-                            <input type="checkbox"
-                                class="checklist-checkbox">
-
-                            <span class="custom-checkbox">
-
-                                <i class="fa-solid fa-check"></i>
-
-                            </span>
-
-                            <span>
-                                Vou confiar no que aprendi.
-                            </span>
-
-                        </label>
+                            </label>
 
 
-                    </div>
+
+                            <label class="check-item">
+
+                                <input
+                                    type="checkbox"
+                                >
+
+                                <span class="checkbox">
+
+                                    <i class="fa-solid fa-check"></i>
+
+                                </span>
+
+                                <span>
+                                    Estou pronto para fazer com calma.
+                                </span>
+
+                            </label>
 
 
-                    <div id="checklistMessage"
-                        class="checklist-message">
+                        </div>
 
-                        Complete os itens no seu ritmo.
+
+                        <div
+                            class="checklist-message"
+                            id="checklistMessage"
+                        >
+                            Comece marcando os itens acima.
+                        </div>
+
 
                     </div>
 
@@ -2244,7 +1820,6 @@
 
 
             </div>
-
 
         </section>
 
@@ -2254,185 +1829,146 @@
              RESULTADOS
         ================================================== -->
 
-        <section id="resultados"
-            class="results-section section">
-
-
-            <div class="results-background"></div>
-
+        <section
+            class="section results"
+            id="resultados"
+        >
 
             <div class="container">
 
 
-                <div class="results-header reveal">
-
+                <div class="section-heading reveal">
 
                     <span class="section-number">
-                        05
+                        06
                     </span>
 
+                    <div>
 
-                    <span class="section-eyebrow">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                        DEPOIS DA PROVA
-
-                    </span>
-
-
-                    <h2>
-
-                        Um resultado.
-                        <span>
-                            Vários caminhos.
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-chart-line"></i>
+                            RESULTADOS
                         </span>
 
-                    </h2>
+                        <h2>
+                            Um resultado.
+                            <span>
+                                Vários caminhos.
+                            </span>
+                        </h2>
 
+                        <p>
+                            As informações podem ajudar diferentes
+                            pessoas da comunidade escolar.
+                        </p>
 
-                    <p>
-
-                        As informações obtidas podem ajudar diferentes
-                        pessoas dentro da comunidade escolar.
-
-                    </p>
-
+                    </div>
 
                 </div>
 
 
 
-                <div class="results-main-visual reveal">
+                <div class="results-image reveal">
 
-
-                    <img src="sala-de-aula.jpg"
-                        alt="Sala de aula com estudantes">
+                    <img
+                        src="sala-de-aula.jpg"
+                        alt="Sala de aula"
+                    >
 
 
                     <div class="results-image-overlay"></div>
 
 
-                    <div class="results-center-card">
+                    <div class="results-center">
 
-                        <div class="results-center-icon">
+                        <div>
 
-                            <i class="fa-solid fa-file-chart-column"></i>
+                            <i class="fa-solid fa-chart-simple"></i>
 
                         </div>
 
-
                         <strong>
-                            Resultados
+                            RESULTADOS
                         </strong>
 
                         <span>
                             Informação para evoluir
                         </span>
 
-
                     </div>
-
 
                 </div>
 
 
 
-                <div class="results-flow">
+                <div class="results-grid">
 
 
-                    <article class="result-flow-card reveal-left">
+                    <article class="result-card reveal">
 
-
-                        <div class="result-flow-icon">
-
+                        <div class="result-icon">
                             <i class="fa-solid fa-chalkboard-user"></i>
-
                         </div>
 
+                        <span class="result-label">
+                            PROFESSORES
+                        </span>
 
                         <h3>
-                            Professores
+                            Planejamento
                         </h3>
 
-
                         <p>
-
-                            Podem identificar conteúdos que precisam
-                            de mais atenção durante as aulas.
-
+                            Os dados podem ajudar a identificar
+                            conteúdos que precisam ser retomados
+                            ou receber mais atenção.
                         </p>
-
 
                     </article>
 
 
 
-                    <div class="flow-arrow">
+                    <article class="result-card reveal delay-1">
 
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </div>
-
-
-
-                    <article class="result-flow-card reveal">
-
-
-                        <div class="result-flow-icon">
-
-                            <i class="fa-solid fa-building"></i>
-
+                        <div class="result-icon">
+                            <i class="fa-solid fa-school"></i>
                         </div>
 
+                        <span class="result-label">
+                            DIREÇÃO
+                        </span>
 
                         <h3>
-                            Direção
+                            Estratégias
                         </h3>
 
-
                         <p>
-
-                            Pode acompanhar informações e planejar
-                            estratégias para a escola.
-
+                            As informações podem apoiar decisões
+                            e ações dentro da comunidade escolar.
                         </p>
-
 
                     </article>
 
 
 
-                    <div class="flow-arrow">
+                    <article class="result-card reveal delay-2">
 
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </div>
-
-
-
-                    <article class="result-flow-card reveal-right">
-
-
-                        <div class="result-flow-icon">
-
+                        <div class="result-icon">
                             <i class="fa-solid fa-user-graduate"></i>
-
                         </div>
 
+                        <span class="result-label">
+                            ESTUDANTES
+                        </span>
 
                         <h3>
-                            Estudantes
+                            Evolução
                         </h3>
 
-
                         <p>
-
-                            Podem compreender melhor seus avanços
-                            e descobrir novos conteúdos para revisar.
-
+                            Os resultados podem mostrar pontos
+                            fortes e conteúdos para continuar estudando.
                         </p>
-
 
                     </article>
 
@@ -2441,7 +1977,6 @@
 
 
             </div>
-
 
         </section>
 
@@ -2451,39 +1986,30 @@
              MITOS E VERDADES
         ================================================== -->
 
-        <section class="myths-section section">
-
+        <section
+            class="section myths"
+        >
 
             <div class="container">
 
 
-                <div class="myths-header reveal">
+                <div class="center-heading reveal">
 
-                    <span class="section-eyebrow">
-
+                    <span class="eyebrow">
                         <i class="fa-solid fa-shuffle"></i>
-
-                        INTERATIVO
-
+                        MITO OU VERDADE
                     </span>
 
-
                     <h2>
-
-                        Mito ou
+                        Vamos separar
                         <span>
-                            verdade?
+                            fato de confusão.
                         </span>
-
                     </h2>
 
-
                     <p>
-
-                        Clique nos cartões e descubra.
-
+                        Clique nos cartões para revelar a resposta.
                     </p>
-
 
                 </div>
 
@@ -2492,182 +2018,131 @@
                 <div class="myths-grid">
 
 
-                    <button class="myth-card reveal"
-                        data-answer="verdade">
+                    <button
+                        class="myth-card reveal"
+                        data-answer="true"
+                    >
 
+                        <span>
+                            PERGUNTA 01
+                        </span>
 
-                        <div class="myth-card-inner">
+                        <h3>
+                            A avaliação pode ajudar
+                            professores a perceberem
+                            conteúdos que precisam
+                            de mais atenção.
+                        </h3>
 
+                        <div class="myth-card-footer">
 
-                            <div class="myth-card-front">
+                            Clique para revelar
 
-                                <span>
-                                    PERGUNTA 01
-                                </span>
-
-
-                                <h3>
-
-                                    Os resultados podem ajudar
-                                    professores a identificar
-                                    conteúdos que precisam de
-                                    mais atenção.
-
-                                </h3>
-
-
-                                <div class="flip-hint">
-
-                                    Clique para descobrir
-
-                                    <i class="fa-solid fa-rotate"></i>
-
-                                </div>
-
-
-                            </div>
-
-
-                            <div class="myth-card-back truth">
-
-                                <i class="fa-solid fa-check"></i>
-
-                                <span>
-                                    VERDADE
-                                </span>
-
-                                <p>
-
-                                    As informações podem contribuir
-                                    para o planejamento pedagógico.
-
-                                </p>
-
-                            </div>
-
+                            <i class="fa-solid fa-rotate"></i>
 
                         </div>
 
+
+                        <div class="myth-answer true-answer">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <strong>
+                                VERDADE
+                            </strong>
+
+                            <small>
+                                Os resultados podem contribuir
+                                para o planejamento pedagógico.
+                            </small>
+
+                        </div>
 
                     </button>
 
 
 
-                    <button class="myth-card reveal delay-1"
-                        data-answer="mito">
+                    <button
+                        class="myth-card reveal delay-1"
+                        data-answer="false"
+                    >
 
+                        <span>
+                            PERGUNTA 02
+                        </span>
 
-                        <div class="myth-card-inner">
+                        <h3>
+                            A Prova Paraná existe apenas
+                            para separar estudantes entre
+                            melhores e piores.
+                        </h3>
 
+                        <div class="myth-card-footer">
 
-                            <div class="myth-card-front">
+                            Clique para revelar
 
-                                <span>
-                                    PERGUNTA 02
-                                </span>
-
-
-                                <h3>
-
-                                    A Prova Paraná existe apenas
-                                    para separar os estudantes
-                                    entre melhores e piores.
-
-                                </h3>
-
-
-                                <div class="flip-hint">
-
-                                    Clique para descobrir
-
-                                    <i class="fa-solid fa-rotate"></i>
-
-                                </div>
-
-
-                            </div>
-
-
-                            <div class="myth-card-back myth">
-
-                                <i class="fa-solid fa-xmark"></i>
-
-                                <span>
-                                    MITO
-                                </span>
-
-                                <p>
-
-                                    A proposta é acompanhar a
-                                    aprendizagem e apoiar melhorias.
-
-                                </p>
-
-                            </div>
-
+                            <i class="fa-solid fa-rotate"></i>
 
                         </div>
 
+
+                        <div class="myth-answer false-answer">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                            <strong>
+                                MITO
+                            </strong>
+
+                            <small>
+                                A proposta está ligada ao acompanhamento
+                                da aprendizagem.
+                            </small>
+
+                        </div>
 
                     </button>
 
 
 
-                    <button class="myth-card reveal delay-2"
-                        data-answer="verdade">
+                    <button
+                        class="myth-card reveal delay-2"
+                        data-answer="true"
+                    >
 
+                        <span>
+                            PERGUNTA 03
+                        </span>
 
-                        <div class="myth-card-inner">
+                        <h3>
+                            Ler as questões com calma
+                            pode ajudar durante
+                            a avaliação.
+                        </h3>
 
+                        <div class="myth-card-footer">
 
-                            <div class="myth-card-front">
+                            Clique para revelar
 
-                                <span>
-                                    PERGUNTA 03
-                                </span>
-
-
-                                <h3>
-
-                                    Manter a calma e ler as questões
-                                    com atenção pode ajudar no momento
-                                    da avaliação.
-
-                                </h3>
-
-
-                                <div class="flip-hint">
-
-                                    Clique para descobrir
-
-                                    <i class="fa-solid fa-rotate"></i>
-
-                                </div>
-
-
-                            </div>
-
-
-                            <div class="myth-card-back truth">
-
-                                <i class="fa-solid fa-check"></i>
-
-                                <span>
-                                    VERDADE
-                                </span>
-
-                                <p>
-
-                                    Uma postura tranquila ajuda você
-                                    a prestar mais atenção nas questões.
-
-                                </p>
-
-                            </div>
-
+                            <i class="fa-solid fa-rotate"></i>
 
                         </div>
 
+
+                        <div class="myth-answer true-answer">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <strong>
+                                VERDADE
+                            </strong>
+
+                            <small>
+                                Atenção e tranquilidade ajudam
+                                na interpretação das questões.
+                            </small>
+
+                        </div>
 
                     </button>
 
@@ -2677,7 +2152,6 @@
 
             </div>
 
-
         </section>
 
 
@@ -2686,74 +2160,58 @@
              QUIZ
         ================================================== -->
 
-        <section id="quiz"
-            class="quiz-section section">
-
+        <section
+            class="section quiz"
+            id="quiz"
+        >
 
             <div class="quiz-background"></div>
 
 
-            <div class="container">
+            <div class="container quiz-container">
 
 
-                <div class="quiz-intro reveal">
+                <div class="center-heading quiz-heading reveal">
 
-
-                    <span class="section-number light-number">
-                        06
+                    <span class="section-number light">
+                        07
                     </span>
 
-
-                    <span class="section-eyebrow light">
-
+                    <span class="eyebrow dark">
                         <i class="fa-solid fa-brain"></i>
-
                         DESAFIO
-
                     </span>
-
 
                     <h2>
-
                         Quanto você
                         <span>
                             aprendeu?
                         </span>
-
                     </h2>
 
-
                     <p>
-
-                        Teste seus conhecimentos em um quiz
-                        interativo sobre a Prova Paraná.
-
+                        Responda às perguntas e descubra sua pontuação.
                     </p>
-
 
                 </div>
 
 
 
-                <div class="quiz-game reveal">
+                <div class="quiz-box reveal">
 
 
-                    <div class="quiz-topbar">
+                    <div class="quiz-top">
 
+                        <div>
 
-                        <div class="quiz-question-info">
-
-                            <span id="quizQuestionNumber">
-                                QUESTÃO 01
+                            <span
+                                id="quizQuestionNumber"
+                                class="quiz-counter"
+                            >
+                                QUESTÃO 01 DE 05
                             </span>
 
-
-                            <strong id="quizQuestionTotal">
-                                1 / 5
-                            </strong>
-
                         </div>
-
 
 
                         <div class="quiz-score">
@@ -2768,94 +2226,92 @@
 
                         </div>
 
+                    </div>
+
+
+                    <div class="quiz-progress">
+
+                        <div
+                            id="quizProgress"
+                            class="quiz-progress-bar"
+                        ></div>
 
                     </div>
 
 
-
-                    <div class="quiz-progress-track">
-
-                        <div id="quizProgress"
-                            class="quiz-progress-fill">
-
-                        </div>
-
+                    <div
+                        id="quizQuestion"
+                        class="quiz-question"
+                    >
                     </div>
 
 
-
-                    <div id="quizContent"
-                        class="quiz-content">
-
-
-                        <!-- JAVASCRIPT COLOCA AS QUESTÕES AQUI -->
-
-
+                    <div
+                        id="quizOptions"
+                        class="quiz-options"
+                    >
                     </div>
+
+
+                    <div
+                        id="quizFeedback"
+                        class="quiz-feedback"
+                    >
+                    </div>
+
+
+                    <button
+                        id="quizNext"
+                        class="quiz-next"
+                        hidden
+                    >
+                        Próxima pergunta
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
 
 
                 </div>
 
 
             </div>
-
 
         </section>
 
 
 
         <!-- =================================================
-             FRASE FINAL
+             FRASE
         ================================================== -->
 
-        <section id="video"
-            class="statement-section">
+        <section class="statement">
 
 
-            <div class="statement-background"></div>
+            <div class="statement-decoration statement-one"></div>
+
+            <div class="statement-decoration statement-two"></div>
 
 
             <div class="container">
 
-
                 <div class="statement-content reveal">
 
-
-                    <div class="statement-quote">
-
+                    <div class="quote-icon">
                         <i class="fa-solid fa-quote-left"></i>
-
                     </div>
 
-
                     <h2>
-
-                        <span>
-                            “
-                        </span>
-
-                        Aprender não é acertar tudo.
-                        É entender onde você está
-                        e descobrir para onde
-                        pode crescer.
-
-                        <span>
-                            ”
-                        </span>
-
+                        Aprender não é apenas
+                        encontrar respostas.
+                        É descobrir novos caminhos.
                     </h2>
 
-
-                    <p>
+                    <span>
                         CENTRAL DO ESTUDANTE
-                    </p>
-
+                    </span>
 
                 </div>
 
-
             </div>
-
 
         </section>
 
@@ -2865,9 +2321,10 @@
              FAQ
         ================================================== -->
 
-        <section id="faq"
-            class="faq-section section">
-
+        <section
+            class="section faq"
+            id="faq"
+        >
 
             <div class="container">
 
@@ -2875,58 +2332,36 @@
                 <div class="faq-layout">
 
 
-                    <div class="faq-intro reveal-left">
-
+                    <div class="faq-heading reveal-left">
 
                         <span class="section-number">
-                            07
+                            08
                         </span>
 
-
-                        <span class="section-eyebrow">
-
+                        <span class="eyebrow">
                             <i class="fa-solid fa-circle-question"></i>
-
                             DÚVIDAS
-
                         </span>
-
 
                         <h2>
-
                             Perguntas
                             <span>
                                 frequentes.
                             </span>
-
                         </h2>
 
-
                         <p>
-
-                            Ainda ficou alguma dúvida?
-                            Confira algumas perguntas importantes
-                            sobre a Prova Paraná.
-
+                            Algumas respostas rápidas sobre
+                            a avaliação e sua finalidade.
                         </p>
 
-
-                        <div class="faq-decoration">
-
-                            <i class="fa-solid fa-question"></i>
-
-                        </div>
-
-
                     </div>
-
 
 
                     <div class="faq-list reveal-right">
 
 
                         <div class="faq-item active">
-
 
                             <button class="faq-question">
 
@@ -2938,19 +2373,15 @@
 
                             </button>
 
-
                             <div class="faq-answer">
 
                                 <p>
-
-                                    É uma avaliação diagnóstica utilizada
-                                    para acompanhar informações sobre a
-                                    aprendizagem dos estudantes.
-
+                                    É uma avaliação diagnóstica
+                                    que ajuda a acompanhar informações
+                                    relacionadas à aprendizagem.
                                 </p>
 
                             </div>
-
 
                         </div>
 
@@ -2958,29 +2389,25 @@
 
                         <div class="faq-item">
 
-
                             <button class="faq-question">
 
                                 <span>
-                                    Quais disciplinas são destacadas?
+                                    Por que os resultados são importantes?
                                 </span>
 
                                 <i class="fa-solid fa-plus"></i>
 
                             </button>
 
-
                             <div class="faq-answer">
 
                                 <p>
-
-                                    Entre as áreas apresentadas neste site
-                                    estão Língua Portuguesa e Matemática.
-
+                                    Eles podem ajudar a identificar
+                                    conteúdos que precisam de mais
+                                    atenção e orientar estratégias.
                                 </p>
 
                             </div>
-
 
                         </div>
 
@@ -2988,29 +2415,24 @@
 
                         <div class="faq-item">
 
-
                             <button class="faq-question">
 
                                 <span>
-                                    Preciso ficar nervoso com a prova?
+                                    Quais disciplinas aparecem neste projeto?
                                 </span>
 
                                 <i class="fa-solid fa-plus"></i>
 
                             </button>
 
-
                             <div class="faq-answer">
 
                                 <p>
-
-                                    Não. O ideal é se preparar com calma,
-                                    descansar e fazer a avaliação com atenção.
-
+                                    O projeto apresenta principalmente
+                                    Língua Portuguesa e Matemática.
                                 </p>
 
                             </div>
-
 
                         </div>
 
@@ -3018,30 +2440,25 @@
 
                         <div class="faq-item">
 
-
                             <button class="faq-question">
 
                                 <span>
-                                    Como os resultados podem ser usados?
+                                    Como posso me preparar?
                                 </span>
 
                                 <i class="fa-solid fa-plus"></i>
 
                             </button>
 
-
                             <div class="faq-answer">
 
                                 <p>
-
-                                    Eles podem ajudar professores,
-                                    gestores e estudantes a identificar
-                                    pontos importantes da aprendizagem.
-
+                                    Organize seus estudos, descanse,
+                                    leia as questões com atenção e
+                                    faça a avaliação com tranquilidade.
                                 </p>
 
                             </div>
-
 
                         </div>
 
@@ -3054,31 +2471,27 @@
 
             </div>
 
-
         </section>
 
 
 
         <!-- =================================================
-             CTA FINAL
+             CTA
         ================================================== -->
 
-        <section class="final-cta-section">
-
-
-            <div class="final-cta-background"></div>
+        <section class="final-cta">
 
 
             <div class="container">
 
+                <div class="final-cta-box reveal">
 
-                <div class="final-cta-content reveal">
+
+                    <div class="cta-glow"></div>
 
 
-                    <div class="final-cta-icon">
-
+                    <div class="cta-icon">
                         <i class="fa-solid fa-graduation-cap"></i>
-
                     </div>
 
 
@@ -3088,55 +2501,51 @@
 
 
                     <h2>
-
-                        O futuro começa
+                        Conhecimento para
                         <strong>
-                            aprendendo hoje.
+                            transformar o futuro.
                         </strong>
-
                     </h2>
 
 
                     <p>
-
-                        Continue explorando, aprendendo e
+                        Continue aprendendo, explorando e
                         descobrindo novas possibilidades.
-
                     </p>
 
 
-                    <div class="final-cta-buttons">
+                    <div class="cta-buttons">
 
-
-                        <a href="#inicio"
-                            class="final-main-button">
-
-                            <i class="fa-solid fa-arrow-up"></i>
+                        <a
+                            href="#inicio"
+                            class="cta-primary"
+                        >
 
                             Voltar ao início
 
-                        </a>
-
-
-                        <a href="#quiz"
-                            class="final-secondary-button">
-
-                            Fazer o quiz novamente
+                            <i class="fa-solid fa-arrow-up"></i>
 
                         </a>
 
+
+                        <a
+                            href="#quiz"
+                            class="cta-secondary"
+                        >
+
+                            Refazer o quiz
+
+                        </a>
 
                     </div>
 
 
                 </div>
 
-
             </div>
 
 
         </section>
-
 
 
     </main>
@@ -3147,38 +2556,39 @@
          MODAL DISCIPLINAS
     ====================================================== -->
 
-    <div id="subjectModal"
-        class="modal">
+    <div
+        class="modal"
+        id="subjectModal"
+    >
+
+        <div
+            class="modal-background"
+            id="modalOverlay"
+        ></div>
 
 
-        <div class="modal-overlay"
-            id="modalOverlay"></div>
+        <div class="modal-box">
 
 
-        <div class="modal-container">
-
-
-            <button id="modalClose"
+            <button
                 class="modal-close"
-                aria-label="Fechar modal">
+                id="modalClose"
+                aria-label="Fechar"
+            >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
 
 
-            <div id="modalContent"
-                class="modal-content">
-
-
-                <!-- JAVASCRIPT -->
-
-
+            <div
+                id="modalContent"
+                class="modal-content"
+            >
             </div>
 
 
         </div>
-
 
     </div>
 
@@ -3188,75 +2598,55 @@
          MODAL DICAS
     ====================================================== -->
 
-    <div id="tipModal"
-        class="modal">
+    <div
+        class="modal"
+        id="tipModal"
+    >
+
+        <div
+            class="modal-background"
+            id="tipModalOverlay"
+        ></div>
 
 
-        <div class="modal-overlay"
-            id="tipModalOverlay"></div>
+        <div class="modal-box">
 
 
-        <div class="modal-container tip-modal-container">
-
-
-            <button id="tipModalClose"
-                class="modal-close">
+            <button
+                class="modal-close"
+                id="tipModalClose"
+                aria-label="Fechar"
+            >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
 
 
-            <div id="tipModalContent"
-                class="modal-content">
-
-
-                <!-- JAVASCRIPT -->
-
-
+            <div
+                id="tipModalContent"
+                class="modal-content"
+            >
             </div>
 
 
         </div>
-
 
     </div>
 
 
 
     <!-- =====================================================
-         BOTÃO VOLTAR AO TOPO
+         BOTÃO TOPO
     ====================================================== -->
 
-    <button id="backToTop"
+    <button
         class="back-to-top"
-        aria-label="Voltar ao topo">
-
-
-        <svg viewBox="0 0 100 100">
-
-            <circle class="back-circle"
-                cx="50"
-                cy="50"
-                r="45">
-
-            </circle>
-
-
-            <circle id="backProgress"
-                class="back-progress"
-                cx="50"
-                cy="50"
-                r="45">
-
-            </circle>
-
-
-        </svg>
-
+        id="backToTop"
+        aria-label="Voltar ao topo"
+    >
 
         <i class="fa-solid fa-arrow-up"></i>
-
 
     </button>
 
@@ -3266,200 +2656,161 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="site-footer">
+    <footer class="footer">
 
 
-        <div class="footer-top">
+        <div class="container">
 
 
-            <div class="container">
+            <div class="footer-grid">
 
 
-                <div class="footer-grid">
+                <div class="footer-brand-column">
 
 
-                    <!-- MARCA -->
+                    <a
+                        href="#inicio"
+                        class="footer-brand"
+                    >
 
-                    <div class="footer-brand-column">
+                        <div class="footer-brand-icon">
 
-
-                        <a href="#inicio"
-                            class="footer-brand">
-
-
-                            <div class="footer-brand-icon">
-
-                                <i class="fa-solid fa-graduation-cap"></i>
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    PROVA PARANÁ
-                                </strong>
-
-                                <span>
-                                    CENTRAL DO ESTUDANTE
-                                </span>
-
-                            </div>
-
-
-                        </a>
-
-
-                        <p>
-
-                            Um projeto digital criado para apresentar
-                            informações sobre a Prova Paraná de forma
-                            moderna, visual e interativa.
-
-                        </p>
-
-
-                        <div class="footer-socials">
-
-
-                            <a href="#inicio"
-                                aria-label="Início">
-
-                                <i class="fa-solid fa-house"></i>
-
-                            </a>
-
-
-                            <a href="#quiz"
-                                aria-label="Quiz">
-
-                                <i class="fa-solid fa-brain"></i>
-
-                            </a>
-
-
-                            <a href="#dicas"
-                                aria-label="Dicas">
-
-                                <i class="fa-solid fa-lightbulb"></i>
-
-                            </a>
-
+                            <i class="fa-solid fa-graduation-cap"></i>
 
                         </div>
 
 
-                    </div>
+                        <div>
+
+                            <strong>
+                                PROVA PARANÁ
+                            </strong>
+
+                            <span>
+                                CENTRAL DO ESTUDANTE
+                            </span>
+
+                        </div>
+
+                    </a>
 
 
+                    <p>
+                        Projeto escolar criado para apresentar
+                        a Prova Paraná de forma simples, visual
+                        e interativa.
+                    </p>
 
-                    <!-- NAVEGAÇÃO -->
 
-                    <div class="footer-column">
-
-
-                        <h4>
-                            Navegação
-                        </h4>
-
+                    <div class="footer-socials">
 
                         <a href="#inicio">
-                            Início
-                        </a>
-
-                        <a href="#o-que-e">
-                            O que é?
-                        </a>
-
-                        <a href="#objetivos">
-                            Objetivos
-                        </a>
-
-                        <a href="#disciplinas">
-                            Disciplinas
-                        </a>
-
-
-                    </div>
-
-
-
-                    <!-- ESTUDANTE -->
-
-                    <div class="footer-column">
-
-
-                        <h4>
-                            Estudante
-                        </h4>
-
-
-                        <a href="#dicas">
-                            Dicas
-                        </a>
-
-                        <a href="#resultados">
-                            Resultados
+                            <i class="fa-solid fa-house"></i>
                         </a>
 
                         <a href="#quiz">
-                            Quiz
+                            <i class="fa-solid fa-brain"></i>
                         </a>
 
-                        <a href="#faq">
-                            Perguntas
+                        <a href="#dicas">
+                            <i class="fa-solid fa-lightbulb"></i>
                         </a>
 
+                    </div>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Navegação
+                    </h4>
+
+                    <a href="#inicio">
+                        Início
+                    </a>
+
+                    <a href="#o-que-e">
+                        O que é?
+                    </a>
+
+                    <a href="#objetivos">
+                        Objetivos
+                    </a>
+
+                    <a href="#disciplinas">
+                        Disciplinas
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Estudante
+                    </h4>
+
+                    <a href="#jornada">
+                        Jornada
+                    </a>
+
+                    <a href="#dicas">
+                        Dicas
+                    </a>
+
+                    <a href="#resultados">
+                        Resultados
+                    </a>
+
+                    <a href="#quiz">
+                        Quiz
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Projeto
+                    </h4>
+
+                    <div class="footer-detail">
+
+                        <i class="fa-solid fa-school"></i>
+
+                        <span>
+                            Projeto escolar
+                        </span>
 
                     </div>
 
 
+                    <div class="footer-detail">
 
-                    <!-- CONTATO -->
+                        <i class="fa-solid fa-code"></i>
 
-                    <div class="footer-column footer-contact">
-
-
-                        <h4>
-                            Projeto
-                        </h4>
-
-
-                        <div class="footer-contact-item">
-
-                            <i class="fa-solid fa-school"></i>
-
-                            <span>
-                                Projeto escolar
-                            </span>
-
-                        </div>
-
-
-                        <div class="footer-contact-item">
-
-                            <i class="fa-solid fa-code"></i>
-
-                            <span>
-                                Desenvolvido com HTML, CSS e JavaScript
-                            </span>
-
-                        </div>
-
-
-                        <div class="footer-contact-item">
-
-                            <i class="fa-solid fa-heart"></i>
-
-                            <span>
-                                Criado para aprender
-                            </span>
-
-                        </div>
-
+                        <span>
+                            HTML + CSS + JavaScript
+                        </span>
 
                     </div>
 
+
+                    <div class="footer-detail">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <span>
+                            Feito para aprender
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -3467,39 +2818,19 @@
             </div>
 
 
-        </div>
+            <div class="footer-bottom">
 
+                <p>
+                    © <span id="currentYear"></span>
+                    Prova Paraná — Central do Estudante.
+                </p>
 
-
-        <div class="footer-bottom">
-
-
-            <div class="container">
-
-
-                <div class="footer-bottom-content">
-
-
-                    <p>
-
-                        © <span id="currentYear"></span>
-                        Prova Paraná — Central do Estudante.
-
-                    </p>
-
-
-                    <p>
-
-                        Desenvolvido por
-                        <strong>
-                            Chrystyan
-                        </strong>
-
-                    </p>
-
-
-                </div>
-
+                <p>
+                    Desenvolvido por
+                    <strong>
+                        Chrystyan
+                    </strong>
+                </p>
 
             </div>
 
@@ -3511,12 +2842,9 @@
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
-
 
 </body>
 
