@@ -5089,3 +5089,9 @@ body:has(button:hover) .cursor-outline {
     }
 
 }
+.loader.hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
