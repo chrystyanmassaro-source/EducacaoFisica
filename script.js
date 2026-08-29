@@ -1,6 +1,6 @@
 /* =========================================================
-   PROVA PARANÁ — SCRIPT PRINCIPAL
-   Projeto interativo
+   PROVA PARANÁ
+   SCRIPT PRINCIPAL — VERSÃO CORRIGIDA
    ========================================================= */
 
 
@@ -24,6 +24,8 @@ const backToTop = document.querySelector(".back-to-top");
 
 const scrollProgress = document.querySelector(".scroll-progress");
 
+const header = document.querySelector(".site-header");
+
 const navLinks = document.querySelectorAll(".desktop-nav a");
 
 const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
@@ -31,26 +33,45 @@ const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
 
 
 /* =========================================================
-   LOADING SCREEN
+   LOADING SCREEN — CORRIGIDO
+   NUNCA FICA PRESO
    ========================================================= */
 
-window.addEventListener("load", () => {
+function hideLoader() {
 
     if (!loader) return;
 
+    loader.classList.add("hide");
+
     setTimeout(() => {
 
-        loader.classList.add("hide");
+        loader.style.display = "none";
 
-        setTimeout(() => {
+    }, 800);
 
-            loader.style.display = "none";
+}
 
-        }, 700);
 
-    }, 700);
+/* Executa quando o HTML estiver pronto */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    setTimeout(() => {
+
+        hideLoader();
+
+    }, 1200);
 
 });
+
+
+/* Segurança extra */
+
+setTimeout(() => {
+
+    hideLoader();
+
+}, 3000);
 
 
 
@@ -64,7 +85,11 @@ function openMobileMenu() {
 
     mobileMenu.classList.add("active");
 
-    mobileOverlay?.classList.add("active");
+    if (mobileOverlay) {
+
+        mobileOverlay.classList.add("active");
+
+    }
 
     body.style.overflow = "hidden";
 
@@ -77,32 +102,48 @@ function closeMobileMenu() {
 
     mobileMenu.classList.remove("active");
 
-    mobileOverlay?.classList.remove("active");
+    if (mobileOverlay) {
+
+        mobileOverlay.classList.remove("active");
+
+    }
 
     body.style.overflow = "";
 
 }
 
 
-hamburger?.addEventListener("click", () => {
+if (hamburger) {
 
-    openMobileMenu();
+    hamburger.addEventListener("click", () => {
 
-});
+        openMobileMenu();
 
+    });
 
-mobileClose?.addEventListener("click", () => {
-
-    closeMobileMenu();
-
-});
+}
 
 
-mobileOverlay?.addEventListener("click", () => {
+if (mobileClose) {
 
-    closeMobileMenu();
+    mobileClose.addEventListener("click", () => {
 
-});
+        closeMobileMenu();
+
+    });
+
+}
+
+
+if (mobileOverlay) {
+
+    mobileOverlay.addEventListener("click", () => {
+
+        closeMobileMenu();
+
+    });
+
+}
 
 
 mobileLinks.forEach(link => {
@@ -116,9 +157,8 @@ mobileLinks.forEach(link => {
 });
 
 
-
 /* =========================================================
-   TECLA ESC FECHA MENU
+   TECLA ESC
    ========================================================= */
 
 document.addEventListener("keydown", event => {
@@ -139,8 +179,7 @@ document.addEventListener("keydown", event => {
 
 function updateScrollProgress() {
 
-    const scrollTop =
-        window.scrollY;
+    const scrollTop = window.scrollY;
 
     const documentHeight =
         document.documentElement.scrollHeight -
@@ -161,12 +200,6 @@ function updateScrollProgress() {
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateScrollProgress
-);
-
-
 
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
@@ -176,7 +209,7 @@ function updateBackToTop() {
 
     if (!backToTop) return;
 
-    if (window.scrollY > 600) {
+    if (window.scrollY > 500) {
 
         backToTop.classList.add("show");
 
@@ -189,61 +222,15 @@ function updateBackToTop() {
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateBackToTop
-);
+if (backToTop) {
 
-
-backToTop?.addEventListener("click", event => {
-
-    event.preventDefault();
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-
-
-/* =========================================================
-   SCROLL SUAVE PARA LINKS INTERNOS
-   ========================================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        if (
-            !targetId ||
-            targetId === "#"
-        ) return;
-
-        const target =
-            document.querySelector(targetId);
-
-        if (!target) return;
+    backToTop.addEventListener("click", event => {
 
         event.preventDefault();
 
-        const headerOffset = 95;
-
-        const position =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerOffset;
-
         window.scrollTo({
 
-            top: position,
+            top: 0,
 
             behavior: "smooth"
 
@@ -251,17 +238,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     });
 
-});
+}
 
 
 
 /* =========================================================
    HEADER DINÂMICO
    ========================================================= */
-
-const header =
-    document.querySelector(".site-header");
-
 
 function updateHeader() {
 
@@ -280,15 +263,57 @@ function updateHeader() {
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateHeader
-);
+
+/* =========================================================
+   SCROLL SUAVE
+   ========================================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        const targetId =
+            link.getAttribute("href");
+
+        if (
+            !targetId ||
+            targetId === "#"
+        ) return;
+
+
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+
+        const headerOffset = 90;
+
+
+        const position =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerOffset;
+
+
+        window.scrollTo({
+
+            top: position,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+});
 
 
 
 /* =========================================================
-   MENU ATIVO CONFORME A SEÇÃO
+   MENU ATIVO
    ========================================================= */
 
 const sections =
@@ -298,7 +323,8 @@ const sections =
 function updateActiveLink() {
 
     const scrollPosition =
-        window.scrollY + 160;
+        window.scrollY + 150;
+
 
     sections.forEach(section => {
 
@@ -311,6 +337,7 @@ function updateActiveLink() {
         const sectionId =
             section.getAttribute("id");
 
+
         if (
 
             scrollPosition >= sectionTop &&
@@ -322,6 +349,7 @@ function updateActiveLink() {
             navLinks.forEach(link => {
 
                 link.classList.remove("active");
+
 
                 if (
                     link.getAttribute("href") ===
@@ -341,10 +369,22 @@ function updateActiveLink() {
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateActiveLink
-);
+
+/* =========================================================
+   SCROLL PRINCIPAL
+   ========================================================= */
+
+window.addEventListener("scroll", () => {
+
+    updateScrollProgress();
+
+    updateBackToTop();
+
+    updateHeader();
+
+    updateActiveLink();
+
+});
 
 
 
@@ -372,43 +412,45 @@ const animatedElements =
     );
 
 
-const observer =
-    new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-        entries => {
+    const observer =
+        new IntersectionObserver(
 
-            entries.forEach(entry => {
+            entries => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    entry.target.classList.add(
-                        "reveal"
-                    );
+                    if (entry.isIntersecting) {
 
-                    observer.unobserve(
-                        entry.target
-                    );
+                        entry.target.classList.add(
+                            "reveal"
+                        );
 
-                }
+                        observer.unobserve(
+                            entry.target
+                        );
 
-            });
+                    }
 
-        },
+                });
 
-        {
+            },
 
-            threshold: 0.12
+            {
+                threshold: 0.12
+            }
 
-        }
-
-    );
+        );
 
 
-animatedElements.forEach(element => {
+    animatedElements.forEach(element => {
 
-    observer.observe(element);
+        observer.observe(element);
 
-});
+    });
+
+}
 
 
 
@@ -417,19 +459,19 @@ animatedElements.forEach(element => {
    ========================================================= */
 
 const counters =
-    document.querySelectorAll(
-        "[data-count]"
-    );
+    document.querySelectorAll("[data-count]");
 
 
 function animateCounter(counter) {
 
     const target =
-        Number(
-            counter.dataset.count
-        );
+        Number(counter.dataset.count);
 
-    const duration = 1800;
+
+    if (isNaN(target)) return;
+
+
+    const duration = 1500;
 
     const startTime =
         performance.now();
@@ -440,11 +482,13 @@ function animateCounter(counter) {
         const elapsed =
             currentTime - startTime;
 
+
         const progress =
             Math.min(
                 elapsed / duration,
                 1
             );
+
 
         const easeOut =
             1 -
@@ -453,19 +497,20 @@ function animateCounter(counter) {
                 3
             );
 
+
         const value =
             Math.floor(
                 target * easeOut
             );
 
+
         counter.textContent =
             value.toLocaleString("pt-BR");
 
+
         if (progress < 1) {
 
-            requestAnimationFrame(
-                update
-            );
+            requestAnimationFrame(update);
 
         } else {
 
@@ -476,48 +521,51 @@ function animateCounter(counter) {
 
     }
 
+
     requestAnimationFrame(update);
 
 }
 
 
-const counterObserver =
-    new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-        entries => {
+    const counterObserver =
+        new IntersectionObserver(
 
-            entries.forEach(entry => {
+            entries => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    animateCounter(
-                        entry.target
-                    );
+                    if (entry.isIntersecting) {
 
-                    counterObserver.unobserve(
-                        entry.target
-                    );
+                        animateCounter(
+                            entry.target
+                        );
 
-                }
+                        counterObserver.unobserve(
+                            entry.target
+                        );
 
-            });
+                    }
 
-        },
+                });
 
-        {
+            },
 
-            threshold: 0.6
+            {
+                threshold: 0.5
+            }
 
-        }
-
-    );
+        );
 
 
-counters.forEach(counter => {
+    counters.forEach(counter => {
 
-    counterObserver.observe(counter);
+        counterObserver.observe(counter);
 
-});
+    });
+
+}
 
 
 
@@ -543,13 +591,16 @@ function updateChecklistProgress() {
 
     if (!checkItems.length) return;
 
+
     const checked =
         document.querySelectorAll(
             ".check-item.checked"
         ).length;
 
+
     const total =
         checkItems.length;
+
 
     const percentage =
         Math.round(
@@ -593,114 +644,79 @@ updateChecklistProgress();
 
 
 /* =========================================================
-   QUIZ DA PROVA PARANÁ
+   QUIZ
    ========================================================= */
 
 const quizData = [
 
     {
-
         question:
             "Qual é uma das principais funções da Prova Paraná?",
 
         options: [
-
             "Punir estudantes com notas baixas",
-
             "Avaliar informações para ajudar no ensino",
-
             "Substituir completamente as aulas",
-
             "Escolher apenas os melhores alunos"
-
         ],
 
         answer: 1
-
     },
 
     {
-
         question:
             "Quais são algumas das áreas avaliadas na Prova Paraná?",
 
         options: [
-
             "Língua Portuguesa e Matemática",
-
             "Somente Educação Física",
-
             "Somente Artes",
-
             "Apenas História"
-
         ],
 
         answer: 0
-
     },
 
     {
-
         question:
             "Os resultados da avaliação podem ajudar principalmente em quê?",
 
         options: [
-
             "Melhorar estratégias pedagógicas",
-
             "Cancelar matérias",
-
             "Diminuir o tempo das aulas",
-
             "Eliminar professores"
-
         ],
 
         answer: 0
-
     },
 
     {
-
         question:
             "Qual é uma boa atitude antes da avaliação?",
 
         options: [
-
             "Não dormir para estudar",
-
             "Ficar extremamente preocupado",
-
             "Descansar e manter a calma",
-
             "Não se alimentar"
-
         ],
 
         answer: 2
-
     },
 
     {
-
         question:
             "Como os resultados podem ser utilizados?",
 
         options: [
-
             "Para identificar pontos que precisam melhorar",
-
             "Apenas para criar rankings",
-
             "Somente para dar punições",
-
             "Para substituir o ensino regular"
-
         ],
 
         answer: 0
-
     }
 
 ];
@@ -714,44 +730,29 @@ let answered = false;
 
 
 const quizQuestion =
-    document.querySelector(
-        ".quiz-question"
-    );
+    document.querySelector(".quiz-question");
 
 const quizOptions =
-    document.querySelector(
-        ".quiz-options"
-    );
+    document.querySelector(".quiz-options");
 
 const quizCounter =
-    document.querySelector(
-        ".quiz-counter"
-    );
+    document.querySelector(".quiz-counter");
 
 const quizScore =
-    document.querySelector(
-        ".quiz-score"
-    );
+    document.querySelector(".quiz-score");
 
 const quizProgressBar =
-    document.querySelector(
-        ".quiz-progress-bar"
-    );
+    document.querySelector(".quiz-progress-bar");
 
 
 
 /* =========================================================
-   RENDERIZAR QUESTÃO
+   MOSTRAR QUESTÃO
    ========================================================= */
 
 function renderQuestion() {
 
-    if (
-
-        !quizQuestion ||
-        !quizOptions
-
-    ) return;
+    if (!quizQuestion || !quizOptions) return;
 
 
     answered = false;
@@ -765,17 +766,25 @@ function renderQuestion() {
         current.question;
 
 
-    quizCounter.textContent =
-        `QUESTÃO ${currentQuestion + 1} DE ${quizData.length}`;
+    if (quizCounter) {
+
+        quizCounter.textContent =
+            `QUESTÃO ${currentQuestion + 1} DE ${quizData.length}`;
+
+    }
 
 
-    const progress =
-        ((currentQuestion + 1) /
-        quizData.length) * 100;
+    if (quizProgressBar) {
+
+        const progress =
+            ((currentQuestion + 1) /
+            quizData.length) * 100;
 
 
-    quizProgressBar.style.width =
-        `${progress}%`;
+        quizProgressBar.style.width =
+            `${progress}%`;
+
+    }
 
 
     quizOptions.innerHTML = "";
@@ -786,54 +795,46 @@ function renderQuestion() {
 
 
     current.options.forEach(
-
         (option, index) => {
 
             const button =
                 document.createElement("button");
 
+
+            button.type = "button";
+
             button.className =
                 "quiz-option";
+
 
             button.innerHTML = `
 
                 <span class="option-letter">
-
                     ${letters[index]}
-
                 </span>
 
                 <span>
-
                     ${option}
-
                 </span>
 
             `;
 
 
             button.addEventListener(
-
                 "click",
-
                 () => {
 
                     selectAnswer(
-                        index,
-                        button
+                        index
                     );
 
                 }
-
             );
 
 
-            quizOptions.appendChild(
-                button
-            );
+            quizOptions.appendChild(button);
 
         }
-
     );
 
 }
@@ -841,13 +842,10 @@ function renderQuestion() {
 
 
 /* =========================================================
-   SELECIONAR RESPOSTA
+   VERIFICAR RESPOSTA
    ========================================================= */
 
-function selectAnswer(
-    selectedIndex,
-    selectedButton
-) {
+function selectAnswer(selectedIndex) {
 
     if (answered) return;
 
@@ -864,46 +862,39 @@ function selectAnswer(
         );
 
 
-    buttons.forEach(
+    buttons.forEach((button, index) => {
 
-        (button, index) => {
-
-            button.style.pointerEvents =
-                "none";
+        button.style.pointerEvents =
+            "none";
 
 
-            if (index === correctAnswer) {
+        if (index === correctAnswer) {
 
-                button.classList.add(
-                    "correct"
-                );
-
-            }
-
-
-            if (
-
-                index === selectedIndex &&
-                selectedIndex !== correctAnswer
-
-            ) {
-
-                button.classList.add(
-                    "wrong"
-                );
-
-            }
+            button.classList.add(
+                "correct"
+            );
 
         }
 
-    );
+
+        if (
+            index === selectedIndex &&
+            selectedIndex !== correctAnswer
+        ) {
+
+            button.classList.add(
+                "wrong"
+            );
+
+        }
+
+    });
 
 
-    if (
-        selectedIndex === correctAnswer
-    ) {
+    if (selectedIndex === correctAnswer) {
 
         score++;
+
 
         if (quizScore) {
 
@@ -919,6 +910,7 @@ function selectAnswer(
 
         currentQuestion++;
 
+
         if (
             currentQuestion <
             quizData.length
@@ -932,25 +924,24 @@ function selectAnswer(
 
         }
 
-    }, 1500);
+    }, 1300);
 
 }
 
 
 
 /* =========================================================
-   RESULTADO FINAL DO QUIZ
+   RESULTADO FINAL
    ========================================================= */
 
 function showQuizResult() {
 
-    if (!quizQuestion) return;
+    if (!quizQuestion || !quizOptions) return;
 
 
     const percentage =
         Math.round(
-            (score /
-            quizData.length) * 100
+            (score / quizData.length) * 100
         );
 
 
@@ -960,65 +951,68 @@ function showQuizResult() {
     if (percentage === 100) {
 
         message =
-            "Perfeito! Você está muito bem preparado! 🚀";
+            "PERFEITO! Você está muito bem preparado! 🚀";
 
     }
 
     else if (percentage >= 60) {
 
         message =
-            "Muito bem! Você já sabe bastante sobre a Prova Paraná! 👏";
+            "MUITO BEM! Você já sabe bastante sobre a Prova Paraná! 👏";
 
     }
 
     else {
 
         message =
-            "Bom começo! Explore o site novamente e tente melhorar sua pontuação! 📚";
+            "Bom começo! Explore o site novamente e tente melhorar! 📚";
 
     }
 
 
     quizQuestion.innerHTML = `
 
-        <span style="color:#00e5a0">
-
+        <span style="color:#00e5a0; font-size:42px;">
             ${percentage}%
-
         </span>
 
-        <br>
+        <br><br>
 
         ${message}
 
     `;
 
 
-    quizCounter.textContent =
-        "QUIZ FINALIZADO";
+    if (quizCounter) {
+
+        quizCounter.textContent =
+            "QUIZ FINALIZADO";
+
+    }
 
 
-    quizProgressBar.style.width =
-        "100%";
+    if (quizProgressBar) {
+
+        quizProgressBar.style.width =
+            "100%";
+
+    }
 
 
     quizOptions.innerHTML = `
 
         <button
+            type="button"
             class="quiz-option"
             id="restartQuiz"
         >
 
             <span class="option-letter">
-
                 ↻
-
             </span>
 
             <span>
-
-                Tentar novamente
-
+                TENTAR NOVAMENTE
             </span>
 
         </button>
@@ -1026,15 +1020,18 @@ function showQuizResult() {
     `;
 
 
-    document
-        .querySelector("#restartQuiz")
-        ?.addEventListener(
+    const restartButton =
+        document.querySelector("#restartQuiz");
 
+
+    if (restartButton) {
+
+        restartButton.addEventListener(
             "click",
-
             restartQuiz
-
         );
+
+    }
 
 }
 
@@ -1066,10 +1063,7 @@ function restartQuiz() {
 }
 
 
-
-/* =========================================================
-   INICIAR QUIZ
-   ========================================================= */
+/* Iniciar quiz */
 
 renderQuestion();
 
@@ -1080,351 +1074,113 @@ renderQuestion();
    ========================================================= */
 
 const heroVisual =
-    document.querySelector(
-        ".hero-visual"
+    document.querySelector(".hero-visual");
+
+
+if (
+    heroVisual &&
+    window.innerWidth > 850
+) {
+
+    window.addEventListener(
+        "mousemove",
+        event => {
+
+            const x =
+                (window.innerWidth / 2 -
+                event.clientX) / 45;
+
+
+            const y =
+                (window.innerHeight / 2 -
+                event.clientY) / 45;
+
+
+            heroVisual.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+        }
     );
 
-
-window.addEventListener(
-
-    "mousemove",
-
-    event => {
-
-        if (!heroVisual) return;
-
-
-        const x =
-            (window.innerWidth / 2 -
-            event.clientX) / 40;
-
-
-        const y =
-            (window.innerHeight / 2 -
-            event.clientY) / 40;
-
-
-        heroVisual.style.transform =
-            `translate(${x}px, ${y}px)`;
-
-    }
-
-);
+}
 
 
 
 /* =========================================================
-   EFEITO NOS CARDS
+   CARDS INTERATIVOS
    ========================================================= */
 
 const interactiveCards =
     document.querySelectorAll(
 
-        `
-        .objective-card,
-        .result-card,
-        .subject-premium-card
-        `
+        ".objective-card, .result-card, .subject-premium-card"
 
     );
 
 
-interactiveCards.forEach(card => {
+if (window.innerWidth > 850) {
 
-    card.addEventListener(
+    interactiveCards.forEach(card => {
 
-        "mousemove",
-
-        event => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-
-            const x =
-                event.clientX -
-                rect.left;
-
-
-            const y =
-                event.clientY -
-                rect.top;
-
-
-            const centerX =
-                rect.width / 2;
-
-
-            const centerY =
-                rect.height / 2;
-
-
-            const rotateX =
-                (y - centerY) / -18;
-
-
-            const rotateY =
-                (x - centerX) / 18;
-
-
-            card.style.transform =
-                `
-                perspective(1000px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                translateY(-8px)
-                `;
-
-        }
-
-    );
-
-
-    card.addEventListener(
-
-        "mouseleave",
-
-        () => {
-
-            card.style.transform = "";
-
-        }
-
-    );
-
-});
-
-
-
-/* =========================================================
-   CURSOR PERSONALIZADO
-   ========================================================= */
-
-const cursorDot =
-    document.querySelector(
-        ".cursor-dot"
-    );
-
-const cursorOutline =
-    document.querySelector(
-        ".cursor-outline"
-    );
-
-
-if (
-
-    cursorDot &&
-    cursorOutline &&
-    window.innerWidth > 600
-
-) {
-
-    window.addEventListener(
-
-        "mousemove",
-
-        event => {
-
-            cursorDot.style.left =
-                `${event.clientX}px`;
-
-            cursorDot.style.top =
-                `${event.clientY}px`;
-
-
-            cursorOutline.style.left =
-                `${event.clientX}px`;
-
-            cursorOutline.style.top =
-                `${event.clientY}px`;
-
-        }
-
-    );
-
-
-    document
-        .querySelectorAll(
-            "a, button, .check-item"
-        )
-        .forEach(element => {
-
-            element.addEventListener(
-                "mouseenter",
-                () => {
-
-                    cursorOutline.classList.add(
-                        "cursor-hover"
-                    );
-
-                }
-            );
-
-
-            element.addEventListener(
-                "mouseleave",
-                () => {
-
-                    cursorOutline.classList.remove(
-                        "cursor-hover"
-                    );
-
-                }
-            );
-
-        });
-
-}
-
-
-
-/* =========================================================
-   EFEITO DIGITAÇÃO NO HERO
-   ========================================================= */
-
-const typingElement =
-    document.querySelector(
-        "[data-typing]"
-    );
-
-
-if (typingElement) {
-
-    const originalText =
-        typingElement.textContent;
-
-    let index = 0;
-
-    typingElement.textContent = "";
-
-
-    function typeText() {
-
-        if (
-            index <
-            originalText.length
-        ) {
-
-            typingElement.textContent +=
-                originalText.charAt(index);
-
-            index++;
-
-            setTimeout(
-                typeText,
-                45
-            );
-
-        }
-
-    }
-
-
-    setTimeout(
-        typeText,
-        1200
-    );
-
-}
-
-
-
-/* =========================================================
-   EFEITO DE RIPPLE NOS BOTÕES
-   ========================================================= */
-
-document
-    .querySelectorAll(
-        ".btn-primary, .btn-secondary, .cta-main"
-    )
-    .forEach(button => {
-
-        button.addEventListener(
-
-            "click",
-
+        card.addEventListener(
+            "mousemove",
             event => {
 
-                const ripple =
-                    document.createElement("span");
-
-
                 const rect =
-                    button.getBoundingClientRect();
+                    card.getBoundingClientRect();
 
 
-                const size =
-                    Math.max(
-                        rect.width,
-                        rect.height
-                    );
+                const x =
+                    event.clientX -
+                    rect.left;
 
 
-                ripple.style.width =
-                    `${size}px`;
-
-                ripple.style.height =
-                    `${size}px`;
+                const y =
+                    event.clientY -
+                    rect.top;
 
 
-                ripple.style.left =
-                    `${event.clientX - rect.left - size / 2}px`;
-
-                ripple.style.top =
-                    `${event.clientY - rect.top - size / 2}px`;
+                const centerX =
+                    rect.width / 2;
 
 
-                ripple.classList.add(
-                    "ripple"
-                );
+                const centerY =
+                    rect.height / 2;
 
 
-                button.appendChild(
-                    ripple
-                );
+                const rotateX =
+                    (y - centerY) / -25;
 
 
-                setTimeout(() => {
+                const rotateY =
+                    (x - centerX) / 25;
 
-                    ripple.remove();
 
-                }, 700);
+                card.style.transform =
+                    `
+                    perspective(1000px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    translateY(-8px)
+                    `;
 
             }
+        );
 
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
         );
 
     });
 
+}
 
-
-/* =========================================================
-   LOG NO CONSOLE
-   ========================================================= */
-
-console.log(
-
-    "%cPROVA PARANÁ",
-
-    `
-    color: #00c2ff;
-    font-size: 28px;
-    font-weight: bold;
-    `
-
-);
-
-
-console.log(
-
-    "%cSite educacional carregado com sucesso! 🚀",
-
-    `
-    color: #6c4cff;
-    font-size: 14px;
-    `
-
-);
 
 
 /* =========================================================
@@ -1439,6 +1195,14 @@ updateHeader();
 
 updateActiveLink();
 
+
 console.log(
-    "Sistema inicializado com sucesso."
+    "%cPROVA PARANÁ",
+    "color:#00c2ff;font-size:28px;font-weight:bold;"
+);
+
+
+console.log(
+    "%cSistema carregado com sucesso! 🚀",
+    "color:#6c4cff;font-size:14px;"
 );
